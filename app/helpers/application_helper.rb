@@ -28,7 +28,7 @@ module ApplicationHelper
 
   # Return a title on a per-page basis.
   def title
-    base_title = "orangenwerk .. Werbung, Werbetechnik und Webdesign für Oranienburg und Berlin"
+    base_title = "orangenwerk ... Werbung . Digitaldruck . Werbetechnik . Webdesign in Oranienburg und Berlin"
     if @title.nil?
       base_title
     else
