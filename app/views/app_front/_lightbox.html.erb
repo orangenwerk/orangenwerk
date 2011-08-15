@@ -1,0 +1,15 @@
+<% if pic.referenz_bilder.count > 0 %>
+<div id="tabs">
+    <ul>
+		<% pic.referenz_bilder.each do |box| %>
+        	<li><a href="#fragment-<%= box.id %>"><span><%= box.name %></span></a></li>
+		<% end %>
+    </ul>
+	<% pic.referenz_bilder.each do |box| %>
+	
+    	<div id="fragment-<%= box.id %>">
+        	<%= image_tag box.bild.url %>
+    	</div>
+    <% end %>
+</div>
+<% end %>

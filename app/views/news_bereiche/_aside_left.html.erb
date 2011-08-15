@@ -1,0 +1,41 @@
+<div id="sidebar_icon">
+	<div id="sidebar_icon_box">
+		<% if @seite %>
+			
+			<% if @seite.sidebar_icon_file_name %>
+					<%= image_tag @seite.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+			<% else %>
+					<%= image_tag '/images/sb_icon_news.png'%>
+			<% end %>
+		
+		<% elsif @news_bereich %>
+		
+				<% if @news_bereich.sidebar_icon_file_name %>
+					<%= image_tag @news_bereich.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_news.png'%>
+				<% end %>
+				
+		<% else %>
+		
+			<%= image_tag '/images/sb_icon_news.png'%>
+			
+		<% end %>
+	
+	</div>
+	
+</div>
+<ul class="aside-nav">
+	<% NewsBereich.all.each do |newz| %>
+		
+		<li><%= link_to newz.titel, news_bereich_path(newz.name), :class => ("current owo" if (@news_bereich && (@news_bereich.name == newz.name))).to_s %>
+				<% if @news_bereich && @news_bereich.name == 'newsletter' && newz.name == 'newsletter' %>
+					<ul class="aside-nav-in">
+						<li><%= link_to 'anmelden', '/news/newsletter/anmelden' %></li>
+						<li><%= link_to 'abmelden', '/news/newsletter/abmelden' %></li>
+					</ul>
+				<% end %>
+			</li>
+	
+	<% end %>
+</ul>

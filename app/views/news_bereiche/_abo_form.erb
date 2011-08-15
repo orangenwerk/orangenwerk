@@ -1,0 +1,43 @@
+<%= form_for @newsletter_abo, :url => { :controller => 'news_bereiche', :action => 'newsletter_safe'}, :remote => true do |f| %>
+<%= render 'app_shared/error_msg', :item => f.object %>
+
+
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :geschlecht %>
+		</th>
+		<td class="name-view">
+			<%= f.select :geschlecht, geschlechter.map { |c| [c, c] }, :include_blank => true %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :email, 'E-Mail' %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :email %><%= harken(f, :email) %>
+		</td>
+	</tr>
+	<tr>
+		<th>
+			
+		</th>
+		<td>
+			<div class="actions"><%= submit_tag " abonnieren " %></div>
+		</td>
+	</tr>
+</tbody></table>
+<br/>
+
+
+<% end %>

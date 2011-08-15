@@ -1,0 +1,6 @@
+<h2>NewsEintrag Neu</h2>
+<%= form_for @news_eintrag, :html => { :multipart => true }, :url => { :controller => 'admin/news_eintraege'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_news_eintraege_path %>

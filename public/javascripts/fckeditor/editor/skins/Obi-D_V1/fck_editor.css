@@ -1,0 +1,325 @@
+/*
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2008 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * Styles used by the editor IFRAME and Toolbar.
+ */
+
+/*
+	### Basic Editor IFRAME Styles.
+*/
+
+body
+ { background-color: #ffffff; margin: 0; padding: 1px }
+
+#xEditingArea
+ { border: solid 1px #fff }
+
+.SourceField
+{
+    padding: 5px;
+    margin: 0px;
+    font-family: Monospace;
+}
+
+/*
+	Toolbar
+*/
+
+.TB_ToolbarSet, .TB_Expand, .TB_Collapse
+{
+    cursor: default;
+    background-color: #000;
+}
+
+.TB_ToolbarSet
+ { border-top: 1px outset #ccc; border-bottom: 1px outset #fff }
+
+.TB_ToolbarSet TD
+ { color: #fff; font-size: 11px; font-family: "Microsoft Sans Serif", Tahoma, Arial, Verdana, Sans-Serif; background-color: #000 }
+
+.TB_Toolbar
+ { display: inline-table; height: 24px }
+
+.TB_Separator
+ { background-color: #fff; margin: 2px; width: 1px; height: 16px }
+
+.TB_Start
+{
+    background-image: url(images/toolbar.start.gif);
+    margin: 2px;
+    width: 3px;
+    background-repeat: no-repeat;
+    height: 16px;
+}
+
+.TB_End
+{
+    display: none;
+}
+
+.TB_ExpandImg
+{
+    background-image: url(images/toolbar.expand.gif);
+    background-repeat: no-repeat;
+}
+
+.TB_CollapseImg
+{
+    background-image: url(images/toolbar.collapse.gif);
+    background-repeat: no-repeat;
+}
+
+.TB_SideBorder
+{
+    background-color: #696969;
+}
+
+.TB_Expand, .TB_Collapse
+{
+    padding: 2px 2px 2px 2px;
+    border: #efefde 1px outset;
+}
+
+.TB_Collapse
+{
+    width: 5px;
+}
+
+.TB_Break
+{
+    height: 24px; /* IE needs the height to be set, otherwise no break */
+}
+
+/*
+	Toolbar Button
+*/
+
+.TB_Button_On, .TB_Button_Off, .TB_Button_On_Over, .TB_Button_Off_Over, .TB_Button_Disabled
+  { height: 22px; border: solid 1px #000 }
+
+.TB_Button_On
+     { background-color: #fc9; border: solid 1px #f90 }
+
+.TB_Button_On_Over, .TB_Button_Off_Over
+    { border: solid 1px #f90 }
+
+.TB_Button_Off
+ { filter: alpha(opacity=70); opacity: 0.70 }
+
+.TB_Button_Disabled
+ { filter: gray() alpha(opacity=30); opacity: 0.30 }
+
+.TB_Button_Padding
+{
+    visibility: hidden;
+    width: 3px;
+    height: 22px;
+}
+
+.TB_Button_Image
+{
+    overflow: hidden;
+    width: 16px;
+    height: 16px;
+    margin: 3px;
+    background-repeat: no-repeat;
+}
+
+.TB_Button_Image img
+{
+    position: relative;
+}
+
+.TB_Button_Off .TB_Button_Text
+ { color: #fff; background-color: #000 }
+
+.TB_ConnectionLine
+{
+    background-color: #ffffff;
+    height: 1px;
+    margin-left: 1px;   /* ltr */
+    margin-right: 1px;  /* rtl */
+}
+
+.TB_Text
+ { color: #fff; height: 22px }
+
+.TB_Button_Off .TB_Text
+ { background-color: #9c0 }
+
+.TB_Button_On_Over .TB_Text
+{
+   	background-color: #dff1ff ;  /* Needed because of a bug on ClearType */
+}
+
+/*
+	Menu
+*/
+
+.MN_Menu
+ { color: #000; background-color: #fff; cursor: default; padding: 2px; border: solid 1px #666 }
+
+.MN_Menu, .MN_Menu .MN_Label
+{
+    font-size: 11px;
+    font-family: 'Microsoft Sans Serif' , Tahoma, Arial, Verdana, Sans-Serif;
+}
+
+.MN_Item_Padding
+ { visibility: hidden; width: 3px; height: 20px }
+
+.MN_Icon
+{
+    background-color: #666;
+    text-align: center;
+    height: 20px;
+}
+
+.MN_Label
+{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.MN_Separator
+{
+    height: 3px;
+}
+
+.MN_Separator_Line
+ { border-top: 1px solid #93f }
+
+.MN_Item .MN_Icon IMG
+{
+    filter: alpha(opacity=70);
+    opacity: 0.70;
+}
+
+.MN_Item_Over
+{
+    color: #ffffff;
+    background-color: #000;
+}
+
+.MN_Item_Over .MN_Icon
+ { background-color: #ccc }
+
+.MN_Item_Disabled IMG
+{
+    filter: gray() alpha(opacity=30); /* IE */
+    opacity: 0.30; /* Safari, Opera and Mozilla */
+}
+
+.MN_Item_Disabled .MN_Label
+{
+    color: #000;
+}
+
+.MN_Arrow
+ { padding-right: 3px; padding-left: 3px }
+
+.MN_ConnectionLine
+ { background-color: #ffffff }
+
+.Menu .TB_Button_On, .Menu .TB_Button_On_Over
+ { background-color: #999; border: solid 1px #fff }
+
+/*
+	### Panel Styles
+*/
+
+.FCK_Panel
+   { background-color: #999; padding: 2px; border: solid 1px #fff }
+
+.FCK_Panel, .FCK_Panel TD
+    { font-size: 11px; font-family: "Microsoft Sans Serif", Tahoma, Arial, Verdana, Sans-Serif }
+
+/*
+	### Special Combos
+*/
+
+.SC_Panel
+  { background-color: #999 !important; white-space: nowrap; cursor: default; padding-right: 2px; padding-left: 2px; overflow: auto; border: solid 1px #fff }
+
+.SC_Panel, .SC_Panel TD
+{
+    font-size: 11px;
+    font-family: 'Microsoft Sans Serif' , Tahoma, Arial, Verdana, Sans-Serif;
+}
+
+.SC_Item, .SC_ItemSelected
+ { background-repeat: no-repeat; background-position: left center; margin-top: 2px; margin-bottom: 2px; padding: 2px 3px 2px 11px; overflow: hidden; border: solid 1px #404040; text-overflow: ellipsis }
+
+.SC_Item *, .SC_ItemSelected *
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.SC_ItemSelected
+ { background-image: url("images/toolbar.arrowright.gif"); border: solid 1px #f60 }
+
+.SC_ItemOver
+ { background-color: #fc9; border: solid 1px #f60 }
+
+.SC_Field
+  { cursor: default; border: solid 1px #fff }
+
+.SC_FieldCaption
+ { color: #000; background-color: #fff; padding-right: 5px; padding-left: 5px; height: 23px; overflow: visible; filter: alpha(opacity=70); opacity: 0.75 }
+
+.SC_FieldLabel
+  { background-color: #ccc; white-space: nowrap; cursor: default; padding: 2px; width: 100%; overflow: hidden; text-overflow: ellipsis  }
+
+.SC_FieldButton
+ { background-image: url("images/toolbar.buttonarrow.gif"); background-repeat: no-repeat; background-position: center; width: 14px; border-left: 1px solid #ccc }
+
+.SC_FieldDisabled .SC_FieldButton, .SC_FieldDisabled .SC_FieldCaption, .SC_FieldDisabled .TB_ButtonType_Text
+{
+    opacity: 0.30; /* Safari, Opera and Mozilla */
+    filter: gray() alpha(opacity=30); /* IE */ /* -moz-opacity: 0.30; Mozilla (Old) */
+}
+
+.SC_FieldOver
+ { border: solid 1px #f60 }
+
+.SC_FieldOver .SC_FieldButton
+ { border-left: 1px solid #f60 }
+
+/*
+	### Color Selector Panel
+*/
+
+.ColorBoxBorder
+  { position: static; border: solid 1px #999 }
+
+.ColorBox
+ { font-size: 1px; position: static; width: 10px; height: 10px }
+
+.ColorDeselected, .ColorSelected
+{
+    cursor: default;
+}
+
+.ColorDeselected
+  { padding: 2px; float: left; border: solid 1px #999 }
+
+.ColorSelected
+ { background-color: #fc9; padding: 2px; float: left; border: solid 1px #f60 }

@@ -1,0 +1,76 @@
+<h2>Admin::Dashboard</h2>
+<hr/>
+<div class="section-group">
+  <div class="section-group-inner">
+	<div class="section">
+		<strong><%= link_to 'Seiten', admin_seiten_path %> </strong>
+		<span class="a_right"><%= Seite.all.count %></span><br/><br/>
+		
+		<strong><%= link_to 'Sidebars', admin_sidebars_path %></strong>
+		<span class="a_right"><%= Sidebar.all.count %></span><br/>
+		<strong><%= link_to 'Aktionen', admin_aktionen_path %></strong>
+		<span class="a_right"><%= Aktion.all.count %></span><br/><br/>
+		
+		<strong><%= link_to 'Banner', admin_banners_path %></strong><span class="a_right"><%= Banner.all.count %></span><br/>
+		<strong><%= link_to 'Slider', admin_sliders_path %></strong><span class="a_right"><%= Slider.all.count %></span><br/>
+		<strong><%= link_to 'StartTabSlider', admin_start_head_sliders_path %></strong>
+		<span class="a_right"><%= StartHeadSlider.all.count %></span><br/><br/>
+		
+		<strong><%= link_to 'User', admin_users_path %></strong><span class="a_right"><%= User.all.count %></span><br/>
+	</div>
+	
+	<div class="sectionx_admin"></div>
+	
+	<div class="section">
+		<strong><%= link_to 'Produkt-Bereiche', admin_produkt_bereiche_path %></strong>
+		<span class="a_right"><%= ProduktBereich.all.count %></span><br/>
+		<strong><%= link_to 'Produkt-Kategorien', admin_produkt_kategorien_path %></strong>
+		<span class="a_right"><%= ProduktKategorie.all.count %></span><br/>
+		<strong><%= link_to 'Produkte', admin_produkte_path %></strong><span class="a_right"><%= Produkt.all.count %></span><br/>
+		<strong><%= link_to 'Produkte-Detailbilder', admin_produkt_detail_bilder_path %></strong>
+		<span class="a_right"><%= ProduktDetailBild.all.count %></span><br/>
+	</div>
+	
+	<div class="sectionx_admin"></div>
+	
+	<div class="section">
+		<strong><%= link_to 'Portfolio-Bereiche', admin_portfolio_bereiche_path %></strong>
+		<span class="a_right"><%= PortfolioBereich.all.count %></span><br/><br/>
+		
+		<strong><%= link_to 'Referenzen', admin_referenzen_path %></strong><span class="a_right"><%= Referenz.all.count %></span><br/>
+		<strong><%= link_to 'Referenz-Bilder', admin_referenz_bilder_path %></strong>
+		<span class="a_right"><%= ReferenzBild.all.count %></span><br/>
+		<strong><%= link_to 'Web-Referenzen', admin_web_referenzen_path %></strong>
+		<span class="a_right"><%= WebReferenz.all.count %></span><br/>
+		<strong><%= link_to 'Web-Referenz-Bilder', admin_web_referenz_bilder_path %></strong>
+		<span class="a_right"><%= WebReferenzBild.all.count %></span><br/><br/>
+		<strong><%= link_to 'Kunden-Meinungen', admin_kunden_meinungen_path %></strong>
+		<span class="a_right"><%= KundenMeinung.all.count %></span><br/><br/>
+		<strong><%= link_to 'Kunden', admin_kunden_path %></strong>
+		<span class="a_right"><%= Kunde.all.count %></span><br/><br/>
+		<strong><%= link_to 'Branchen', admin_branchen_path %></strong>
+		<span class="a_right"><%= Branche.all.count %></span><br/>
+	</div>
+	
+	<div class="sectionx_admin"></div>
+	
+	<div class="section">
+		<strong><%= link_to 'News-Bereiche', admin_news_bereiche_path %></strong><span class="a_right"><%= NewsBereich.all.count %></span><br/><br/>
+		<strong><%= link_to 'News', admin_news_eintraege_path %></strong><span class="a_right"><%= NewsEintrag.all.count %></span><br/><br/>
+		<strong><%= link_to 'Newsletter-Abos', admin_newsletter_abos_path %></strong><span class="a_right"><%= NewsletterAbo.all.count %></span><br/>
+	</div>
+	
+	<div class="sectionx_admin"></div>
+	
+	<div class="section">
+		<strong><%= link_to 'Kontakt-Bereiche', admin_kontakt_bereiche_path %></strong>
+		<span class="a_right"><%= KontaktBereich.all.count %></span><br/>
+		<strong><%= link_to 'Kontakt-Kategorien', admin_kontakt_kategorien_path %></strong>
+		<span class="a_right"><%= KontaktKategorie.all.count %></span><br/><br/>
+		<strong><%= link_to 'AGBs', admin_agbs_path %></strong><span class="a_right"><%= Agb.all.count %></span><br/><br/>
+		<strong><%= link_to 'FAQs', admin_faqs_path %></strong><span class="a_right"><%= Faq.all.count %></span><br/>
+	</div>
+  </div>
+</div>
+<br class="clear"/><hr/><br/>User::&nbsp;&nbsp;&nbsp;<strong><%= current_user.name %></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Rang::&nbsp;&nbsp;&nbsp;<strong><%= current_role %></strong> [<%= rechte_symbol %>]

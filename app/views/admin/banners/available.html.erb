@@ -1,0 +1,49 @@
+<script type="text/javascript">
+  function displayRow(){
+    var row = document.getElementById("captionRow");
+    if (row.style.display == '') row.style.display = 'none';
+    else row.style.display = '';
+  }
+</script>
+<hr/>
+<h2>Banner hinzu:</h2>
+<br/>
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>
+<br/>
+<!--
+# => name :string
+# => title :string
+# => link :url
+# => sorter :integer
+# => bild
+-->
+<table>
+  <tr class="pretty">
+	<th>bild</th>
+    <th><%= sortable "name", "Name" %></th>
+	<th><%= sortable "sorter", "Sorter" %></th>
+	<th><%= sortable "link", "Link" %></th>
+    <th></th>
+
+  </tr>
+
+
+<% @available_banners.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td><%= image_tag help_me.bild.url(:thumb) %></td>
+    <td><%= help_me.name %></td>
+	<td><%= help_me.sorter %></td>
+	<td><%= help_me.link != '' ? 'ja' : 'ne' %></td>
+	<td>
+		<%= link_to icon('add') + ' ' + t("select"),
+                            select_admin_produkt_banner_path(@produkt, help_me),
+                           :remote => true, :class => 'iconlink xx_link' %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+
+<br/>
+
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>

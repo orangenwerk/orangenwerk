@@ -1,0 +1,6 @@
+<h2>User Neu</h2>
+<%= form_for @user, :html => { :multipart => true }, :url => { :controller => 'admin/users'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_users_path %>

@@ -1,0 +1,6 @@
+<h2>KontaktBereich Neu</h2>
+<%= form_for @kontakt_bereich, :html => { :multipart => true }, :url => { :controller => 'admin/kontakt_bereiche'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_kontakt_bereiche_path %>

@@ -1,0 +1,13 @@
+<nav>
+	<ul class="main-nav">
+		
+		<li><%= link_to 'Kontakt Bereiche', admin_kontakt_bereiche_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_kontakt_bereich'))  %></li>
+		
+		<li><%= link_to 'Kontakt Kategorien', admin_kontakt_kategorien_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_kontakt_kategorie'))  %></li>
+
+		
+	</ul>
+	<div class="clear"></div>
+</nav>

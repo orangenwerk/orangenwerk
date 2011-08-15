@@ -1,0 +1,2 @@
+$("#selected-bereiche").html("<%= escape_javascript(render(:partial => "pb_table", :locals => {:pbs => @produkt_bereiche})) %>");
+$("#<%= dom_id @produkt_bereich, :sel %>").hide();

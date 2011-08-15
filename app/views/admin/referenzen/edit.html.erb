@@ -1,0 +1,11 @@
+<div id="admin_content_with_aside" class="section">
+<h2>Referenz bearbeiten</h2>
+<%= form_for @referenz, :html => { :multipart => true }, :url => admin_referenz_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_referenz_path(@referenz.id) %> |
+<%= link_to 'Zurück', admin_referenzen_path %>
+
+</div>
+<%= render 'sidebar' %>

@@ -1,0 +1,7 @@
+<h2>User <%= @user.name %> bearbeiten</h2>
+<%= form_for @user, :html => { :multipart => true }, :url => admin_user_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_user_path(@user.id) %> |
+<%= link_to 'Zurück', admin_users_path %>

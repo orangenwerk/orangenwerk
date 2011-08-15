@@ -1,0 +1,26 @@
+<%# render 'breadcrumps'  %>
+<h1>Produkte</h1>
+<div class="trennertop clear"></div>
+<div class="icon_box">
+<% ProduktBereich.all.map do |icon| %>
+<%= render 'app_icons/produkt_bereich', :icon => icon  %>
+<% end %>
+</div>
+<div class="trenner clear"></div>
+<br class="clear"/>
+<h1>Referenzen</h1>
+<div class="icon_box">
+<% @rightside.nil? ? ref_count = 12 : ref_count = 8 %>
+<% Referenz.random(ref_count).each do |icon| %>
+		<%= render 'app_icons/referenz_icon', :icon => icon  %>
+	<% end %>
+</div>
+<br />
+
+
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>
+
+

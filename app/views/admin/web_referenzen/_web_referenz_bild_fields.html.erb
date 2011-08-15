@@ -1,0 +1,36 @@
+ <div class="fields">
+
+<div class="remove_nested_form"><%= link_to_remove_fields "Screenshot entfernen", f %></div> 
+
+<div class="section-group">
+	<div class="section-group-inner">
+		
+			  <div class="field">
+			    <%= f.label :name %>
+			  </div>
+			  <div class="field">
+			    <%= f.text_field :name %>
+			  </div>
+		</div>
+
+		<div class="section-group-inner">	
+			  <div class="field">
+			    <%= f.label :sorter %>
+			  </div>
+			  <div class="field">
+				<%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			  </div>
+		</div>			
+
+		<br/>
+		<div class="section-group-inner">
+			  <div class="field">
+			    <%= f.label :screenshot %>
+			  </div>
+			  <div class="field">
+			    <%= f.file_field :screenshot %>
+			  </div>
+		</div>
+		<br/>
+</div>
+</div>

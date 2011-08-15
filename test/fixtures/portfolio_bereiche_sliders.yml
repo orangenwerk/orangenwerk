@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: portfolio_bereiche_sliders
+#
+#  id                   :integer(4)      not null, primary key
+#  portfolio_bereich_id :integer(4)
+#  slider_id            :integer(4)
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  portfolio_bereich: 
+  slider: 
+
+two:
+  portfolio_bereich: 
+  slider: 

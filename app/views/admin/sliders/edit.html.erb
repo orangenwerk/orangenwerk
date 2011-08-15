@@ -1,0 +1,7 @@
+<h2>Slider bearbeiten</h2>
+<%= form_for @slider, :html => { :multipart => true }, :url => admin_slider_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_slider_path(@slider.id) %> |
+<%= link_to 'Zurück', admin_sliders_path %>

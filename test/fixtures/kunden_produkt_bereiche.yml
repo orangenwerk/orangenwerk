@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  kunden: 
+  produkt_bereich: 
+
+two:
+  kunden: 
+  produkt_bereich: 

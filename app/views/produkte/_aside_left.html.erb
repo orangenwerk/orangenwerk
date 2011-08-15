@@ -1,0 +1,76 @@
+<div id="sidebar_icon">
+	<div id="sidebar_icon_box">
+		<% if @seite %>
+			
+			<% if @seite.sidebar_icon_file_name %>
+					<%= image_tag @seite.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+			<% else %>
+					<%= image_tag '/images/sb_icon_produkte.png'%>
+			<% end %>
+		
+		<% elsif @produkt %>
+		
+				<% if @produkt.sidebar_icon_file_name %>
+					<%= image_tag @produkt.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% elsif @produkt.produkt_kategorie.sidebar_icon_file_name %>
+					<%= image_tag @produkt.produkt_kategorie.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% elsif @produkt.produkt_kategorie.produkt_bereich.sidebar_icon_file_name %>
+					<%= image_tag @produkt.produkt_kategorie.produkt_bereich.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_produkte.png'%>
+				<% end %>
+				
+		<% elsif @produkt_kategorie %>
+		
+				<% if @produkt_kategorie.sidebar_icon_file_name %>
+					<%= image_tag @produkt_kategorie.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% elsif @produkt_kategorie.produkt_bereich.sidebar_icon_file_name %>
+					<%= image_tag @produkt_kategorie.produkt_bereich.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_produkte.png'%>
+				<% end %>
+				
+		<% elsif @produkt_bereich %>
+		
+				<% if @produkt_bereich.sidebar_icon_file_name %>
+					<%= image_tag @produkt_bereich.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_produkte.png'%>
+				<% end %>
+				
+		<% else %>
+		
+			<%= image_tag '/images/sb_icon_produkte.png'%>
+			
+		<% end %>
+	
+	</div>
+	
+</div>
+<ul class="aside-nav">
+	<% ProduktBereich.all.each do |produkt_b| %>
+		
+		<li><a href="<%= produkt_path(produkt_b.name) %>" class='<%= "current owo" if (@produkt_bereich && (@produkt_bereich.name == produkt_b.name)) %>'><%= produkt_b.titel %></a>
+			<% if @produkt_bereich && (@produkt_bereich.name == produkt_b.name) && (@produkt_bereich.produkt_kategorien.all.count > 0) %>
+				
+				<ul class="aside-nav-in"> 
+					<% @produkt_bereich.produkt_kategorien.each do |produkt_k| %>
+						<li><%= link_to produkt_k.titel, produkt_path(produkt_b.name)+'/'+produkt_k.name, 
+												:class => ("current" if @produkt_kategorie && (@produkt_kategorie.name == produkt_k.name)) if produkt_k.produkte.count > 0 %>
+						<% if @produkt_kategorie && (@produkt_kategorie.name == produkt_k.name) && (@produkt_kategorie.produkte.all.count > 0) %>
+							<ul class="aside-nav-in"> 
+								<% @produkt_kategorie.produkte.each do |produkt| %>
+									<li><%= link_to produkt.titel, produkt_path(produkt_b.name)+'/'+produkt_k.name+'/'+produkt.name,
+															:class => ("current" if @produkt && (@produkt.name == produkt.name)) %></li>
+								<% end %>	
+							</ul>
+						<% end %>						
+						</li>
+					<% end %>	
+				</ul>
+				
+			<% end %>
+		</li>
+	
+	<% end %>
+</ul>

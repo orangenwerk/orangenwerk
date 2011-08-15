@@ -1,0 +1,7 @@
+<h2>Sidebar bearbeiten</h2>
+<%= form_for @sidebar, :html => { :multipart => true }, :url => admin_sidebar_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_sidebar_path(@sidebar.id) %> |
+<%= link_to 'Zurück', admin_sidebars_path %>

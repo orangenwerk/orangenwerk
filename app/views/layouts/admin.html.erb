@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>orangenwerk | Admin-Area</title>
+  <%= stylesheet_link_tag :all %>
+  <%= render 'app_shared/scriptz' %>
+	<%= render 'admin_shared/fck_editor' %>
+	<%= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery? %>
+	<%= javascript_include_tag 'jquery.alerts/jquery.alerts.js' %>
+	<%= stylesheet_link_tag '/javascripts/jquery.alerts/jquery.alerts.css' %>
+	<%= stylesheet_link_tag '/javascripts/jquery.alerts/jquery.alerts.spree.css' %>
+	<%= javascript_tag "jQuery.alerts.dialogClass = 'spree';" %>
+  <%= csrf_meta_tag %>
+	<%= yield :head %>
+</head>
+<body class="admin">
+
+
+<header>
+
+	<div id="top-nav">
+		<div class="container">
+	  		<%= render 'admin_shared/nav_top' %>
+		</div>
+	</div>
+<br/><br/>
+</header>
+<div id="page">
+	<div class="container">
+			<%= render 'admin_shared/nav_main' %>
+			<br/>
+		<div class="site">
+						<% if notice %>
+							<div id="notice"><div id="in_notice"><%= notice %></div></div>
+						<% end %>
+						<% if alert %>
+							<div id="alert"><div id="in_alert"><%= alert %></div></div>
+						<% end %>
+			<div class="section-group">
+				<div class="section-group-inner">
+				
+				<content class="admin-content">
+			  <%= yield %>
+				</content>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render 'app_shared/footer' %>
+
+
+</body>
+</html>
+
+
+

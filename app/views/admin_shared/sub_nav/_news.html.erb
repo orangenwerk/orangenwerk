@@ -1,0 +1,13 @@
+<nav>
+<ul class="main-nav">
+		
+	<li><%= link_to 'News Bereiche', admin_news_bereiche_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_news_bereich'))  %></li>
+
+<li><%= link_to 'News Eintraege', admin_news_eintraege_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_news_eintrag'))  %></li>
+
+<li><%= link_to 'Newsletter Abos', admin_newsletter_abos_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_newsletter_abo'))  %></li>
+	
+
+</ul>
+<div class="clear"></div>
+</nav>	

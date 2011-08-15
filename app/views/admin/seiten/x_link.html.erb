@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "Seite", admin_seiten_path, :class => ("current" if @activio && (@activio == 'admin_start'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'Seite', admin_seiten_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_seite'))  %></li>
+
+Sub:
+
+<li><%= link_to 'Seite', admin_seiten_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_seite'))  %></li>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+	<% if @Meta_Description %>
+	<meta name="description" content="<%= @Meta_Description %>" />
+	<% else %>
+	<meta name="description" content="orangenwerk | Agentur für visuelle Medien. Werbung, Werbetechnick, Digitaldruck und Webdesign für Berlin und Brandenburg aus Oranienburg" />
+	<% end %>
+	<% if @Meta_Keywords %>
+	<meta name="keywords" content="<%= @Meta_Keywords %>" />
+	<% else %>
+	<meta name="keywords" content="orangenwerk,Werbung,Werbeagentur,Werbetechnick,Schilder,Lichtwerbung,Digitaldruck,Aufkleber,Beschriftung,Webdesign,Ruby on Rails,Webshops,Oranienburg" />
+	<% end %>
+	<meta name="author" content="orangenwerk | Agentur für visuelle Medien" />
+  <%= render 'app_shared/scriptz' %>
+<!--[if IE]>
+<%= stylesheet_link_tag '/stylesheets/ie/ie.css' %>
+<![endif]-->
+  <%= csrf_meta_tag %>
+  <%= yield :head %>
+</head>
+<body class="app">
+
+
+<header>
+	<div id="top-nav">
+		<div class="container">
+	  		<%= render 'app_shared/nav_top' %>
+		</div>
+	</div>
+	<div id="top-stripe"></div>
+	<div id="banner">
+	<%= render 'app_shared/banner' %>
+	</div>
+	<div id="mid-stripe"></div>
+</header>
+<div id="page" class="pngFix">
+	<div class="container">
+		<div class="section-group">
+			<div class="section-group-inner">
+				<% unless @sidebar.nil? %>
+					<div class="aside leftside">
+						<%= yield :left_aside %>
+					</div>
+				<% end %>
+				
+				<div class="section-part <% if !@sidebar.nil? && !@rightside.nil? %>with_aside both<% elsif !@sidebar.nil? %>with_aside left<% elsif !@rightside.nil? %>with_aside_right<% end %>">
+					<%= render 'app_shared/nav_main' %>
+					
+					<div class="site">
+						<% if notice %>
+							<div id="notice"><div id="in_notice"><%= notice %></div></div>
+						<% end %>
+						<% if alert %>
+							<div id="alert"><div id="in_alert"><%= alert %></div></div>
+						<% end %>
+						<content<%= ' class="rightsided"' unless @rightside.nil? %>>
+			  				
+							<%= yield %>
+						</content>
+					</div>
+				</div>
+				<% unless @rightside.nil? %>
+					<div class="aside rightside">
+						<%= render 'app_shared/rightside' %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render 'app_shared/footer' %>
+
+
+
+</body>
+</html>
+
+
+

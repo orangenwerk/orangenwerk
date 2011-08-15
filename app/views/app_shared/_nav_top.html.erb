@@ -1,0 +1,20 @@
+<nav class="top">
+				<ul class="top-nav">
+				<li><%= link_to 'Start', root_path %></li>
+				<li><%= link_to "AGB", '/AGB'  %></li><!-- # produkte_path -->
+				<li><%= link_to "FAQ's", '/FAQs'  %></li><!-- # produkte_path -->
+				<li><%= link_to "Sitemap", '/sitemap'  %></li>
+				<% if autor_check %>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li>|</li>
+				<li><%= link_to 'admin', admin_root_path %></li>
+				<li>|</li>
+				<% end %>
+				</ul>
+		
+<%= render 'app_shared/account_nav' %>
+
+		<div class="clear"></div>
+				
+				<%= logo %>
+</nav>

@@ -1,0 +1,41 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :screenshot %></th>
+		<td class="view"><%= f.file_field :screenshot %>
+			
+			<div class="input-help"> 838 x 800 > </div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :web_referenz_id %></th>
+		
+		<% if @web_referenz %>
+			<td class="view"><%= f.select :web_referenz_id, WebReferenz.all.map { |c| [c.name, c.id] }, :selected => @web_referenz.id.to_s %>
+		<% else %>
+			<td class="view"><%= f.select :web_referenz_id, WebReferenz.all.map { |c| [c.name, c.id] } %>
+		<% end %>
+		
+		
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	
+
+</tbody></table>
+
+
+<div class="actions"><%= f.submit %></div>
+

@@ -1,0 +1,40 @@
+<!--
+
+-->
+<%= link_to 'Back', admin_produkt_bereiche_path %> | <%= link_to 'Edit', edit_admin_produkt_bereich_path(@produkt_bereich.id) %>
+<div class="stand"><%= @produkt_bereich.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @produkt_bereich.icon.url %></div>
+<div style="float:right; margin:5px"><%= image_tag @produkt_bereich.sidebar_icon.url %></div>
+
+<h2><%= @produkt_bereich.titel %></h2>
+<p>Name: <strong><%= @produkt_bereich.name %></strong></p>
+<p>Title: <strong><%= @produkt_bereich.titel %></strong>
+<hr />
+<p><strong>Inhalt:</strong></p>
+<%= raw @produkt_bereich.inhalt %>
+<hr />
+<p><strong>Banner:</strong></p>
+<% @produkt_bereich.banners.each do |banner| %>
+<%= image_tag banner.bild.url(:thumb) %>
+<% end %>
+<hr />
+<p><strong>Kunden:</strong></p>
+<% @produkt_bereich.kunden.each do |banner| %>
+<%= image_tag banner.icon.url(:thumb) %>
+<% end %>
+<hr />
+<p><strong>Referenzen:</strong></p>
+<% @produkt_bereich.referenzen.each do |banner| %>
+<%= image_tag banner.icon.url(:thumb) %>
+<% end %>
+<hr />
+<%= link_to 'Back', admin_produkt_bereiche_path %> | 
+<%= link_to 'Edit', edit_admin_produkt_bereich_path(@produkt_bereich.id) %>
+<hr />
+<h2>Kategorien:</h2>
+<%= render 'admin/produkt_kategorien/listing', :data => @produkt_bereich.produkt_kategorien  %>
+<hr />
+<%= link_to 'Back', admin_produkt_bereiche_path %> | 
+<%= link_to 'Edit', edit_admin_produkt_bereich_path(@produkt_bereich.id) %>
+<hr />

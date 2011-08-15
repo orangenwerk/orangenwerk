@@ -1,0 +1,57 @@
+html { height: 100%; width: 100%; margin: 0; padding: 0; }
+body.FCK_AREA_Body { margin: 0; padding: 0; font-size: 15px; text-align: left; top: 0px; font-family: 'StrangeBreath' !important; }
+
+h1 { font-size: 22px; line-height: 36px; font-weight:bold; margin:0; padding: 0 0 0 23px; background: transparent url('/images/round_arrow_right_16px.png') 0px 8px no-repeat; color: #000; text-align:left; font-family: 'StrangeBreath' !important;}
+
+h2 { font-size: 20px; line-height: 24px; font-weight:bold; margin:0; padding: 0 0 0 23px; background: transparent url('/images/round_arrow_right_16px.png') 0px 3px no-repeat; color: #666; text-align:left; font-family: 'StrangeBreath' !important;}
+
+h3 {color: #666666; padding: 0 23px; background: transparent url('/images/pfeil-rechts-aktiv.png') 9px 4px no-repeat; font-size: 18px; margin: 0; line-height: 22px; font-family: 'StrangeBreath' !important;}
+
+p, span { color: #666666; font-family: 'StrangeBreath' !important; font-size: 15px !important; line-height: 18px; margin:0; padding: 0 23px; text-align:left;}
+body.FCK_AREA_Body p, span { color: #666666; font-family: 'StrangeBreath' !important; font-size: 15px !important; line-height: 18px; margin:0; }
+
+div.no_padding p, div.no_padding span { color: #666666; font-family: 'StrangeBreath' !important; font-size: 15px !important; line-height: 18px; margin:0; padding: 0; text-align:left; }
+table, th, td, tr { font-family: 'StrangeBreath' !important; font-size: 15px !important; }
+
+ul { padding: 3px 23px; list-style:none; margin:0; }
+ul li { padding: 0 13px; background: transparent url('/images/bullet_orange.png') 0px 4px no-repeat; line-height: 18px; font-size: 15px; list-style:none; font-family: 'StrangeBreath' !important; }
+
+ul li p { font-family: 'StrangeBreath' !important; padding:0;}
+
+body.FCK_AREA_Body ul { padding: 3px; list-style:none; margin:0px; }
+body.FCK_AREA_Body ul li { padding: 0 13px; background: transparent url('/images/bullet_orange.png') 0px 4px no-repeat; line-height: 18px; font-size: 15px; list-style:none;}
+
+body.FCK_AREA_Body ul li p { font-family: 'StrangeBreath' !important; padding:0;}
+
+span.ue2 {  font-size: 18px !important; line-height: 34px; font-weight:bold; margin:0; padding: 0 0 0 5px; color: #000; text-align:left; font-family: 'StrangeBreath' !important; }
+
+/*			-			-			-			-			-			-			-			-			-			-			*/
+
+
+@font-face {
+	font-family: 'StrangeBreath';
+	src: url('sbb-webfont.eot');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'StrangeBreath';
+	src: url(//:) format('no404'), url('sbb-webfont.woff') format('woff'), url('sbb-webfont.ttf') format('truetype'), url('sbb-webfont.svg#webfontaBAXe4QR') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'StrangeBreath';
+	src: url('sbr-webfont.eot');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'StrangeBreath';
+	src: url(//:) format('no404'), url('sbr-webfont.woff') format('woff'), url('sbr-webfont.ttf') format('truetype'), url('sbr-webfont.svg#webfontba0Nwzq6') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

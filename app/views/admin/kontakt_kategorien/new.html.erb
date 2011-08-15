@@ -1,0 +1,6 @@
+<h2>KontaktKategorie Neu</h2>
+<%= form_for @kontakt_kategorie, :html => { :multipart => true }, :url => { :controller => 'admin/kontakt_kategorien'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_kontakt_kategorien_path %>

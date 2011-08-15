@@ -1,0 +1,104 @@
+<h1><%= @produkt.produkt_kategorie.titel %>&nbsp;&nbsp;&nbsp;<span class="inH"><%= @produkt.titel %></span></h1>
+<div class="trennertop clear"></div>
+<script>
+$("#tabs").tabs();
+jQuery('.loadable-image').loadImages({ LoadingImage: '/images/loading.gif', FailImage: '/images/loading.gif' },
+	 	function(){ 
+		var img = jQuery(arguments[0]); 	 
+	});
+$('.referenz_icon').hover(function() {
+			jQuery(this).find('.icon_schimmer').fadeOut('200');
+		},function() {
+			jQuery(this).find('.icon_schimmer').fadeIn('500');
+			});
+</script>
+<div class="icon_box">
+<% if @produkt_kategorie.produkte %>
+<% @produkt_kategorie.produkte.each do |icon| %>
+<%= render 'app_icons/produkt', :icon => icon  %>
+<% end %>
+<% end %>
+</div>
+<br class="clear"/><br class="clear"/>
+
+<div id="produkt_beispiel">
+	<div id="bsp_pic">
+		<%= image_tag @produkt.produktbild.url %>
+	</div>
+	<% if @produkt.beispiel_preis && @produkt.beispiel_preis != 'ab 0,00' && @produkt.beispiel_preis != '0' && @produkt.beispiel_preis != '0,00' && @produkt.beispiel_preis != 'nur 0,00' && @produkt.beispiel_preis != '' %>
+	<div id="bsp_preis">
+		<%= @produkt.beispiel_preis %> Euro
+	</div>
+	<% end %>
+	<div id="bsp_desc">
+		<div id="bsp_name">
+			<%= @produkt.beispiel_produkt %>
+		</div>
+		<div id="bsp_beschreibung">
+			<%= @produkt.beispiel_beschreibung %>
+		</div>
+	</div>
+	<div id="bsp_leistungen">
+		<div id="bsp_in">
+			<h2>Unsere Leistungen</h2>
+			
+			<ul>
+				<li class="no_bg"><hr/></li>
+				<% @produkt.leistungen.each do |leistung| %>
+				<li><%= leistung.inhalt %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<br class="clear"/>
+<div id="tabs">
+	<ul>
+		<li><a href="#produkt_beschreibung">Beschreibung</a></li>
+		<% if @produkt.produkt_detail_bilder.count > 0 %>
+			<li><a href="#produkt_detailpics">Details</a></li>
+		<% end %>
+		<li><a href="#produkt_refs">Referenzen</a></li>
+	</ul>
+	<div id="produkt_beschreibung">
+		<%= raw @produkt.beschreibung %>
+		<br class="clear"/>
+	</div>
+	
+		
+	<% if @produkt.produkt_detail_bilder.count > 0 %>
+		<div id="produkt_detailpics">
+<%=  raw '<script>$(document).ready(function(){ $("a.colorB[rel=\'detail_pic_group'+@produkt.id.to_s+'\']").colorbox({current: "{current}/{total}"}); });</script>' %>
+			<% @produkt.produkt_detail_bilder.each do |icon| %>
+				<%= render 'app_icons/produkt_detail_bild', :icon => icon  %>
+			<% end %>
+			
+			<br class="clear"/>
+		</div>
+	<% end %>
+		
+	<div id="produkt_refs" class="icon_box">
+		<% if @produkt.referenzen.count > 2 %>
+			<% @produkt.referenzen.random(12).each do |icon| %>
+				<%= render 'app_icons/referenz_icon', :icon => icon  %>
+			<% end %>
+		<% elsif @produkt_kategorie.referenzen.count > 2 %>
+			<% @produkt_kategorie.referenzen.random(12).each do |riconef| %>
+				<%= render 'app_icons/referenz_icon', :icon => icon  %>
+			<% end %>
+		<% elsif @produkt_bereich.referenzen.count > 0 %>
+			<% @produkt_bereich.referenzen.random(12).each do |icon| %>
+				<%= render 'app_icons/referenz_icon', :icon => icon  %>
+			<% end %>
+		<% else %>
+			<p>Referenzbilder folgen ...</p>
+		<% end %>
+		<br class="clear"/>
+	</div>
+</div>
+

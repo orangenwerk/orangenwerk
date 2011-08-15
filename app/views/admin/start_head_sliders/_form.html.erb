@@ -1,0 +1,65 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :headline %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :headline %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :sorter %>
+		</th>
+		<td class="name-view">
+			<%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :inhalt %>
+		</th>
+		<td class="name-view">
+			<%= f.text_area :inhalt, :class => "asid2" %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<th class="name-label">
+			<%= f.label :bild %>
+		</th>
+		<td class="name-view">
+			<%= f.file_field :bild %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="name-label">
+			<%= f.label :seite_id %>
+		</th>
+		<td class="name-view">
+			<%= f.select :seite_id, Seite.all.map { |c| [c.name, c.id] } %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+
+
+</tbody></table>
+<div class="actions"><%= f.submit %></div>
+

@@ -1,0 +1,19 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_portfolio_bereiche_path %> | <%= link_to 'Bearbeiten', edit_admin_portfolio_bereich_path(@portfolio_bereich.id) %>
+<div class="stand"><%= @portfolio_bereich.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @portfolio_bereich.sidebar_icon.url %></div>
+<h2><%= @portfolio_bereich.titel %></h2>
+<p>Name: <strong><%= @portfolio_bereich.name %></strong></p>
+<p>Title: <strong><%= @portfolio_bereich.titel %></strong>
+<hr />
+<%= raw @portfolio_bereich.inhalt %>
+<hr />
+<% @portfolio_bereich.sliders.each do |banner| %>
+<%= image_tag banner.bild.url(:thumb) %>
+<% end %>
+<hr />
+<%= link_to 'Zurück', admin_portfolio_bereiche_path %> | <%= link_to 'Bearbeiten', edit_admin_portfolio_bereich_path(@portfolio_bereich.id) %>
+<hr />

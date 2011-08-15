@@ -1,0 +1,32 @@
+<h2>Produkt Detail Bilder:</h2>
+<% if @produkt %>
+	<%= link_to ' << zurück zu '+@produkt.titel+' ', edit_admin_produkt_url(@produkt), :class => 'admin_new_button' %>
+<% end %>
+<br />
+<%= render 'listing', :data => @produkt_detail_bilder  %>
+<br />
+<% if @produkt %>
+	<%= link_to 'ProduktDetailBild erstellen', new_admin_produkt_produkt_detail_bild_url(@produkt), :class => 'admin_new_button', :id => "new_image_link" %>
+<% else %>
+	<%= link_to 'ProduktDetailBild erstellen', new_admin_produkt_detail_bild_path, :class => 'admin_new_button' %>
+<% end %>
+
+
+
+<div id="images"></div>
+<br/>
+
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+
+      jQuery('#new_image_link').click(function (event) {
+        event.preventDefault();
+        jQuery(this).hide();
+        jQuery.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ jQuery('#images').html(r);} });
+      });
+
+    });
+  </script>
+<% end %>

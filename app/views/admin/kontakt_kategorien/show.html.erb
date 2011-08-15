@@ -1,0 +1,15 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_kontakt_kategorien_path %> | <%= link_to 'Bearbeiten', edit_admin_kontakt_kategorie_path(@kontakt_kategorie.id) %>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @kontakt_kategorie.sidebar_icon.url %></div>
+<h2><%= @kontakt_kategorie.titel %></h2>
+<p>Name: <strong><%= @kontakt_kategorie.name %></strong></p>
+<p>Title: <strong><%= @kontakt_kategorie.titel %></strong></p>
+<p>Bereich: <strong><%= !@kontakt_kategorie.kontakt_bereich.nil? ? @kontakt_kategorie.kontakt_bereich.titel : 'keiner' %></strong></p>	
+<hr />
+<%= raw @kontakt_kategorie.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_kontakt_kategorien_path %> | <%= link_to 'Bearbeiten', edit_admin_kontakt_kategorie_path(@kontakt_kategorie.id) %>
+<hr />

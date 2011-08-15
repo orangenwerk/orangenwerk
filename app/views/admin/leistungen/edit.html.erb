@@ -1,0 +1,62 @@
+<div class="section-group">
+  <div class="section-group-inner">
+
+<div id="admin_content_with_aside" class="section">
+
+<h2>Leistung bearbeiten</h2>
+<%= form_for @leistung, :html => { :multipart => true }, :url => admin_leistung_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+<br/>
+
+<br/><br/>
+<br/><br/>
+
+<%= link_to 'Anzeigen', admin_leistung_path(@leistung.id) %> |
+<%= link_to 'Zurück', admin_leistungen_path %>
+
+
+
+
+<div id="Pagez__stuff"></div>
+<br/>
+	
+</div>
+<div id="admin_content_aside" class="section">
+	<div class="o_box">
+		<h2>Bereiche:</h2>
+		<div id="selected-bereiche">
+			<% if @produkt_bereiche %>
+				<%= render :partial => "/admin/produkt_bereiche/pb_table", :locals => {:pbs => @produkt_bereiche} %>
+			<% end %>
+		</div>
+		
+	</div>
+	<br/>
+		<%= link_to icon('add')+' Bereich hinzufügen', available_admin_leistung_produkt_bereiche_url(@leistung), :class => 'Pagez_remote_link button' %>
+</div>
+
+</div></div>
+
+
+
+
+
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+	$('.Pagez_remote_link').click(function (event) {
+		$(this).hide();
+        event.preventDefault();
+        $.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ $('#Pagez__stuff').html(r);} });
+      });
+	$('.ad_nesta').live('click', function(){
+		$('#Pagez__stuff').html('');
+		$('.Pagez_remote_link').show();
+	})
+
+    });
+  </script>
+<% end %>

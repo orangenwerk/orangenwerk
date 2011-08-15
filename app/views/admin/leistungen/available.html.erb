@@ -1,0 +1,42 @@
+<script type="text/javascript">
+  function displayRow(){
+    var row = document.getElementById("captionRow");
+    if (row.style.display == '') row.style.display = 'none';
+    else row.style.display = '';
+  }
+</script>
+<hr/>
+<h2>Leistung hinzu:</h2>
+<br/>
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>
+<br/>
+
+<table>
+  <tr class="pretty">
+	<th>inhalt</th>
+    <th>Produkt-Bereiche</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @available_leistungen.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+    <td><%= help_me.inhalt %></td>
+    <td>
+		<% help_me.produkt_bereiche.each_with_index do |pb,index| %>
+			<%= ', ' if index > 0 %><%= pb.titel %>
+		<% end %>
+	</td>
+	<td><%= link_to icon('add') + ' ' + t("select"),
+                            select_admin_produkt_leistung_path(@produkt, help_me),
+                           :remote => true, :class => 'iconlink xx_link' %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br/>
+
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>

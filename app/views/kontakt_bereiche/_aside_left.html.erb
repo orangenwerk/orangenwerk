@@ -1,0 +1,54 @@
+<div id="sidebar_icon">
+	<div id="sidebar_icon_box">
+		<% if @seite %>
+			<% if @seite.sidebar_icon_file_name %>
+					<%= image_tag @seite.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+			<% else %>
+					<%= image_tag '/images/sb_icon_kontakte.png'%>
+			<% end %>
+		
+		<% elsif @kontakt_k %>
+		
+				<% if @kontakt_k.sidebar_icon_file_name %>
+					<%= image_tag @kontakt_k.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% elsif @kontakt_k.kontakt_bereich.sidebar_icon_file_name %>
+					<%= image_tag @kontakt.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_kontakte.png'%>
+				<% end %>
+				
+		<% elsif @kontakt %>
+		
+				<% if @kontakt.sidebar_icon_file_name %>
+					<%= image_tag @kontakt.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_kontakte.png'%>
+				<% end %>
+
+		<% else %>
+		
+			<%= image_tag '/images/sb_icon_kontakte.png'%>
+			
+		<% end %>
+	
+	</div>
+	
+</div>
+<ul class="aside-nav">
+	<% KontaktBereich.all.each do |konta| %>
+		
+		<li><%= link_to konta.titel.downcase, kontakt_bereich_path(konta.name), :class => ("current owo" if (@kontakt && (@kontakt.name == konta.name))).to_s %>
+			<% if @kontakt && (@kontakt.name == konta.name) && (@kontakt.kontakt_kategorien.count > 0) %>
+			
+				<ul class="aside-nav-in">
+					
+					<% @kontakt.kontakt_kategorien.each do |konta_k| %>
+						<li><%= link_to konta_k.titel, kontakt_bereich_path(konta.name)+'/'+konta_k.name, 
+												:class => ("current" if @kontakt_k && (@kontakt_k.name == konta_k.name)) %></li>
+					<% end %>
+				</ul>
+			<% end %>
+		</li>
+	
+	<% end %>
+</ul>

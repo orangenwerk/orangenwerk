@@ -1,0 +1,6 @@
+<h2>StartHeadSlider Neu</h2>
+<%= form_for @start_head_slider, :html => { :multipart => true }, :url => { :controller => 'admin/start_head_sliders'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_start_head_sliders_path %>

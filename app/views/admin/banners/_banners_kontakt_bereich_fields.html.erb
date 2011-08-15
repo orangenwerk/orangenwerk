@@ -1,0 +1,11 @@
+<div class="fields many_select">
+<div class="section-group">
+	<div class="section-group-inner">
+		
+		<div class="field label"><%= f.label :kontakt_bereich_id, 'Kontakt_Bereich' %></div>
+		<div class="field view"><%= f.select :kontakt_bereich_id, KontaktBereich.all.map { |c| [c.name, c.id] } %></div>
+		
+		<div class="remove_nested_form"><%= link_to_remove_fields "Kontakt_Bereich entfernen", f %></div> 
+	</div>
+</div>
+</div>

@@ -1,0 +1,21 @@
+<h2>ProduktDetailBild Neu</h2>
+<%= form_for @produkt_detail_bild, :html => { :multipart => true }, :url => { :controller => 'admin/produkt_detail_bilder'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+
+<% end %>
+<br/>
+<% if @produkt %>
+<%= link_to 'Abbrechen', "#", :id => "cancel_link" %>
+<% else %>
+<%= link_to 'Zurück', admin_produkt_detail_bilder_path %>
+<% end %>
+
+
+<script type="text/javascript">    
+  jQuery('#cancel_link').click(function (event) { 
+    jQuery('#new_image_link').show();
+    jQuery('#images').html('');
+  });  
+ 
+</script>

@@ -1,0 +1,17 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_referenz_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_referenz_bild_path(@referenz_bild.id) %>
+<div class="stand"><%= @referenz_bild.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @referenz_bild.bild.url(:klein) %></div>
+<div style="float:right; margin:5px"><%= image_tag @referenz_bild.bild.url(:thumb) %></div>
+<h2><%= @referenz_bild.name %></h2>
+<p>Name: <strong><%= @referenz_bild.name %></strong></p>
+<p>Referenz: <strong><%= link_to @referenz_bild.referenz.name, admin_referenz_path(@referenz_bild.referenz)  %></strong></p>
+<%= render 'app_icons/referenz_klein', :icon => @referenz_bild.referenz  %>
+<hr class="clear" />
+<%= raw @referenz_bild.inhalt %>
+<hr class="clear" />
+<%= link_to 'Zurück', admin_referenz_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_referenz_bild_path(@referenz_bild.id) %>
+<hr />

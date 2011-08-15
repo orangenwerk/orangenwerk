@@ -1,0 +1,2 @@
+module Admin::AgbsHelper
+end

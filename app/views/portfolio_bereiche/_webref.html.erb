@@ -1,0 +1,89 @@
+<% content_for :head do %>
+	<%= javascript_include_tag 'c_slider' %>
+	<script>
+	$().ready(function() {
+	       $('#coda-slider').codaSlider({
+	           dynamicArrows: false,
+	           dynamicTabs: false
+	       });
+	});
+	</script>
+	
+	<style>
+			/* Most common stuff you'll need to change */
+
+			.coda-slider-wrapper { padding: 0; position: relative; width: 800px; margin: 0 auto;}
+			.coda-slider { background: transparent url('/images/new/slider_bg.jpg');  }
+
+			/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+			.coda-slider-no-js .coda-slider { min-height: 400px; overflow: auto !important; padding-right: 0px }
+
+			/* Change the width of the entire slder (without dynamic arrows) */
+			.coda-slider, .coda-slider .panel {  min-height: 400px; width: 800px; } 
+			.coda-slider, .coda-slider .panel img { margin: 0 auto;}
+
+			/* Change margin and width of the slider (with dynamic arrows) */
+			.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 600px }
+			.coda-slider-wrapper.arrows .coda-slider { margin: 0 }
+
+			/* Arrow styling */
+			.coda-nav-left a {position:absolute; top:50%; left:0px; margin-top:-32px; background:url(/images/cbox/strange_controls_wr.png) top left no-repeat; width:28px; height:65px; text-indent:-9999px;z-index: 20;}
+	        .coda-nav-left a:hover{background-position:bottom left;}
+	        .coda-nav-right a {position:absolute; top:50%; right:0px; margin-top:-32px; background:url(/images/cbox/strange_controls_wr.png) top right no-repeat; width:28px; height:65px; text-indent:-9999px;z-index: 20;}
+	        .coda-nav-right a:hover{background-position:bottom right;}
+
+			/* Tab nav */
+			.coda-nav ul li a.current { background: #39c }
+
+			/* Panel padding */
+			.coda-slider .panel-wrapper { padding: 0px }
+
+			/* Preloader */
+			.coda-slider p.loading { padding: 0px; text-align: center }
+
+		/* Don't change anything below here unless you know what you're doing */
+
+			/* Tabbed nav */
+			.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
+			.coda-nav ul li { display: inline }
+			.coda-nav ul li a { background: #000; color: #fff; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+
+			/* Miscellaneous */
+			.coda-slider-wrapper { clear: both; overflow: auto }
+			.coda-slider { float: left; overflow: hidden; position: relative }
+			.coda-slider .panel { display: block; float: left; position: relative; z-index:5; }
+			.coda-slider .panel-container { position: relative }
+			.coda-nav-left, .coda-nav-right { float: left }
+			.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
+	</style>
+
+<% end %>
+<h1>WebReferenz<span class="inH"><%= ref.name %></span></h1>
+
+<div id="balken_nav">
+	<%= link_to 'zurück', '/portfolio/projekte/webproduktion', :id => "balken_back_link" %>
+</div>
+<div class="coda-slider-wrapper">
+   	<div id="coda-nav-left-1" class="coda-nav-left"><a href="#" title="Slide left">&#171;</a></div>
+       
+       <div class="coda-slider preload" id="coda-slider">
+	
+		<% @referenz.web_referenzen.first.web_referenz_bilder.each do |wpic| %>
+       		<div class="panel">
+           		<div class="panel-wrapper">
+
+					<%= image_tag wpic.screenshot.url(:shot), :class => 'topping' %>
+            	</div>
+           </div>
+		<% end %>
+
+       </div><!-- .coda-slider -->
+
+<div id="coda-nav-right-1" class="coda-nav-right"><a href="#" title="Slide right">&#187;</a></div>
+
+</div><!-- .coda-slider-wrapper -->
+<div id="balken_nav_end"></div>
+<br/>
+<br/>
+
+<%= raw @referenz.web_referenzen.first.inhalt %>

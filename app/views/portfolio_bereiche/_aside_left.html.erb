@@ -1,0 +1,50 @@
+<div id="sidebar_icon">
+	<div id="sidebar_icon_box">
+		<% if @seite %>
+			<% if @seite.sidebar_icon_file_name %>
+				<%= image_tag @seite.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+			<% else %>
+					<%= image_tag '/images/sb_icon_portfolio.png'%>
+				<% end %>
+		<% elsif @portfolio %>
+		
+				<% if @portfolio.sidebar_icon_file_name %>
+					<%= image_tag @portfolio.sidebar_icon.url, :class => 'sidebar_icon_pic' %>
+				<% else %>
+					<%= image_tag '/images/sb_icon_portfolio.png'%>
+				<% end %>
+				
+		<% else %>
+		
+			<%= image_tag '/images/sb_icon_portfolio.png'%>
+			
+		<% end %>
+	
+	</div>
+	
+</div>
+<ul class="aside-nav">
+	<% PortfolioBereich.all.each do |port| %>
+		
+		<li><%= link_to port.titel, portfolio_bereich_path(port.name), :class => ("current owo" if (@portfolio && (@portfolio.name == port.name))).to_s %>
+			<% if @portfolio && @portfolio.name == 'projekte' && port.name == 'projekte' %>
+				<ul class="aside-nav-in">
+					<% ProduktBereich.all.each do |prod| %>
+						<% if prod.referenzen.count > 0 %>
+						<li><%= link_to prod.titel, portfolio_bereich_path(port.name)+'/'+prod.name, :class => "#{'current' if @produkt_bereich && prod == @produkt_bereich}" %></li>
+						<% end %>
+					<% end %>
+				</ul>
+			<% elsif @portfolio && @portfolio.name == 'kunden' && port.name == 'kunden' %>
+				<ul class="aside-nav-in">
+					<% Branche.all.each do |prod| %>
+						<% if prod.kunden.count > 0 %>
+						<li><%= link_to prod.titel, portfolio_bereich_path(port.name)+'/'+prod.name, :class => "#{'current' if @branche && prod == @branche}" %></li>
+						<% end %>
+					<% end %>
+				</ul>
+			<% end %>
+		</li>
+	
+	<% end %>
+</ul>

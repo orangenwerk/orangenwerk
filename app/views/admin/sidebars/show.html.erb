@@ -1,0 +1,16 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_sidebars_path %> | <%= link_to 'Bearbeiten', edit_admin_sidebar_path(@sidebar.id) %>
+<div class="stand"><%= @sidebar.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<h2><%= @sidebar.name %></h2>
+<p>Name: <strong><%= @sidebar.name %></strong></p>
+<p>Headline: <strong><%= @sidebar.headline %></strong></p>
+<p>klasse: <strong><%= @sidebar.klasse %></strong></p>
+<p>geber: <strong><%= @sidebar.geber %></strong></p>
+<hr />
+<%= raw @sidebar.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_sidebars_path %> | <%= link_to 'Bearbeiten', edit_admin_sidebar_path(@sidebar.id) %>
+<hr />

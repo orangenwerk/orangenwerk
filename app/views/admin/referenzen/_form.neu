@@ -1,0 +1,62 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">URL-fähig! =  'Leerzeichen' => '_', 'ö' => 'oe'</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :objekt %></th>
+		<td class="view"><%= f.text_field :objekt %>
+			
+			<div class="input-help">Kann Leer- und Sonderzeichen enthalten (wird in Lightbox &amp; Thumbnail angezeigt)</div></td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :ort %></th>
+		<td class="view"><%= f.text_field :ort %>
+			
+			<div class="input-help">z.B. Berlin</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :icon, 'Icon + Lightboxbild 1' %></th>
+		<td class="view"><%= f.file_field :icon %>
+			
+			<div class="input-help">max 900 x 650 > ... wird für Icon auf 200 x 150 # beschnitten ! (drum am besten 4:3 Format)</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :datum %></th>
+		<td class="view"><%= f.date_select(:datum) %>
+			
+			<div class="input-help">Fertigstellung</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :branche_id %></th>
+		<td class="view"><%= f.select :branche_id, Branche.all.map { |c| [c.name, c.id] }, :include_blank => true %>
+			</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :webref %></th>
+		<td class="view"><%= f.check_box :webref %>
+			
+			<div class="input-help">Webreferenz ja / nein ?</div>		</td>
+	</tr>
+</tbody></table>
+<div class="trennertop"></div>
+<div id="web_refs_in_refs">
+
+<div class="nested_form">
+	<h3>Web-Referenz?:</h3>
+  <% f.fields_for :web_referenzen do |builder| %>
+    <%= render "web_referenz_fields", :f => builder %>
+  <% end %>
+  <p id="web_ref_add_link" class="add_nested_form"><%= link_to_add_webref_fields "Web-Referenz!", f, :web_referenzen %></p>
+
+</div></div>
+<div class="trennertop"></div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

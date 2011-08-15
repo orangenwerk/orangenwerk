@@ -1,0 +1,69 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :titel %></th>
+		<td class="view"><%= f.text_field :titel %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :icon %></th>
+		<td class="view"><%= f.file_field :icon %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sidebar_icon %></th>
+		<td class="view"><%= f.file_field :sidebar_icon %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :produkt_bereich_id %></th>
+		<td class="view"><%= f.select :produkt_bereich_id, ProduktBereich.all.map { |c| [c.name, c.id] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :inhalt %></th>
+		<td class="view"><%= f.text_area :inhalt, :class => "asid2", :rows => '3' %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>	
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Referenzen:</h3>
+ <% f.fields_for :produkt_kategorien_referenzen do |builder| %>
+    <%= render "produkt_kategorien_referenz_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Referenz hinzufuegen", f, :produkt_kategorien_referenzen %></p>
+</div>
+<div class="trennertop clear"></div>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Banner:</h3>
+ <% f.fields_for :banners_produkt_kategorien do |builder| %>
+    <%= render "banners_produkt_kategorie_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Banner hinzufuegen", f, :banners_produkt_kategorien %></p>
+</div>
+<div class="trennertop clear"></div>
+
+<div class="actions"><%= f.submit %></div>
+

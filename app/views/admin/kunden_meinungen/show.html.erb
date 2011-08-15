@@ -1,0 +1,21 @@
+<!--
+#  name        :string(255)
+#  titel       :string(255)
+#  kunden_name :string(255)
+#  firma       :string(255)
+#  inhalt      :text
+#  kunde_id    :integer(4)
+-->
+<%= link_to 'Zurück', admin_kunden_meinungen_path %> | <%= link_to 'Bearbeiten', edit_admin_kunden_meinung_path(@kunden_meinung.id) %>
+<div class="stand"><%= @kunden_meinung.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<h2><%= @kunden_meinung.name %></h2>
+<p>Name: <strong><%= @kunden_meinung.name %></strong></p>
+<p>Kunden Name: <strong><%= @kunden_meinung.kunden_name %></strong></p>
+<p>Firma: <strong><%= @kunden_meinung.firma %></strong></p>
+<p>Kunde: <strong><%= @kunden_meinung.kunde %></strong></p>
+<hr />
+<%= raw @kunden_meinung.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_kunden_meinungen_path %> | <%= link_to 'Bearbeiten', edit_admin_kunden_meinung_path(@kunden_meinung.id) %>
+<hr />

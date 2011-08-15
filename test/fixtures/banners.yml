@@ -1,0 +1,37 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: banners
+#
+#  id                :integer(4)      not null, primary key
+#  name              :string(255)
+#  link              :string(255)
+#  sorter            :integer(4)
+#  bild_file_name    :string(255)
+#  bild_content_type :string(255)
+#  bild_file_size    :integer(4)
+#  bild_updated_at   :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#  titel             :string(255)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  title: MyString
+  link: 
+  sorter: 1
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+
+two:
+  name: MyString
+  title: MyString
+  link: 
+  sorter: 1
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1

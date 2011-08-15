@@ -1,0 +1,24 @@
+<h2>Referenz Bilder:</h2>
+<% if @referenz %>
+<br/>
+<%= link_to ' zurück zu .. "'+@referenz.objekt+'" ', edit_admin_referenz_path(@referenz), :class => 'admin_new_button' %>
+<br/>
+<% else %>
+<%= link_to 'ReferenzBild erstellen', new_admin_referenz_bild_path, :class => 'admin_new_button' %>
+<% end %>
+<br />
+<%= render 'listing', :data => @referenz_bilder  %>
+<br />
+<% if @referenz %>
+<%= link_to 'ReferenzBild erstellen', new_admin_referenz_referenz_bild_path(@referenz), :class => 'admin_new_button Pagez_remote_link' %>
+<% else %>
+<%= link_to 'ReferenzBild erstellen', new_admin_referenz_bild_path, :class => 'admin_new_button' %>
+<% end %>
+
+
+<div id="Pagez__stuff"></div>
+<br/>
+<p>
+    
+	
+</p>

@@ -1,0 +1,7 @@
+<h2>ProduktDetailBild bearbeiten</h2>
+<%= form_for @produkt_detail_bild, :html => { :multipart => true }, :url => admin_produkt_detail_bild_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_produkt_detail_bild_path(@produkt_detail_bild.id) %> |
+<%= link_to 'Zurück', admin_produkt_detail_bilder_path %>

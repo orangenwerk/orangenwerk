@@ -1,0 +1,9 @@
+<div id="selected-bereiche">
+<% if @produkt_bereiche.each %>
+<ul>
+  <% @produkt_bereiche.each do |pb| %>
+	<li><%= pb.titel %></li>
+  <% end %>
+</ul>
+<% end %>
+</div>

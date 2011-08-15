@@ -1,0 +1,39 @@
+<!--
+# => name :string
+# => title :string
+# => link :url
+# => sorter :integer
+# => bild
+-->
+<table>
+  <tr class="pretty">
+	<th>bild</th>
+    <th><%= sortable "name", "Name" %></th>
+	<th><%= sortable "sorter", "Sorter" %></th>
+	<th><%= sortable "link", "Link" %></th>
+    <th></th>
+<% unless @produkt %>
+    <th></th>
+    <th></th>
+<% end %>
+  </tr>
+
+
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td><%= image_tag help_me.bild.url(:thumb) %></td>
+    <td><%= help_me.name %></td>
+	<td><%= help_me.sorter %></td>
+	<td><%= help_me.link != '' ? 'ja' : 'ne' %></td>
+  <% if @produkt %>
+	<td class="actions">	                         
+		      <%= link_to_delete help_me, :url => remove_admin_produkt_banner_url(@produkt, help_me), :name => icon("delete")+' Löschen !' %>
+  	    </td>
+  <% else %>
+	<td><%= link_to show_pic, admin_banner_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_banner_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_banner_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+	<% end %>
+  </tr>
+<% end %>
+</table>

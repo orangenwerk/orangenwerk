@@ -1,0 +1,3 @@
+module Admin::ReferenzBilderHelper
+  
+end

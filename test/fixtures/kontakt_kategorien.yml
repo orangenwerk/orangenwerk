@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  kontakt_bereich: 
+  sidebar_icon_file_name: MyString
+  sidebar_icon_content_type: MyString
+  sidebar_icon_file_size: 1
+  sidebar_icon_updated_at: 2010-09-21 12:34:11
+
+two:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  kontakt_bereich: 
+  sidebar_icon_file_name: MyString
+  sidebar_icon_content_type: MyString
+  sidebar_icon_file_size: 1
+  sidebar_icon_updated_at: 2010-09-21 12:34:11

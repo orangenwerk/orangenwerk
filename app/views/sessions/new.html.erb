@@ -1,0 +1,27 @@
+<div class="rounded_box Login">
+<h1>Anmeldung</h1>
+<div class="trenner clear"></div>
+<p>Bitte melden Sie sich mit Ihrer E-Mail-Adresse und Ihrem Passwort an.</p>
+<div class="trenner clear"></div>
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :email, 'E-Mail' %></th>
+		<td class="view"><%= f.text_field :email %></td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :password, 'Passwort' %></th>
+		<td class="view"><%= f.password_field :password %></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<div class="actions"><%= f.submit "Anmelden" %></div>
+		</td>
+	</tr>
+</tbody></table>
+<% end %>
+<br/>
+<!-- <p>New user <%# link_to "?", signup_path %></p> -->
+</div>

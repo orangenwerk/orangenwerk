@@ -1,0 +1,22 @@
+<%= form_for @newsletter_abo, :url => { :controller => 'news_bereiche', :action => 'newsletter_search'} do |f| %>
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :email %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :email %><%= harken(f, :email) %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<div class="actions"><%= submit_tag "E-Mail-Adresse suchen" %></div>
+		</td>
+	</tr>
+</tbody></table>
+<br/>
+
+<% end %>

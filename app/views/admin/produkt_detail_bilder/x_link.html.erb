@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "Produkt Detail Bilder", admin_produkt_detail_bilder_path, :class => ("current" if @activio && (@activio == 'admin_produkt_bereich'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'Produkt Detail Bilder', admin_produkt_detail_bilder_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_produkt_detail_bild'))  %></li>
+
+Sub:
+
+<li><%= link_to 'Produkt Detail Bilder', admin_produkt_detail_bilder_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_produkt_detail_bild'))  %></li>

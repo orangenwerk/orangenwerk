@@ -1,0 +1,78 @@
+<h2>Leistungen:</h2>
+<br/>
+<% if @produkt %>
+<%= link_to ' << zurück zu '+@produkt.titel+' ', edit_admin_produkt_url(@produkt), :class => 'admin_new_button' %>	
+<% else %>
+<%= link_to 'Leistung erstellen', new_admin_leistung_path %>
+<% end %>
+
+<br />
+<div id="selected-leistungen">
+<%= render 'listing', :data => @leistungen  %>
+</div>
+<br />
+
+
+
+
+<% if @produkt %>
+<%= link_to icon('add')+' Leistung hinzufügen', available_admin_produkt_leistungen_url(@produkt), :class => 'Pagez_remote_link button' %>
+<% else %>
+<%= link_to 'Leistung erstellen', new_admin_leistung_path %>
+<% end %>
+ <br />
+<div id="Pagez__stuff"></div>
+<br/>
+
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+	$('.Pagez_remote_link').click(function (event) {
+		$(this).hide();
+        event.preventDefault();
+        $.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ $('#Pagez__stuff').html(r);} });
+      });
+	$('.ad_nesta').live('click', function(){
+		$('#Pagez__stuff').html('');
+		$('.Pagez_remote_link').show();
+	});
+	$('.xx_link').live('click', function(){
+		$(this).parent().parent().hide();
+	});
+
+    });
+  </script>
+<script type="text/javascript" charset="utf-8">
+	
+  var fixWidthHelper = function(e, ui) {
+      ui.children().each(function() {
+        $(this).width($(this).width());
+      });
+      return ui;
+  };
+  
+  $(function() {
+    $("#leistungen tbody").sortable({
+      axis: 'y',
+      handle: '.handle',
+      cursor: "move",
+      helper: fixWidthHelper,
+      
+      update: function(){
+        $.ajax({
+          type: 'post', 
+          data: $('#leistungen tbody').sortable('serialize'), 
+          dataType: 'script',
+          complete: function(request){
+            $('#leistungen tbody').effect('highlight');
+          },
+          url: "<%=reorder_admin_leistungen_url%>"
+        })
+      }
+		}).disableSelection();
+  });
+  
+</script>
+<% end %>

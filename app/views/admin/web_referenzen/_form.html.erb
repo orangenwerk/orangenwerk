@@ -1,0 +1,49 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :titel %></th>
+		<td class="view"><%= f.text_field :titel %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :url %></th>
+		<td class="view"><%= f.text_field :url %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :inhalt %></th>
+		<td class="texta view"><%= f.text_area :inhalt, :class => "asid2" %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :referenz_id %></th>
+		<td class="view"><%= f.select :referenz_id, Referenz.all.map { |c| [c.name, c.id] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	
+
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Screenshots:</h3>
+ <% f.fields_for :web_referenz_bilder do |builder| %>
+    <%= render "web_referenz_bild_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Screenshot", f, :web_referenz_bilder %></p>
+</div>
+<div class="trennertop clear"></div>
+
+
+<div class="actions"><%= f.submit %></div>

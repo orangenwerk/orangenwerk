@@ -1,0 +1,95 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :titel %></th>
+		<td class="view"><%= f.text_field :titel %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label">
+			<%= f.label :bild %>
+		</th>
+		<td class="view">
+			<%= f.file_field :bild %>
+			<div class="input-help">max <strong>1800 x 400</strong> px !</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :link %></th>
+		<td class="view"><%= f.text_field :link %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+<% hori = %w[center top bottom 70% 80% 90% 100% 110% 130% 140% 150%] %>
+<% verti = %w[center left right 30% 50% 70% 80% 90% 100% 110% 130% 140% 150%] %>
+<% zomi = %w[1x 1.1x 1.2x 1.3x 1.4x 1.5x 1.6x 1.7x 1.8x 1.9x 2x] %>
+<% hori = %w[center top bottom] %>
+<% verti = %w[center left right] %>
+<% zomi = %w[1x 1.1x 1.2x 1.3x 1.4x 1.5x 1.6x 1.7x 1.8x 1.9x 2x] %>
+	<tr>
+		<th class="label">Ausgangswert</th>
+		<td class="view">	<%= f.label :von_horizontal, 'Horizontale: ' %>  
+							<%= f.select :von_horizontal, hori.map { |c| [c, c] } %>
+							<%= f.label :von_vertikal, 'Vertikale: ' %> 
+							<%= f.select :von_vertikal, verti.map { |c| [c, c] } %>
+							<%= f.label :von_zoom, 'Zoom: ' %>  <%= f.select :von_zoom, zomi.map { |c| [c, c] }, :include_blank => true %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label">Zielwert</th>
+		<td class="view">
+			<%= f.label :von_horizontal, 'Horizontale: ' %>  <%= f.select :zu_horizontal, hori.map { |c| [c, c] } %>
+	<%= f.label :von_vertikal, 'Vertikale: ' %>  <%= f.select :zu_vertikal, verti.map { |c| [c, c] } %>
+	<%= f.label :von_zoom, 'Zoom: ' %>  <%= f.select :zu_zoom, zomi.map { |c| [c, c] }, :include_blank => true  %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :dauer, 'Anzeige-Dauer: ' %></th>
+		<td class="view"><%= f.select :dauer, Array(2..9).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Portfolio_Bereiche:</h3>
+ <% f.fields_for :portfolio_bereiche_sliders do |builder| %>
+    <%= render "portfolio_bereiche_slider_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "portfolio hinzufuegen", f, :portfolio_bereiche_sliders %></p>
+</div>
+<div class="trennertop clear"></div>
+
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Produkt_Bereiche (im Portfolio):</h3>
+ <% f.fields_for :produkt_bereiche_sliders do |builder| %>
+    <%= render "produkt_bereiche_slider_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "produktBereich hinzufuegen", f, :produkt_bereiche_sliders %></p>
+</div>
+<div class="trennertop clear"></div>
+
+
+<div class="actions"><%= f.submit %></div>
+
+
+portfolio_bereiche_sliders		produkt_bereiche_sliders

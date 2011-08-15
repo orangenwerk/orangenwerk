@@ -1,0 +1,17 @@
+<% if icon.produkte.count > 0 %>
+<a class="produkt_icon o_box" id="<%= icon.id %>" href="<%= produkt_path(icon.name) %>">
+	<div class="resize_picas">
+
+	<%= image_tag icon.icon.url %>
+	<div class="icon_text"><%= icon.titel %></div>
+	</div>
+</a>
+<% else %>
+<div class="produkt_icon o_box" id="<%= icon.id %>">
+	<div class="resize_picas">
+
+	<%= image_tag icon.icon.url %>
+	<div class="icon_text"><%= icon.titel %></div>
+	</div>
+</div>
+<% end %>

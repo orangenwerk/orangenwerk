@@ -1,0 +1,15 @@
+<table class="index">
+  <tbody>
+    <% pbs.each do |taxon| %>
+      <tr id="<%= dom_id(taxon)%>">
+        <td><%= taxon.titel %></td>
+  	    <td class="actions">	                         
+		      <%= link_to_delete taxon, :url => remove_admin_leistung_produkt_bereich_url(@leistung, taxon), :name => icon("delete") %>
+  	    </td>        
+      </tr>
+    <% end %>
+    <% if pbs.empty? %>
+     <tr><td colspan="3"><%= t('none') %>.</td></tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,12 @@
+<h2><%= @user.name %></h2>
+<%= rechte_symbol %><br />
+<%= current_role %>
+<br /><br />
+
+<%= @user.email %><br />
+
+<br />
+
+<strong>StandardURL</strong>  <%= link_to user_path(@user), @user %><br /><br />
+
+<strong>Pretty - URL: </strong>  <%= link_to '/user/'+@user.name, '/user/'+@user.name %><br /><br />

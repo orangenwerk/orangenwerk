@@ -1,0 +1,46 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %><%= harken(f, :name) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :titel %></th>
+		<td class="view"><%= f.text_field :titel %><%= harken(f, :titel) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :datum %></th>
+		<td class="view"><%= f.date_select(:datum) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :icon %></th>
+		<td class="view"><%= f.file_field :icon %><%= harken(f, :icon_file_name) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :branche_id, 'Branche:' %></th>
+		<td class="view"><%= f.select :branche_id, Branche.all.map { |c| [c.name, c.id] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+</tbody></table>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ <% f.fields_for :kunden_produkt_bereiche do |builder| %>
+    <%= render "kunden_produkt_bereich_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Produkt_Bereich hinzufuegen", f, :kunden_produkt_bereiche %></p>
+</div>
+<div class="trennertop clear"></div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+

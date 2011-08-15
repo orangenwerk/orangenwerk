@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  function displayRow(){
+    var row = document.getElementById("captionRow");
+    if (row.style.display == '') row.style.display = 'none';
+    else row.style.display = '';
+  }
+</script>
+<h4><%= t('available_taxons') %></h4>
+<table class="index">
+	<thead>
+		<tr>
+			<th><%= t("name") %></th>
+			<th><%= t("action") %></th>
+		</tr>
+	</thead>
+	<tbody>
+    <% @available_pbs.each do |taxon| %>
+      <tr id="<%= dom_id(taxon, :sel) %>">
+        <td><%= taxon.name %></td>
+		    <td class="actions">
+          <%= link_to icon('add') + ' ' + t("select"),
+                            select_admin_leistung_produkt_bereich_path(@leistung, taxon),
+                           :remote => true, :class => 'iconlink' %>
+		    </td>        
+      </tr>
+    <% end %>
+    <% if @available_pbs.empty? %>
+     <tr><td colspan="3"><%= t('no_match_found') %>.</td></tr>
+    <% end %>
+  </tbody>
+</table>

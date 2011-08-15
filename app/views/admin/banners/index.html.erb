@@ -1,0 +1,44 @@
+<h2>Banner:</h2>
+<% if @produkt %>
+	<%= link_to ' << zurück zu '+@produkt.titel+' ', edit_admin_produkt_url(@produkt), :class => 'admin_new_button' %>	
+<% else %>
+	<%= link_to 'Banner erstellen', new_admin_banner_path, :class => 'admin_new_button' %>
+<% end %>
+
+<br />
+<div id="selected-banners">
+<%= render 'listing', :data => @banners  %>
+</div>
+
+<br />
+
+<% if @produkt %>
+<%= link_to icon('add')+' Banner hinzufügen', available_admin_produkt_banners_url(@produkt), :class => 'Pagez_remote_link button' %>
+<% else %>
+<%= link_to 'Banner erstellen', new_admin_banner_path, :class => 'admin_new_button' %>
+<% end %>
+ <br />
+<div id="Pagez__stuff"></div>
+<br/>
+
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+	$('.Pagez_remote_link').click(function (event) {
+		$(this).hide();
+        event.preventDefault();
+        $.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ $('#Pagez__stuff').html(r);} });
+      });
+	$('.ad_nesta').live('click', function(){
+		$('#Pagez__stuff').html('');
+		$('.Pagez_remote_link').show();
+	});
+	$('.xx_link').live('click', function(){
+		$(this).parent().parent().hide();
+	});
+
+    });
+  </script>
+<% end %>

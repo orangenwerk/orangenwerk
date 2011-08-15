@@ -1,0 +1,27 @@
+<!--
+
+-->
+<table>
+  <tr class="pretty">
+    <th><%= sortable "name", "Name" %></th>
+    <th><%= sortable "titel", "Titel" %></th>
+	<th><%= sortable "sorter", "Sorter" %></th>
+	<th>Slider</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= help_me.name %></td>
+    <td><%= help_me.titel %></td>
+	<td><%= help_me.sorter %></td>
+	<td><%= help_me.sliders.count %></td>
+	<td><%= link_to show_pic, admin_portfolio_bereich_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_portfolio_bereich_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_portfolio_bereich_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+  </tr>
+<% end %>
+</table>

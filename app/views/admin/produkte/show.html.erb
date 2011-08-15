@@ -1,0 +1,56 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_produkte_path %> | <%= link_to 'Bearbeiten', edit_admin_produkt_path(@produkt.id) %>
+<div class="stand"><%= @produkt.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @produkt.icon.url %></div>
+<div style="float:right; margin:5px"><%= image_tag @produkt.sidebar_icon.url %></div>
+
+<h2><%= @produkt.titel %></h2>
+<p>Name: <strong><%= @produkt.name %></strong></p>
+<p>Title: <strong><%= @produkt.titel %></strong></p>
+<br/>
+
+<p>Bereich: <strong><%= link_to @produkt.produkt_kategorie.produkt_bereich.titel, admin_produkt_path(@produkt.produkt_kategorie.produkt_bereich) %></strong></p>
+<p>Kategorie: <strong><%= link_to @produkt.produkt_kategorie.titel, admin_produkt_path(@produkt.produkt_kategorie) %></strong></p>
+<br/>
+<hr />
+<p><strong>Produkt Bild:</strong></p>
+<%= image_tag @produkt.produktbild.url %>
+<hr />
+<p><strong>Beschreibung:</strong></p>
+<%= raw @produkt.beschreibung %>
+<hr />
+<p><strong>Detail Bilder:</strong></p>
+<% @produkt.produkt_detail_bilder.each do |banner| %>
+<%= image_tag banner.icon.url(:thumb) %>
+<% end %>
+<br class="clear"/>
+<div id="hida_formshower" class="o_box">Bearbeiten</div>
+<div id="hida_form">
+<%= form_for @produkt, :html => { :multipart => true }, :url => admin_produkt_path do |f| %>
+<div class="nested_form hida">
+	<h3>Detail Bilder:</h3>
+ <% f.fields_for :produkt_detail_bilder do |builder| %>
+    <%= render "produkt_detail_bild_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Detailbild hinzufuegen", f, :produkt_detail_bilder %></p>
+</div>
+<div class="trennertop clear"></div>
+<div class="actions"><%= f.submit %></div>
+<% end %>
+</div>
+<hr />
+<p><strong>Banner:</strong></p>
+<% @produkt.banners.each do |banner| %>
+<%= image_tag banner.bild.url(:thumb) %>
+<% end %>
+<hr />
+<p><strong>Referenzen:</strong></p>
+<% @produkt.referenzen.each do |banner| %>
+<%= image_tag banner.icon.url(:thumb) %>
+<% end %>
+<hr />
+<%= link_to 'Zurück', admin_produkte_path %> | <%= link_to 'Bearbeiten', edit_admin_produkt_path(@produkt.id) %>
+<hr />

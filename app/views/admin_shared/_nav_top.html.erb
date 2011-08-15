@@ -1,0 +1,17 @@
+<nav class="top">
+	<ul class="top-nav">
+		<li><%= link_to 'admin', admin_root_path, :class => ("current" if @activio && (@activio == 'admin_start')) %></li>
+		<li><%= link_to "Produkte", admin_produkt_bereiche_path, :class => ("current" if @activio && (@activio == 'admin_produkt_bereich'))  %></li>
+		<li><%= link_to "Portfolio", admin_portfolio_bereiche_path, :class => ("current" if @activio && (@activio == 'admin_portfolio_bereich'))  %></li>
+		<li><%= link_to "News", admin_news_bereiche_path, :class => ("current" if @activio && (@activio == 'admin_news_bereich'))  %></li>
+		<li><%= link_to "Kontakt", admin_kontakt_bereiche_path, :class => ("current" if @activio && (@activio == 'admin_kontakt_bereich'))  %></li>
+		<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		<li>|</li>
+		<li><%= link_to 'Seite', start_path %></li>
+		<li>|</li>
+	</ul>
+	
+<%= render 'app_shared/account_nav' %>
+
+		<div class="clear"></div>
+</nav>

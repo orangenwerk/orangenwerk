@@ -1,0 +1,41 @@
+<!--
+
+-->
+<table id="leistungen">
+	<thead>
+  <tr class="pretty">
+	<th></th>
+	<th>inhalt</th>
+    <th>Produkt-Bereiche</th>
+    <th></th>
+<% unless @produkt %>
+    <th></th>
+    <th></th>
+<% end %>
+  </tr>
+</thead>
+
+<tbody>
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td><span class="handle">[drag]</span></td>
+    <td><%= help_me.inhalt %></td>
+    <td>
+		<% help_me.produkt_bereiche.each_with_index do |pb,index| %>
+			<%= ', ' if index > 0 %><%= pb.titel %>
+		<% end %>
+	</td>
+  <% if @produkt %>
+	<td class="actions">	                         
+		      <%= link_to_delete help_me, :url => remove_admin_produkt_leistung_url(@produkt, help_me), :name => icon("delete")+' Löschen !' %>
+  	    </td>
+  <% else %>
+	<td><%= link_to show_pic, admin_leistung_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_leistung_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_leistung_path(help_me.id), :confirm => 'Leistung "'+help_me.inhalt+'" wirklich löschen?', :method => :delete, :class => 'a_link_del' %></td>
+<% end %>
+  </tr>
+<% end %>
+</tbody>
+</table>
+

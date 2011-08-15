@@ -1,0 +1,18 @@
+<h1>Abmeldung bestätigen</h1>
+<div class="trenner clear"></div>
+<% if @newsletter_abo %>
+
+	<%= render 'abo_kill_form' %>
+	
+<% else %>
+	<p>Die von Ihnen angegebene E-Mail-Adresse wurde nicht gefunden!</p>
+	<br/>
+	<p><%= button_to 'Zurück', :back %>
+
+<% end %>
+
+
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

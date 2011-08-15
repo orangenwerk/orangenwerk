@@ -1,0 +1,23 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_seiten_path %> | <%= link_to 'Bearbeiten', edit_admin_seite_path(@seite.id) %>
+<div class="stand"><%= @seite.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @seite.sidebar_icon.url %></div>
+<h2><%= @seite.titel %></h2>
+<p>Headline: <strong><%= @seite.headline %></strong></p>
+<p>Title: <strong><%= @seite.titel %></strong></p>
+<p>Sideboxes: <strong><%= @seite.sidebars.count %></strong></p>
+<p>Banners: <strong><%= @seite.banners.count %></strong></p>
+<p>start_head_sliders: <strong><%= @seite.start_head_sliders.count %></strong></p>
+<hr />
+<%= raw @seite.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_seiten_path %> | <%= link_to 'Bearbeiten', edit_admin_seite_path(@seite.id) %>
+<hr />
+<p><strong>Banner:</strong></p>
+<% @seite.banners.each do |banner| %>
+<%= image_tag banner.bild.url(:thumb) %>
+<% end %>
+<hr />

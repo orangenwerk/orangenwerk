@@ -1,0 +1,17 @@
+<nav>
+<ul class="main-nav">
+	<li><%= link_to 'Seite', admin_seiten_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_seite'))  %></li>
+	<li><%= link_to 'Sidebar', admin_sidebars_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_sidebar'))  %></li>
+	<li><%= link_to 'User', admin_users_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_user'))  %></li>
+	<li><%= link_to 'AGBs', admin_agbs_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_agb'))  %></li>
+	<li><%= link_to 'FAQs', admin_faqs_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_faq'))  %></li>
+	<li><%= link_to 'Banner', admin_banners_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_banner'))  %></li>
+	<li><%= link_to 'Slider', admin_sliders_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_slider'))  %></li>
+	<li><%= link_to 'HeadTabSlider', admin_start_head_sliders_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_start_head_slider'))  %></li>
+	<li><%= link_to 'Kunden Meinungen', admin_kunden_meinungen_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_kunden_meinung'))  %></li>
+	<li><%= link_to 'Aktionen', admin_aktionen_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_sidebar'))  %></li>
+	
+
+</ul>
+<div class="clear"></div>
+</nav>	

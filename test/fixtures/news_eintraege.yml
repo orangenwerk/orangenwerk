@@ -1,0 +1,33 @@
+# == Schema Information
+# Schema version: 20100909074738
+#
+# Table name: news_eintraege
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  titel      :string(255)
+#  headline   :string(255)
+#  datum      :datetime
+#  autor      :string(255)
+#  inhalt     :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  headline: MyString
+  datum: 2010-09-09 09:28:46
+  autor: MyString
+  inhalt: MyText
+
+two:
+  name: MyString
+  titel: MyString
+  headline: MyString
+  datum: 2010-09-09 09:28:46
+  autor: MyString
+  inhalt: MyText

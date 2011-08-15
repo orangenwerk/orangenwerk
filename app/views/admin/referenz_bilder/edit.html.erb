@@ -1,0 +1,7 @@
+<h2>XyOyX bearbeiten</h2>
+<%= form_for @referenz_bild, :html => { :multipart => true }, :url => admin_referenz_bild_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_referenz_bild_path(@referenz_bild.id) %> |
+<%= link_to 'Zurück', admin_referenz_bilder_path %>

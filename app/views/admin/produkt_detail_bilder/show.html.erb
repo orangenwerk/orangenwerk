@@ -1,0 +1,17 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_produkt_detail_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_produkt_detail_bild_path(@produkt_detail_bild.id) %>
+<div class="stand"><%= @produkt_detail_bild.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @produkt_detail_bild.icon.url(:thumb) %></div>
+<h2><%= @produkt_detail_bild.name %></h2>
+<p>Name: <strong><%= @produkt_detail_bild.name %></strong></p>
+<hr class="clear" />
+<p>Produkt: <strong><%= @produkt_detail_bild.produkt.titel %></strong>
+<%= render 'produkte/icon_produkt', :icon => @produkt_detail_bild.produkt  %>
+<hr class="clear" />
+<%= image_tag @produkt_detail_bild.icon.url %>
+<hr class="clear" />
+<%= link_to 'Zurück', admin_produkt_detail_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_produkt_detail_bild_path(@produkt_detail_bild.id) %>
+<hr />

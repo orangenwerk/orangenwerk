@@ -1,0 +1,11 @@
+Neue Kontakt-Mail.
+
+<%= @kontakt.geschlecht+' '+@kontakt.name %><%= @kontakt.vorname.nil? ? '' : ', '+@kontakt.vorname %>
+
+
+<%= @kontakt.inhalt %>
+
+
+<%= @std_domain %> - <%= Time.now %>
+
+<%= @kontakt.email %>

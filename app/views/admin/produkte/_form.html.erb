@@ -1,0 +1,131 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+
+<table class="field-list admin_w50">
+	<tbody>
+		<tr>
+			<td class="col1"><%= f.label :name %></td>
+			<td class="col2"><%= f.text_field :name %><%= harken(f, :name) %></td>
+		</tr>
+		<tr class="exp">
+			<td colspan="2">x___xx___xxx___xx___x</td>
+		</tr>
+		<tr>
+			<td class="col1"><%= f.label :titel %></td>
+			<td class="col2"><%= f.text_field :titel %><%= harken(f, :titel) %></td>
+		</tr>
+		<tr class="exp">
+			<td colspan="2">x___xx___xxx___xx___x</td>
+		</tr>
+		<tr>
+			<td class="col1"><%= f.label :produkt_kategorie_id %></td>
+			<td class="col2"><%= f.select :produkt_kategorie_id, ProduktKategorie.all.map { |c| [c.name, c.id] } %><%= harken(f, :produkt_kategorie_id) %></td>
+		</tr>
+		<tr class="exp">
+			<td colspan="2">x___xx___xxx___xx___x</td>
+		</tr>
+</tbody></table>
+	
+<table class="field-list admin_w50">
+	<tbody>
+		<tr>
+			<td class="col1">
+				<% if @produkt && @produkt.id && @produkt.icon.url != '/images/p_icon_klein.png' %>
+					<%= image_tag @produkt.icon.url(:klein) %>
+				<% else %>
+					<%= image_tag '/images/exp_icon.jpg'%>
+				<% end %>
+				</td>
+			<td class="col2"><%= f.label :icon %><br/>
+			<%= f.file_field :icon %><%= harken(f, :icon_file_name) %>
+			<div class="input-help">x___xx___xxx___xx___x</div></td>
+		</tr>
+		<tr>
+		<td class="col1">
+			<% if @produkt && @produkt.id && @produkt.sidebar_icon_file_name && @produkt.sidebar_icon.url != "/sidebar_icons/thumb/missing.png" %>
+					<%= image_tag @produkt.sidebar_icon.url(:thumb) %>
+				<% else %>
+					<%= image_tag '/images/exp_sidebar_icon.jpg' %>
+				<% end %>
+		</td>
+			<td class="col2"><%= f.label :sidebar_icon %><br/>
+			<%= f.file_field :sidebar_icon %><%= harken(f, :sidebar_icon_file_name) %>
+			<div class="input-help">x___xx___xxx___xx___x</div></td>
+		</tr>
+		<tr>
+		<td class="col1">
+				<% if @produkt && @produkt.id && @produkt.produktbild_file_name && @produkt.produktbild.url != '/images/produkte/produkt_bild_emergency_thumb.jpg' %>
+					<%= image_tag @produkt.produktbild.url(:thumb) %>
+				<% else %>
+					<%= image_tag '/images/exp_produkt_pic.jpg'%>
+				<% end %>
+				</td>
+			<td class="col2"><%= f.label :produktbild %><br/>
+			<%= f.file_field :produktbild %><%= harken(f, :produktbild_file_name) %>
+			<div class="input-help">x___xx___xxx___xx___x</div></td>
+		</tr>
+</tbody></table>	
+
+<div class="trennertop clear"></div>
+
+
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label texta"><%= f.label :sku %></th>
+		<td class="view"><%= f.text_field :sku, :size => 10 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :beispiel_produkt %></th>
+		<td class="view"><%= f.text_field :beispiel_produkt, :size => 80 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :beispiel_beschreibung %></th>
+		<td class="view"><%= f.text_field :beispiel_beschreibung, :size => 80 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :beispiel_preis %></th>
+		<td class="view"><%= f.text_field :beispiel_preis, :size => 6 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :beispiel_style_klasse %></th>
+		<td class="view"><%= f.select :beispiel_style_klasse, BSP_PRODUKT_KLASSES.sort.map { |k,c| [k,c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	
+	<tr>
+		<th class="label texta"><%= f.label :meta_description %></th>
+		<td class="view"><%= f.text_field :meta_description, :size => 80 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :meta_keywords %></th>
+		<td class="view"><%= f.text_field :meta_keywords, :size => 80 %><%= harken(f, :inhalt) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	
+	<tr>
+		<th class="label texta"><%= f.label :beschreibung %></th>
+		<td class="view"><%= f.text_area :beschreibung, :class => "fck", :rows => 8, :cols => 80 %><%= harken(f, :beschreibung) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="trennertop clear"></div>
+<div class="actions"><%= f.submit %></div>
+
+
+

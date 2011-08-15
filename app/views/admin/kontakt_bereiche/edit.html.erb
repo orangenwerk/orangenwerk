@@ -1,0 +1,7 @@
+<h2>KontaktBereich bearbeiten</h2>
+<%= form_for @kontakt_bereich, :html => { :multipart => true }, :url => admin_kontakt_bereich_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_kontakt_bereich_path(@kontakt_bereich.id) %> |
+<%= link_to 'Zurück', admin_kontakt_bereiche_path %>

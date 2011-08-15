@@ -1,0 +1,19 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_news_bereiche_path %> | <%= link_to 'Bearbeiten', edit_admin_news_bereich_path(@news_bereich.id) %>
+<div class="stand"><%= @news_bereich.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @news_bereich.sidebar_icon.url %></div>
+<h2><%= @news_bereich.titel %></h2>
+<p>Name: <strong><%= @news_bereich.name %></strong></p>
+<p>Title: <strong><%= @news_bereich.titel %></strong>
+<hr />
+<%= raw @news_bereich.inhalt %>
+<hr />
+<% @news_bereich.banners.each do |banner| %>
+<%= image_tag banner.bild.url(:thumb) %>
+<% end %>
+<hr />
+<%= link_to 'Zurück', admin_news_bereiche_path %> | <%= link_to 'Bearbeiten', edit_admin_news_bereich_path(@news_bereich.id) %>
+<hr />

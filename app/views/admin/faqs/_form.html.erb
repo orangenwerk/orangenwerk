@@ -1,0 +1,30 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">Zur zuordnung</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :frage %></th>
+		<td class="view"><%= f.text_field :frage %>
+			
+			<div class="input-help">(Macht Ihr auch internet ?)</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :antwort %></th>
+		<td class="view"><%= f.text_area :antwort, :class => "asid2 fck" %>
+			
+			<div class="input-help">klar süßer </div>		</td>
+	</tr><tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">Position</div>		</td>
+	</tr>
+</tbody></table>
+<div class="actions"><%= f.submit %></div>
+
+

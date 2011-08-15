@@ -1,0 +1,40 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: produkt_detail_bilder
+#
+#  id                :integer(4)      not null, primary key
+#  name              :string(255)
+#  sorter            :integer(4)
+#  produkt_id        :integer(4)
+#  icon_file_name    :string(255)
+#  icon_content_type :string(255)
+#  icon_file_size    :integer(4)
+#  icon_updated_at   :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  sorter: 1
+  inhalt: MyText
+  produkt: 
+  icon_file_name: MyString
+  icon_content_type: MyString
+  icon_file_size: 1
+  icon_updated_at: 2010-09-09 09:46:33
+
+two:
+  name: MyString
+  titel: MyString
+  sorter: 1
+  inhalt: MyText
+  produkt: 
+  icon_file_name: MyString
+  icon_content_type: MyString
+  icon_file_size: 1
+  icon_updated_at: 2010-09-09 09:46:33

@@ -1,0 +1,36 @@
+<!--
+#  name                    :string(255)
+#  titel                   :string(255)
+#  inhalt                  :text
+#  sorter                  :integer(4)
+#  web_referenz_id         :integer(4)
+#  screenshot_file_
+-->
+<table>
+  <tr class="pretty">
+	<th>Screenshot</th>
+    <th><%= sortable "name", "Name" %></th>
+    <th>Web-Referenz</th>
+	<th>Referenz</th>
+	<th><%= sortable "sorter", "Sorter" %></th>
+	<th>WebReferenz</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+	<td><%= image_tag help_me.screenshot.url(:thumb) %></td>
+    <td><%= help_me.name %></td>
+    <td><%= help_me.web_referenz.name if help_me.web_referenz %></td>
+	<td><%= help_me.web_referenz.referenz.name if help_me.web_referenz && help_me.web_referenz.referenz %></td>
+	<td><%= help_me.sorter %></td>
+	<td><%= help_me.web_referenz.name if help_me.web_referenz %></td>
+	<td><%= link_to show_pic, admin_web_referenz_bild_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_web_referenz_bild_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_web_referenz_bild_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+  </tr>
+<% end %>
+</table>

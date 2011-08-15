@@ -1,0 +1,97 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label"><%= f.label :name %></th>
+		<td class="name-view">
+			<%= f.text_field :name %><%= harken(f, :name) %>
+			<div class="input-help">für sortierung</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="titel-label"><%= f.label :titel %></th>
+		<td class="titel-view">
+			<%= f.text_field :titel %><%= harken(f, :titel) %>
+			<div class="input-help">headline / titel der Box</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="link_name-label"><%= f.label :link_name %></th>
+		<td class="link_name-view">
+			<%= f.text_field :link_name %>
+			<div class="input-help">Link-Anzeige-Name</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="link_url-label"><%= f.label :link_url %></th>
+		<td class="link_url-view">
+			<%= f.url_field :link_url, :value => 'http//orangenwerk.com/' %><%= harken(f, :link_url) %>
+			<div class="input-help">link-Adresse (url)</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="aktiv-label"><%= f.label :aktiv %></th>
+		<td class="aktiv-view">
+			<%= f.check_box :aktiv %>
+			<div class="input-help">ist Aktiv ?</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="link-label"><%= f.label :link %></th>
+		<td class="link-view">
+			<%= f.check_box :link %>
+			<div class="input-help">ist ein Link ?</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="all_area-label"><%= f.label :all_area %></th>
+		<td class="all_area-view">
+			<%= f.check_box :all_area %>
+			<div class="input-help">ueberall sichtbar ?</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="zeitlimit-label"><%= f.label :zeitlimit %></th>
+		<td class="zeitlimit-view">
+			<%= f.check_box :zeitlimit %>
+			<div class="input-help">Zeitlich limitiert ?</div>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="von-label">
+			<%= f.label :von %>
+		</th>
+		<td class="von-view">
+			<%= f.date_select :von %>
+			<div class="input-help">Startzeit</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="bis-label">
+			<%= f.label :bis %>
+		</th>
+		<td class="bis-view">
+			<%= f.date_select :bis %>
+			<div class="input-help">Endzeit</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="bild-label">
+			<%= f.label :bild %>
+		</th>
+		<td class="bild-view">
+			<%= f.file_field :bild %><%= harken(f, :bild_file_name) %>
+			<div class="input-help">Aktions-Bild ... <strong>250 x</strong> max <strong>500</strong> px</div>
+		</td>
+	</tr>
+
+
+
+</tbody></table>
+<div class="actions"><%= f.submit %></div>
+

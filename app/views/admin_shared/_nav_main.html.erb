@@ -1,0 +1,21 @@
+<% if @sub_activio && (@activio == 'admin_start') %>
+
+	<%= render 'admin_shared/sub_nav/start' %>
+
+<% elsif @sub_activio && (@activio == 'admin_produkt_bereich') %>
+
+	<%= render 'admin_shared/sub_nav/produkt' %>
+
+<% elsif @sub_activio && (@activio == 'admin_kontakt_bereich') %>
+
+	<%= render 'admin_shared/sub_nav/kontakt' %>
+
+<% elsif @sub_activio && (@activio == 'admin_portfolio_bereich') %>
+
+	<%= render 'admin_shared/sub_nav/portfolio' %>
+
+<% elsif @sub_activio && (@activio == 'admin_news_bereich') %>
+
+	<%= render 'admin_shared/sub_nav/news' %>
+
+<% end %>

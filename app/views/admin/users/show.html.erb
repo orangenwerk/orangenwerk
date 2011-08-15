@@ -1,0 +1,12 @@
+<%= link_to 'Zurück', admin_users_path %> | <%= link_to 'Bearbeiten', edit_admin_user_path(@user.id) %>
+<hr />
+<h2><%= @user.name %> . [<%= user_rang(@user.id) %>]</h2>
+<p>Name: <strong><%= @user.name %></strong></p>
+<p>Title: <strong><%= @user.email %></strong>
+<hr />
+<h2><%= @user.name %></h2>
+
+<br /><br />
+<hr />
+<%= link_to 'Zurück', admin_users_path %> | <%= link_to 'Bearbeiten', edit_admin_user_path(@user.id) %>
+<hr />

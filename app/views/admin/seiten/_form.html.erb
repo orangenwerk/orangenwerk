@@ -1,0 +1,74 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :titel %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :titel %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :sidebar_icon %>
+		</th>
+		<td class="name-view">
+			<%= f.file_field :sidebar_icon %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	
+	<tr>
+		<th class="name-label">
+			<%= f.label :headline %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :headline %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+
+	<tr>
+		<th class="name-label">
+			<%= f.label :inhalt %>
+		</th>
+		<td class="name-view">
+			<%= f.text_area :inhalt, :class => "asid2" %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Banner:</h3>
+ <% f.fields_for :banners_seiten do |builder| %>
+    <%= render "banners_seite_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Banner hinzufuegen", f, :banners_seiten %></p>
+</div>
+<div class="trennertop clear"></div>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Sidebars:</h3>
+ <% f.fields_for :seiten_sidebars do |builder| %>
+    <%= render "seiten_sidebar_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Sidebar hinzufuegen", f, :seiten_sidebars %></p>
+</div>
+<div class="trennertop clear"></div>
+
+<div class="actions"><%= f.submit %></div>
+

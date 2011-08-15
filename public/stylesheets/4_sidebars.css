@@ -1,0 +1,41 @@
+.aside-nav { margin:0; padding: 7px 0; }
+.aside-nav li { list-style: none; margin: 0 0 5px; color: #ffffff !important; width:178px; padding:0; background: transparent;}
+.aside-nav li a { line-height:26px; border: 0; display:block; width:138px; background: transparent url('/images/navi_left.png') 0px 0px no-repeat;  color: #666; padding: 3px 20px 1px; font-weight:bold;}
+
+
+.aside-nav li a.owo { color: #000;  }
+.aside-nav li a.current { color: #fff; background-position: -534px 0px;}
+.aside-nav li a:hover { color: #fff; background-position: -178px 0px; }
+.aside-nav li a:active { color: #fff; background-position: -356px 0px; }
+.aside-nav li .aside-nav-in { margin:10px 0 5px; padding: 0 10px; border:0; background:transparent; }
+.aside-nav li .aside-nav-in li { padding: 0; }
+.aside-nav li .aside-nav-in li .aside-nav-in { margin:5px 0 10px; }
+.aside-nav li .aside-nav-in li a { margin:0; padding: 0 10px; border:0; background:transparent; color:#999; line-height: 20px;}
+.aside-nav li .aside-nav-in li a:hover { color: #000;}
+.aside-nav li .aside-nav-in li a.current { color: #333;}
+.aside-nav li .aside-nav-in li .aside-nav-in li a { font-weight: normal;}
+
+#sidebar_icon {width:178px; height: 74px; margin: 2px 0 0; /* background: #f0f0f0; */ background:transparent; position:relative; }
+
+#sidebar_icon #sidebar_icon_box {width:178px; position:absolute; left:0; bottom:0; text-align:center; padding:0; vertical-align:bottom; z-index:55;}
+
+#sidebar_icon #sidebar_icon_box img { margin:0; padding:0; vertical-align:bottom;}
+
+.icon_box {margin-right: -10px;}
+
+.rightside_top { width:270px; height: 60px; background: transparent;  }
+
+.rightside_top.kundenmeinung { background: transparent url('/images/rightside_kdmg.png') center center no-repeat !important; }
+.rightside_top.referenz { background: transparent url('/images/rightside_ref.png') center center no-repeat !important; }
+.rightside_top.aktion { background: transparent url('/images/rightside_aktionen.png') center center no-repeat; }
+
+.right_headline { color: #fff; padding: 22px 20px 10px 60px; font-size: 18px; }
+.rightside_top.referenz .right_headline { color: #fff; padding: 22px 20px 10px 75px; font-size: 18px; }
+
+
+.side_pic_akt {width: 250px; margin: 0 auto 10px;}
+
+.rightside_box { margin: 3px 0 10px;}
+
+.side_ref { background: #fff;}
+.side_pic_ref { width: 200px; margin: 0 auto 10px; padding: 0 6px 0 0; }

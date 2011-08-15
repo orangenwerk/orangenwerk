@@ -1,0 +1,42 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: start_head_sliders
+#
+#  id                :integer(4)      not null, primary key
+#  name              :string(255)
+#  sorter            :integer(4)
+#  headline          :string(255)
+#  inhalt            :text
+#  bild_file_name    :string(255)
+#  bild_content_type :string(255)
+#  bild_file_size    :integer(4)
+#  bild_updated_at   :datetime
+#  seite_id          :integer(4)
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  sorter: 1
+  headline: MyString
+  inhalt: MyText
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-13 16:09:48
+  seite: 
+
+two:
+  name: MyString
+  sorter: 1
+  headline: MyString
+  inhalt: MyText
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-13 16:09:48
+  seite: 

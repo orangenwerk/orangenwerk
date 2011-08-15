@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Neuer Newsletter angemeldet.</h1>
+    <p>
+      <%= @abo.geschlecht.nil? ? '' : @abo.geschlecht+' ' %><%= @abo.name.nil? ? '' : @abo.name %><br/>
+      <%= @abo.email %>
+    </p>
+
+    <p><%= @std_domain %> - <%= Time.now %></p>
+  </body>
+</html>

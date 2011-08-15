@@ -1,0 +1,7 @@
+<h2>WebReferenzBild bearbeiten</h2>
+<%= form_for @web_referenz_bild, :html => { :multipart => true }, :url => admin_web_referenz_bild_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_web_referenz_bild_path(@web_referenz_bild.id) %> |
+<%= link_to 'Zurück', admin_web_referenz_bilder_path %>

@@ -1,0 +1,14 @@
+<!--
+#  name       :string(255)
+#  titel      :string(255)
+#  inhalt     :text
+#  sorter     :integer(4)
+-->
+<%= link_to 'Zurück', admin_branchen_path %> | <%= link_to 'Bearbeiten', edit_admin_branche_path(@branche.id) %>
+<hr />
+<h2><%= @branche.titel %></h2>
+<p>Name: <strong><%= @branche.name %></strong></p>
+<p>Title: <strong><%= @branche.titel %></strong>
+<hr />
+<%= link_to 'Zurück', admin_branchen_path %> | <%= link_to 'Bearbeiten', edit_admin_branche_path(@branche.id) %>
+<hr />

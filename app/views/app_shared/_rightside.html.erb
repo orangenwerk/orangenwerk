@@ -1,0 +1,124 @@
+<!--		gebeb = %w[kundenmeinung aktion referenz text]			-->
+
+<% @rightsides.each do |side| %>
+	<% if side.geber == 'text' %>
+		<div class="rightside_box rounded_box"> 
+			<div class="rightside_top <%= side.klasse %>">
+				<div class="right_headline">
+					<%= side.headline %>
+				</div>
+	
+			</div>
+			<div class="pad10r">
+				<div class="no_padding">
+					<%= raw side.inhalt %>
+				</div>
+			</div>	
+		</div>
+	<% elsif side.geber == 'kundenmeinung' %>
+		<div class="rightside_box rounded_box">
+			<% @kdm = KundenMeinung.random %>
+			<% @kdm.each do |km| %>
+				<div class="rightside_top kundenmeinung">
+					<div class="right_headline">
+						Kundenmeinung
+					</div>
+	
+				</div>
+				<div class="pad10t">
+					<div class="no_padding">
+						<%= raw km.inhalt %>
+					</div>
+				</div>
+				<div class="pad10r black">
+						<%= km.kunden_name %> | <%= km.firma %>
+				</div>
+			<% end %>
+		</div>
+	<% elsif side.geber == 'referenz' %>
+		<div class="rightside_box rounded_box side_ref">
+			<% @ref = Referenz.random(2) %>
+			<div class="rightside_top referenz">
+				<div class="right_headline">
+					Referenzen
+				</div>
+	
+			</div>
+			<div class="side_ref_box">
+			<div class="side_pic_ref">
+				<% @ref.each do |refpic| %>
+					<%= render 'app_icons/referenz_nav', :icon => refpic %>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+	<% elsif side.geber == 'kunden_4' %>
+		<div class="rightside_box rounded_box side_ref">
+			<% @ref = Kunde.random(6) %>
+			<div class="rightside_top <%= side.klasse %>">
+				<div class="right_headline">
+					Kunden
+				</div>
+	
+			</div>
+			<div class="k_side icon_box">
+				<% @ref.each do |refpic| %>
+					<%= render 'app_icons/kunde_mini', :icon => refpic %>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+		</div>
+	<% elsif side.geber == 'kunden_2_text' %>
+		<div class="rightside_box rounded_box side_ref">
+			<% @ref = Kunde.random(4) %>
+			<div class="rightside_top <%= side.klasse %>">
+				<div class="right_headline">
+					Kunden
+				</div>
+	
+			</div>
+			<div class="side_ref_box">
+				<% if side.inhalt && side.inhalt != '' %>
+			<div class="pad10t">
+				<div class="no_padding">
+						<%= raw side.inhalt %>
+				</div></div>
+				<% end %>
+			<div class="k_side icon_box">
+				<% @ref.each do |refpic| %>
+					<%= render 'app_icons/kunde_mini', :icon => refpic %>
+				<% end %>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+	<% elsif side.geber == 'aktion' %>
+		<% if Aktion.all.count > 0 %>
+		<div class="rightside_box rounded_box">
+			<% @akt = Aktion.random %>
+			<div class="rightside_top aktion">
+				<div class="right_headline">
+					Aktion
+				</div>
+			</div>
+			<% @akt.each do |akti| %>
+				<% if akti.link_url != '' %>
+				<div class="side_pic_akt">
+				<a href="<%= akti.link_url %>">
+						<strong><%= akti.titel %></strong>
+						<%= image_tag akti.bild.url %>
+				</a>
+				</div>
+				<% else %>
+				<div class="side_pic_akt">
+					<strong><%= akti.titel %></strong>
+					<%= image_tag akti.bild.url %>
+				</div>
+				<% end %>
+			<% end %>
+		</div>
+		<% end %>
+	<% end %>
+
+<% end %>

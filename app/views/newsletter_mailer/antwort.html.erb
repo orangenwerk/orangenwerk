@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+	<% if @na_state == 'on' %>
+    <h1>Sie haben sich erfolgreich für unseren Newsletter angemeldet.</h1>
+	<p>
+      Vielen Dank für Ihr Intresse <%= @abo.geschlecht.nil? ? '' : @abo.geschlecht+' ' %><%= @abo.name.nil? ? '' : @abo.name %><br/>
+      .. wir werden Sie ab jetzt über alle wichtigen Dinge rund ums orangenwerk informieren.
+    </p>
+	<% elsif @na_state == 'off' %>
+	<h1>Sie haben sich erfolgreich für unseren Newsletter angemeldet.</h1>
+    <p>
+      Vielen Dank für Ihr Intresse <%= @abo.geschlecht.nil? ? '' : @abo.geschlecht+' ' %><%= @abo.name.nil? ? '' : @abo.name %><br/>
+      .. wir werden Sie ab jetzt über alle wichtigen Dinge rund ums orangenwerk informieren.
+    </p>
+	<% end %>
+    <p>Ihr <%= @std_domain %>-Team</p>
+  </body>
+</html>

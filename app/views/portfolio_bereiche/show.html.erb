@@ -1,0 +1,40 @@
+<% if @referenzen %>
+
+	<% if @referenz %>
+		<%= render 'webref', :ref => @referenz %>
+	<% else %>
+
+		<h1>projekte</h1>
+		<div class="trenner clear"></div>
+		<div class="no_padding">
+			<p>Hier sehen Sie eine Auswahl abgeschlossener Projekte, welche wir als Agentur betreut und realisiert haben. 
+			Unser Kundenspektrum umfasst kleine und mittelständige Unternehmen, aus verschiedensten Bereichen der Wirtschaft und des Handels.</p>
+		</div>
+
+		<div class="trenner clear"></div>
+		<div class="icon_box">
+		<% @referenzen.each do |ref| %>
+			<%= render 'app_icons/referenz_klein', :icon => ref  %>
+		<% end %>
+		</div>
+	<% end %>
+
+<% end %>
+<% if @kunden %>
+<h1>kunden</h1>
+<div class="no_padding">
+<p>
+Unser Kundenspektrum umfasst kleine und mittelständige Unternehmen, aus verschiedensten Bereichen der Wirtschaft und des Handels. Seit 2007 sind wir Vertragspartner verschiedener Gastronomiezulieferer und Brauereien, wodurch sich in der Werbetechnik eine Spezialisierung auf die Bereiche Gastronomie und Eventwerbung herauskristallisiert hat.</p><br/>
+<p>
+Durch die Verstärkung unseres Teams, sowie langfristige Investitionen in unseren Maschinen- und Fuhrpark konnten wir 2009/2010 ein enormes Wachstum vorweisen und einige weitere namhafte Unternehmen in unseren Kundenkreis aufnehmen.<p></div>
+<div class="trenner clear"></div>
+<div class="icon_box">
+<% @kunden.each do |kunde| %>
+	<%= render 'app_icons/kunde_klein', :icon => kunde %>
+<% end %>
+</div>
+<% end %>
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

@@ -1,0 +1,7 @@
+<h2>Branche bearbeiten</h2>
+<%= form_for @branche, :html => { :multipart => true }, :url => admin_branche_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_branche_path(@branche.id) %> |
+<%= link_to 'Zurück', admin_branchen_path %>

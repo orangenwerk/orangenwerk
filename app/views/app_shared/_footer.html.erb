@@ -1,0 +1,26 @@
+<footer>
+	<div class="container">
+		<br class="clear" /><br class="clear" />
+		<p class="left"><strong>&copy; 2011 orangenwerk</strong></p>
+		<p class="right">
+		<%= link_to 'start', root_path %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to 'produkte', produkte_path %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to 'portfolio', portfolio_bereiche_path %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to 'news', news_bereiche_path %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to 'kontakt', kontakt_bereiche_path %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to "agb", '/AGB'  %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to "faq's", '/FAQs'  %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to "sitemap", '/sitemap'  %>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<%= link_to "impressum", '/kontakt/kontaktdaten/impressum'  %>
+		</p>
+			<br class="clear" /><br class="clear" />
+			<%= debug(params) if Rails.env.development? %>
+	</div>
+	<ul id="description_of_site">
+		<% keywds = %w(internet werbung webdesign werbetechnik schilder t-shirts lichtwerbung oranienburg berlin) -%>
+		<% keywds.each do |kw| %>
+			<li><%= kw %></li>
+		<% end %>
+	</ul>
+	<div class="clear"></div>
+</footer>

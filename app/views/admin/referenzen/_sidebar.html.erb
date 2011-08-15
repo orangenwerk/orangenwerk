@@ -1,0 +1,48 @@
+<div id="admin_content_aside" class="section">
+	<ul class="o_box">
+		
+		<% if @referenz && @referenz.webref && @referenz.web_referenzen.count == 1 %>
+		<li>
+			<a href="<%= admin_web_referenz_web_referenz_bilder_path(@referenz.web_referenzen.first) %>">
+				Bilder [Screenshots]
+				<div class="Xcounter"><%= @referenz.web_referenzen.first.web_referenz_bilder.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		
+		<% else %>
+		<li>
+			<a href="<%= admin_referenz_referenz_bilder_path(@referenz) %>">
+				Bilder [LightBox]
+				<div class="Xcounter"><%= @referenz.referenz_bilder.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		<% end %>
+		
+		<li>
+			<a href="<%= admin_referenz_produkt_bereiche_path(@referenz) %>">
+				Produkt-Bereiche
+				<div class="Xcounter"><%= @referenz.produkt_bereiche.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		
+		<li>
+			<a href="<%= admin_referenz_produkt_kategorien_path(@referenz) %>">
+				Produkt-Kategoiren
+				<div class="Xcounter"><%= @referenz.produkt_kategorien.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		
+		<li>
+			<a href="<%= admin_referenz_produkte_path(@referenz) %>">
+				Produkte
+				<div class="Xcounter"><%= @referenz.produkte.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		
+	</ul>
+</div>

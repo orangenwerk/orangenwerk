@@ -1,0 +1,105 @@
+<div id="banner_container">
+<div id="banner_box">
+	
+		
+<% if @slider %>
+			<div id="test3">
+				
+			</div>
+			<% javatext = '' %>
+			<% javatext = '<script type="text/javascript">
+			  $(function() {
+			    $("#banner_box").crossSlide({
+					fade: 3,
+					shuffle: true
+			    }, [ // Bilder
+			       ' %>
+			
+					
+					<% @slider.each do |slider| %>
+			<% javatext +='{ src: "'+slider.bild.url()+'",
+			        from: "'+slider.von_vertikal+' '+slider.von_horizontal+' '+slider.von_zoom+'",
+			        to:   "'+slider.zu_vertikal+' '+slider.zu_horizontal+' '+slider.zu_zoom+'",
+			        time: '+slider.dauer.to_s+'
+			      }, ' %>
+				<% end %>
+			<% javatext +=']);
+			  });
+			</script>' %>	
+		
+
+			<%= raw render :text => javatext %>
+			
+<% elsif !@banners.nil? %>
+
+		<% if @banners.count > 1 %>
+				<% javatext = '' %>
+				<% javatext = '<script type="text/javascript">
+				  $(function() {
+				    $("#banner_box").crossSlide({
+						fade: 3,
+						sleep: 3,
+						shuffle: true,
+						doubleFade: true
+				    }, [ // Bilder
+				       ' %>
+				<% @banners.each do |slider| %>
+				<% javatext +='{ src: "'+slider.bild.url()+'"}, ' %>
+					<% end %>
+				<% javatext +=']);
+				  });
+				</script>' %>	
+				
+				<%= raw render :text => javatext %>
+		<% elsif @banners.count > 0 %>
+				<% @banners.each do |banner| %>
+					<%if banner.link.empty?%>
+	        			<%=image_tag( banner.bild.url(:original)) %>
+	      			<%else%>
+	        			<%= link_to(image_tag(banner.bild.url(:original)), banner.link) %>
+	      			<%end%>
+				<% end %>
+		<% else %>
+				<script type="text/javascript" charset="utf-8">
+				$(document).ready(function() {
+
+	
+					$('#banner_box').crossSlide({
+						  sleep: 3,
+						  fade: 1
+						}, [
+						  { src: '/images/header-textilien.jpg'   },
+						  { src: '/images/header-beschriftungen.jpg' }
+						]);
+				});  
+				</script>
+		<% end %>
+<% else %>
+		<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+        
+	    
+			$('#banner_box').crossSlide({
+				  sleep: 5,
+				  fade: 1,
+				shuffle: true,
+				doubleFade: true
+				}, [
+				  { src: '/images/header-textilien.jpg'   },
+				  { src: '/images/header-beschriftungen.jpg' },
+				  { src: '/images/header-grafik.jpg' },
+				  { src: '/images/header-digitaldruck.jpg' }
+				]);
+		});  
+		</script>
+<% end %>
+
+</div>	
+</div>
+
+
+
+
+
+
+    

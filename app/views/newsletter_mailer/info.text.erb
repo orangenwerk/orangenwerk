@@ -1,0 +1,8 @@
+Neuer Newsletter angemeldet.
+
+<%= @abo.geschlecht.nil? ? '' : @abo.geschlecht+' ' %><%= @abo.name.nil? ? '' : @abo.name %>
+
+<%= @abo.email %>
+
+
+<%= @std_domain %> - <%= Time.now %></p>

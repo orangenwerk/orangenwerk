@@ -1,0 +1,7 @@
+<h2>Banner bearbeiten</h2>
+<%= form_for @banner, :html => { :multipart => true }, :url => admin_banner_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_banner_path(@banner.id) %> |
+<%= link_to 'Zurück', admin_banners_path %>

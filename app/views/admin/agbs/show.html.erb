@@ -1,0 +1,17 @@
+<!--
+#  name       :string(255)
+#  titel      :string(255)
+#  headline   :string(255)
+#  inhalt     :text
+#  paragraf   :string(255)
+-->
+<%= link_to 'Zurück', admin_agbs_path %> | <%= link_to 'Bearbeiten', edit_admin_agb_path(@agb.id) %>
+<hr />
+<h2><%= @agb.paragraf %> <%= @agb.headline %></h2>
+<p>Name: <strong><%= @agb.name %></strong></p>
+<p>headline: <strong><%= @agb.headline %></strong>	
+<hr />
+<%= raw @agb.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_agbs_path %> | <%= link_to 'Bearbeiten', edit_admin_agb_path(@agb.id) %>
+<hr />

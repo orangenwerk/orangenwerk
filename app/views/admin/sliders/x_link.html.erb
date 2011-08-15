@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "Slider", admin_sliders_path, :class => ("current" if @activio && (@activio == 'admin_start'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'Slider', admin_sliders_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_slider'))  %></li>
+
+Sub:
+
+<li><%= link_to 'Slider', admin_sliders_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_slider'))  %></li>

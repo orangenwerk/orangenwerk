@@ -1,0 +1,57 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: aktionen
+#
+#  id                :integer(4)      not null, primary key
+#  name              :string(255)
+#  titel             :string(255)
+#  link_name         :string(255)
+#  link_url          :string(255)
+#  aktiv             :boolean(1)
+#  link              :boolean(1)
+#  all_aerea         :boolean(1)
+#  zeitlimit         :boolean(1)
+#  von               :datetime
+#  bis               :datetime
+#  bild_file_name    :string(255)
+#  bild_content_type :string(255)
+#  bild_file_size    :integer(4)
+#  bild_updated_at   :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  link_name: MyString
+  link_url: MyString
+  aktiv: false
+  link: false
+  all_aerea: false
+  zeitlimit: false
+  von: 2010-09-13 16:12:29
+  bis: 2010-09-13 16:12:29
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-13 16:12:29
+
+two:
+  name: MyString
+  titel: MyString
+  link_name: MyString
+  link_url: MyString
+  aktiv: false
+  link: false
+  all_aerea: false
+  zeitlimit: false
+  von: 2010-09-13 16:12:29
+  bis: 2010-09-13 16:12:29
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-13 16:12:29

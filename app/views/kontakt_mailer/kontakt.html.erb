@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Neue Kontakt-Mail.</h1>
+    <p><%= @kontakt.geschlecht+' '+@kontakt.name %><%= @kontakt.vorname.nil? ? '' : ', '+@kontakt.vorname %></p>
+	<p><%= @kontakt.email %></p>
+    <br/>
+<p><%= @kontakt.inhalt %></p>
+	<br/>
+    <p><%= @std_domain %> - <%= I18n.l Time.now, :format => :short %></p>
+  </body>
+</html>

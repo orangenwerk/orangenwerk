@@ -1,0 +1,28 @@
+<div class="fields many_form">
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="inna label"><%= f.label :name %></th>
+		<td class="inna view"><div class="remove_nested_form"><%= link_to_remove_fields "löschen", f %></div>
+		</td>
+	</tr>
+	<tr>
+		<th class="inna label"><%= f.label :name %></th>
+		<td class="inna view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="inna label"><%= f.label :icon, 'Bild ( 300 x 200 px )' %></th>
+		<td class="inna view"><%= f.file_field :icon %></div>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="inna label"><%= f.label :sorter %></th>
+		<td class="inna view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %></div>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+</tbody></table>
+</div>

@@ -1,0 +1,159 @@
+/* __________________________________________________    xxx    __________________________________________________ */
+#g_map{ width: 840px; height: 550px; background-color: rgba(247,247,247,.3); border: 1px solid rgba(123,103,86,.3); border-radius: 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; }
+#g_map iframe.g_map_frame { border: 1px solid rgba(123,103,86,.5); margin: 9px;}
+/* ************************************************** xxx - ENDE ************************************************** */
+
+
+.clear { clear: both;}
+
+.myleft { float: left; margin:0; margin-right: 10px;}
+
+.trenner_line { height: 10px; border-bottom: solid 2px rgba(255,102,0,.5); margin: 0 13px 13px 5px; clear:both; }
+
+
+/* __________________________________________________    Referenzen_Navigation    __________________________________________________ */
+ul.ref_nav {width:820px; height: 36px; background: transparent url(/images/ref_nav_bg.png) left top repeat-x; list-style: none; border-top: solid 1px #ff6600; padding: 0 10px;}
+ul.ref_nav li {float:left; height: 36px; background: transparent !important;}
+ul.ref_nav li.backer a {padding: 0 9px 0 25px; background: url("/images/arrow-orange.png") 9px 13px no-repeat !important;}
+ul.ref_nav li a { padding: 0 15px; line-height: 36px; height: 36px; background: transparent !important; display:block; }
+ul.ref_nav li a:hover { background: #fff !important; color: #000;}
+ul.ref_nav li div { padding: 0 15px; line-height: 36px; height: 36px; background: transparent !important; display:block; }
+ul.ref_nav li div:hover { background: #fff !important; color: #000;}
+ul.ref_nav li.backer a:hover { background: transparent url("/images/arrow-orange.png") 9px 13px no-repeat !important; color:#000;}
+ul.ref_nav li a.activ { background: #fff !important; color: rgb(255,102,0);}
+ul.ref_nav li div.current { background: rgba(255,255,255,.3) !important; /*color: rgb(255,102,0);*/ color:#000;}
+/* ************************************************** Referenzen_Navigation - ENDE ************************************************** */
+
+
+/* __________________________________________________    xxx    __________________________________________________ */
+#kontakt_box {width:269px; height: 230px; margin: 20px 0; display:block; background: transparent url(/images/vKarte.png) left top no-repeat; }
+#kontakt_box p { padding: 10px 0 0 10px;}
+/* ************************************************** xxx - ENDE ************************************************** */
+
+
+/*
+#kontakt_box {width:228px; margin: 20px 0; display:block; }
+#kontakt_box #kontakt_box_top {width: 228px; height: 15px; background: transparent url(/images/kontakt_box_top.png) left top no-repeat;}
+#kontakt_box #kontakt_box_mid {width: 228px; background: transparent url(/images/kontakt_box_mid.png) left top repeat-y;}
+#kontakt_box #kontakt_box_mid #box_in { width: 208px; margin: 0 10px; font-size: 12px; color: #5e4c3d;}
+#kontakt_box #kontakt_box_bot {width: 228px; height: 20px; background: transparent url(/images/kontakt_box_bot.png) left top no-repeat;}
+*/
+
+
+td.helper-view { height:500px; -webkit-border-radius: 5px; }
+
+#schild_helper___Frame { -webkit-border-radius: 5px; } 
+#schild_helper___Frame table { -webkit-border-radius: 5px; }
+#schild-inhalt { min-height: 500px; display:block;}
+
+#xToolbarRow { -webkit-border-radius: 5px; }
+
+
+/* __________________________________________________    tabs    __________________________________________________ */
+#tabs { width: 851px !importent; height: 597px !importent; margin:0; padding:0; border: solid 1px #ff6500; -webkit-border-radius: 0; position: relative;}
+#tabs ul.ui-tabs-nav { position:absolute; right: 10px; bottom:10px; overflow: hidden; background: transparent; border: 0;}
+#tabs ul.ui-tabs-nav li { float:left; width: 21px; height: 21px; padding:5px; overflow: hidden; background: transparent; border: 0;}
+#tabs ul.ui-tabs-nav li a { width: 21px; height: 21px; display:block; padding:0px; border: 0; background:url(/images/LB_buttons.png) left top no-repeat; overflow: hidden; line-height: 21px; text-align:center; color: #fff;}
+#tabs ul.ui-tabs-nav li.ui-tabs-selected.ui-state-active a { background-position: left bottom;}
+#tabs ul.ui-tabs-nav li a:hover { background-position: left bottom;}
+#tabs div { margin:0; padding:0; width: 851px; height: 597px;}
+.myright { position:absolute; width:851px; height: 50px !important; display:block; border: solid 0px #000; bottom:0px; left:0; background:url(/images/LB_bg.png) left top repeat; }
+.myright p { padding: 5px; color: #fff; }
+
+.orange { color: #ff6600; }
+.grey { color: #999999; }
+/* ************************************************** tabs - ENDE ************************************************** */
+
+
+/* __________________________________________________    web-tabs    __________________________________________________ */
+#tabis { width: 838px !important; height: 480px !important; margin:0; padding:0; border: solid 1px rgba(123,103,86,.5); -webkit-border-radius: 0; position: relative;}
+#tabis ul.ui-tabs-nav { position:absolute; right: 10px; bottom:10px; overflow: hidden; background: transparent; border: 0;}
+#tabis ul.ui-tabs-nav li { float:left; width: 21px; height: 21px; padding:5px; overflow: hidden; background: transparent; border: 0;}
+#tabis ul.ui-tabs-nav li a { width: 21px; height: 21px; display:block; padding:0px; border: 0; background:url(/images/LB_buttons.png) left top no-repeat; overflow: hidden; line-height: 21px; text-align:center; color: #fff;}
+#tabis ul.ui-tabs-nav li.ui-tabs-selected.ui-state-active a { background-position: left bottom;}
+#tabis ul.ui-tabs-nav li a:hover { background-position: left bottom;}
+#tabis div { margin:0; padding:0; width: 838px; height: 480px;}
+#tabis .myleft .loadable-image img.center_pic {margin-top: 200px;}
+#tabis .myright { position:absolute; width:838px; height: 50px !important; display:block; border: solid 0px #000; bottom:0px; left:0; background:url(/images/LB_bg.png) left top repeat; }
+#tabis .myright p { padding: 5px; color: #fff; }
+
+/* ************************************************** web-tabs - ENDE ************************************************** */
+
+
+
+/* __________________________________________________    Prdukt_tabs    __________________________________________________ */
+#prdukt_tabs ul.ui-tabs-nav.ui-helper-reset.ui-helper-clearfix.ui-widget-header.ui-corner-all { background: transparent; }
+#prdukt_tabs.ui-tabs { border: 0; }
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav { background: transparent !important; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; border: 0; border-bottom: solid 1px #999; padding: 0.2em 1em 0px; }
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav li {margin: 2px 0 -1px 0;}
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav li.ui-state-hover {margin: 2px  0 -1px 0;}
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav li.ui-state-active {margin: 0 0 -1px 0; color: #ff6600;}
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav li a { font-size: 13px; margin: 0; padding: 3px 10px 5px;}
+#prdukt_tabs.ui-tabs ul.ui-tabs-nav li.ui-state-active a { font-size: 13px; margin: 0; padding: 5px 10px 5px; color: #ff6600;}
+#prdukt_tabs div.ui-tabs-panel.ui-widget-content { padding: 10px 0;}
+/* ************************************************** Prdukt_tabs - ENDE ************************************************** */
+
+
+/* __________________________________________________    projekt_tabs    __________________________________________________ */
+#projekt_tabs_top { width: 844px; height:10px; border:0; margin:0; padding:0; background: url(/images/projekt_tab_top.png) left top no-repeat; }
+#projekt_tabs_bot { width: 844px; height:75px; border:0; margin:0; padding:0; background: url(/images/projekt_tab_bot.png) left top no-repeat; }
+#projekt_tabs { width: 834px; border:0; margin:0; padding:5px; background: url(/images/projekt_tab_mid.png) left top repeat-y; border-radius: 0; -moz-border-radius: 0; -webkit-border-radius: 0; }
+#projekt_tabs ul.projekt_tabs { float: right;  background: transparent; margin: 5px 17px 30px 0; border:0; }
+#projekt_tabs ul.projekt_tabs li { clear: both; color: #000; border:0; background:transparent; font-size: 12px; font-weight: normal; margin: 5px 0;}
+#projekt_tabs ul.projekt_tabs li.projekt_name { clear: both; margin-bottom: 15px; color: #7b6756; font-weight: bold; }
+#projekt_tabs ul.projekt_tabs li a { color: #7b6756; border:0; background:transparent; margin:0; padding:0; }
+#projekt_tabs ul.projekt_tabs li.ui-state-active a { text-shadow: rgba(255,102,0,.6) 0 1px 1px; }
+#projekt_tabs div.ui-tabs-panel.ui-widget-content.ui-corner-bottom { float: left; width: 550px; border: 0; padding:0; margin:0; margin-bottom: -50px;}
+/* ************************************************** projekt_tabs - ENDE ************************************************** */
+
+
+/* __________________________________________________    colorbox    __________________________________________________ */
+#cboxContent form.login { padding: 20px 20px 5px;}
+#cboxContent form.login input.string { width: 220px !important;}
+#cboxContent form.login div.actions { margin: 10px 0; padding:0 5px;}
+#cboxContent a.forgot-password { width:330px; height:25px; line-height: 25px; text-align: center; -moz-border-radius: 5px; -webkit-border-radius: 5px; display:block; border: solid 1px rgba(0,0,0,.5); margin: 0 auto;}
+#cboxContent a.forgot-password:hover { background: rgba(255,102,0,.5); -webkit-box-shadow:2px 2px 10px #000; }
+#cboxContent form.login input.button { width: 150px !important; height: 33px; line-height: 30px; font-size: 16px; margin: 7px; background: transparent; background: rgba(255,102,0,.5); border: solid 1px rgba(255,102,0,.5); text-shadow: rgba(0,0,0,.5) 0 1px 1px; padding:0;-webkit-box-shadow:2px 2px 5px #000; }
+#cboxContent form.login input.button:hover { background: rgba(255,102,0,.8); -webkit-box-shadow:2px 2px 10px #000; }
+#cboxContent form.login a.signup { width: 60px !important; height: 25px !important; line-height: 25px; font-size: 12px; margin: 3px auto; background: transparent; border: solid 1px rgba(255,102,0,0); text-shadow: rgba(0,0,0,.5) 0 1px 1px; padding:0; display:block;}
+#cboxContent form.login a.signup:hover { background: rgba(255,102,0,0); border: solid 1px rgba(255,102,0,.8); -moz-border-radius: 5px; -webkit-border-radius: 5px; -webkit-box-shadow:2px 2px 5px #000; -moz-box-shadow:3px 3px 5px #666;}
+#colorbox body { padding: 0; margin: 0 auto;}
+#colorbox .section { padding: 0; margin: 0;}
+#cboxTitle { background: transparent !important; visibility:hidden; display:none;}
+#cboxContent #kontent { width: 300px; background: #fff url(/images/kontentTop_BG.png) top left repeat-x; }
+#cboxContent #kontent #inhalt { width: 300px; height: 300px; background: transparent !important; margin: 0; }
+/* ************************************************** colorbox - ENDE ************************************************** */
+
+
+/* __________________________________________________    E R R O R    __________________________________________________ */
+div.section.error-messages { -moz-border-radius: 15px; -webkit-border-radius: 15px; background: rgba(220,0,0,.3); text-shadow: rgba(255,255,255,.6) 0 1px 1px; border: 1px solid rgba(220,0,0,.9); -webkit-box-shadow:0px 0px 15px #666; -moz-box-shadow:5px 5px 5px #666; margin:10px; padding:20px 50px; color: #555;}
+div.section.error-messages h2 { font-size: 18px; font-weight: bold; color: #666;}
+input, select, textarea {  -moz-border-radius: 5px; background: rgba(200,200,200,.1) !important;}
+/* ************************************************** E R R O R - ENDE ************************************************** */
+
+
+/* __________________________________________________    N E W S    __________________________________________________ */
+#hot-news-head { width: 865px; height: 58px; margin: -8px -15px 20px; background: transparent url(/images/HotNews.png) top left no-repeat; }
+#Home-HotNews { width: 732px; height: 48px; position: relative; margin: 0 auto 50px; background: transparent url(../images/Home-HotNews.png) no-repeat; }
+#Home-HotNews #NewsIn { width: 535px; height: 18px; position: absolute; top: 16px; left: 178px; line-height: 18px; font-size: 14px; color: #5e4c3d; text-align: left;}
+#Home-HotNews #NewsIn a { font-size: 13px; font-weight: bold; color: #5e4c3d; }
+#Home-HotNews #NewsIn a:hover { text-decoration: underline; }
+#hot-news-head { width: 865px; height: 58px; margin: -8px -15px 20px; background: transparent url(/images/HotNews.png) top left no-repeat; }
+#IhrKommentar { width: 100%; height: 83px; background: transparent url(/images/IhrKommentar.png) top left no-repeat; margin: 60px 0 20px;}
+#Kommentar1 { width: 800px; height: 36px; background: transparent url(/images/kommentar_pic.png) 2px 2px no-repeat; margin: 5px 5px; padding: 0 40px; line-height: 36px; font-size: 16px; font-weight: bold; text-shadow: rgba(255,255,255,.6) 0 1px 1px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: solid 1px rgba(150,150,150,.5); background-color: rgba(190,190,190,.1);}
+#Kommentar2 { width: 100%; height: 32px; background: transparent url(/images/kommentar_2.png) top left no-repeat; margin: 0;}
+#Kommentar3 { width: 780px; height: 48px; background: transparent url(/images/kommentar_3.png) top left no-repeat; margin: 0 auto;}
+/* ************************************************** N E W S - ENDE ************************************************** */
+
+img.center_pic { margin: auto auto;}
+
+DIV#loader {
+            border: 1px solid #ccc;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+DIV#loader.loading {
+            background: url(/images/spinner.gif) 50% 50% no-repeat; }
+
+.loadable-image { width:100%; height: 100%; text-align:center; vertical-align: middle;}

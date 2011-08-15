@@ -1,0 +1,6 @@
+<h2>KundenMeinung Neu</h2>
+<%= form_for @kunden_meinung, :html => { :multipart => true }, :url => { :controller => 'admin/kunden_meinungen'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_kunden_meinungen_path %>

@@ -1,0 +1,2 @@
+$("#selected-leistungen").html("<%= escape_javascript(render(:partial => "listing", :locals => {:data => @leistungen})) %>");
+$("#<%= dom_id @leistung, :sel %>").hide();

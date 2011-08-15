@@ -1,0 +1,11 @@
+<nav>
+  			<ul class="main-nav">
+    			<li><%= link_to 'start', root_path, :class => ("current" if @activio && (@activio == 'home')) %></li>
+			    <li><%= link_to 'produkte', produkte_path, :class => ("current" if @activio && (@activio == 'produkt_bereich'))  %></li>
+				<li><%= link_to 'portfolio', portfolio_bereiche_path, :class => ("current" if @activio && (@activio == 'portfolio'))  %></li>
+				<li><%= link_to 'news', news_bereiche_path, :class => ("current" if @activio && (@activio == 'news'))  %></li>
+				<li><%= link_to 'kontakt', kontakt_bereiche_path, :class => ("current" if @activio && (@activio == 'kontakt'))  %></li>
+			
+			</ul>
+			<div class="clear"></div>
+		</nav>

@@ -1,0 +1,6 @@
+<h2>ReferenzBild Neu</h2>
+<%= form_for @referenz_bild, :html => { :multipart => true }, :url => { :controller => 'admin/referenz_bilder'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_referenz_bilder_path %>

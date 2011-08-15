@@ -1,0 +1,6 @@
+<h2>NewsBereich Neu</h2>
+<%= form_for @news_bereich, :html => { :multipart => true }, :url => { :controller => 'admin/news_bereiche'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_news_bereiche_path %>

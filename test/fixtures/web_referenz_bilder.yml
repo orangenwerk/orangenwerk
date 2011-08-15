@@ -1,0 +1,40 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: web_referenz_bilder
+#
+#  id                      :integer(4)      not null, primary key
+#  name                    :string(255)
+#  sorter                  :integer(4)
+#  web_referenz_id         :integer(4)
+#  screenshot_file_name    :string(255)
+#  screenshot_content_type :string(255)
+#  screenshot_file_size    :integer(4)
+#  screenshot_updated_at   :datetime
+#  created_at              :datetime
+#  updated_at              :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  web_referenz_bild: 
+  screenshot_file_name: MyString
+  screenshot_content_type: MyString
+  screenshot_file_size: 1
+  screenshot_updated_at: 2010-09-09 09:38:17
+
+two:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  web_referenz_bild: 
+  screenshot_file_name: MyString
+  screenshot_content_type: MyString
+  screenshot_file_size: 1
+  screenshot_updated_at: 2010-09-09 09:38:17

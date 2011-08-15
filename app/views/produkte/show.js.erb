@@ -1,0 +1,2 @@
+$('#bc_wrap').fadeOut().html("<%= escape_javascript(render 'breadcrumps')%>").fadeIn();
+$('#produkt_wrap').html("<%= escape_javascript(render 'show_produkt', :produkt => @produkt)%>");

@@ -1,0 +1,29 @@
+<% if @news %>
+<h1>News</h1>
+<div class="trenner clear"></div>
+<div class="no_padding">
+	<%= raw @news_bereich.inhalt %>
+</div>
+
+<br/>
+<% @news.each do |newz| %>
+<div class="o_box news_box">
+<div class="trigger <%= 'active' if @newsname == newz.name %>">
+<span class="date"><%= newz.datum.strftime('%d.%m.%Y') %></span>
+<h3><%= newz.headline %></h3>
+
+</div>
+<div class="toggle_container">
+	<div class="x_trenner"></div>
+	<br class="clear"/>
+<p><%= raw newz.inhalt %></p>
+<br/>
+<p><strong><%= newz.autor %></strong></p>
+</div>
+</div>
+
+<% end %>
+<% end %>
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

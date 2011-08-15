@@ -1,0 +1,16 @@
+<!--
+#  name       :string(255)
+#  titel      :string(255)
+#  frage      :string(255)
+#  antwort    :text
+#  sorter     :integer(4)
+-->
+<%= link_to 'Zurück', admin_faqs_path %> | <%= link_to 'Bearbeiten', edit_admin_faq_path(@faq.id) %>
+<hr />
+<h2><%= @faq.name %></h2>
+<p>Frage: <strong><%= @faq.frage %></strong></p>
+<p>Antwort:</p>
+<%= raw @faq.antwort %>
+<hr />
+<%= link_to 'Zurück', admin_faqs_path %> | <%= link_to 'Bearbeiten', edit_admin_faq_path(@faq.id) %>
+<hr />

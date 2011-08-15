@@ -1,0 +1,17 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_start_head_sliders_path %> | <%= link_to 'Bearbeiten', edit_admin_start_head_slider_path(@start_head_slider.id) %>
+<div class="stand"><%= @start_head_slider.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+
+<div style="float:right; margin:5px"><%= image_tag @start_head_slider.bild.url(:thumb) %></div>
+<h2><%= @start_head_slider.name %></h2>
+<p>Name: <strong><%= @start_head_slider.name %></strong></p>
+<p>headline: <strong><%= @start_head_slider.headline %></strong></p>
+<p>headline: <strong><%= @start_head_slider.seite.name if @start_head_slider.seite %></strong></p>
+<hr />
+<%= raw @start_head_slider.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_start_head_sliders_path %> | <%= link_to 'Bearbeiten', edit_admin_start_head_slider_path(@start_head_slider.id) %>
+<hr />

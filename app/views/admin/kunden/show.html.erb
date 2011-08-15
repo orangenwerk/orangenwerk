@@ -1,0 +1,28 @@
+<!--
+#  name               :string(255)
+#  titel              :string(255)
+#  inhalt             :text
+#  datum              :datetime
+#  branche_id         :integer(4)
+#  produkt_bereich_id :integer(4)
+#  icon_file_
+-->
+<%= link_to 'Zurück', admin_kunden_path %> | <%= link_to 'Bearbeiten', edit_admin_kunde_path(@kunde.id) %>
+<div class="stand"><%= @kunde.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+
+<div style="float:right; margin:5px"><%= image_tag @kunde.icon.url %></div>
+<div style="float:right; margin:5px"><%= image_tag @kunde.icon.url(:klein) %></div>
+<div style="float:right; margin:5px"><%= image_tag @kunde.icon.url(:thumb) %></div>
+<h2><%= @kunde.titel %></h2>
+<p>Name: <strong><%= @kunde.name %></strong></p>
+<p>Title: <strong><%= @kunde.titel %></strong></p>
+	<br /><br />
+<p>Branche: <strong><%= @kunde.branche.titel if @kunde.branche %></strong></p>
+<p>Bereiche: <strong><%= @kunde.produkt_bereiche.map{ |pb| pb.name }.join(', ') %></strong></p>
+<p><%= distance_of_time_in_words(@kunde.datum, Time.now) %> .. <%= @kunde.datum.strftime('%d.%m.%Y') %> </p>
+<p>Datum: <strong><%= @kunde.datum %></strong></p>
+<hr />
+
+<%= link_to 'Zurück', admin_kunden_path %> | <%= link_to 'Bearbeiten', edit_admin_kunde_path(@kunde.id) %>
+<hr />

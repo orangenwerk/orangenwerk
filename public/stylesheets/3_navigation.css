@@ -1,0 +1,28 @@
+nav { white-space: nowrap; }
+.top-nav {float:left; padding:0;}
+.top-nav li { list-style-type: none; display: inline-block; padding: 0 10px; background: transparent;}
+.top-nav li a {line-height: 35px; font-weight:normal; color: #000; }
+.top-nav li a.current { font-weight:bold; }
+.top-nav li a:hover { color: #ff7f0f; }
+
+
+.account-nav {float:right; padding:0;}
+body.app .account-nav {float:right; margin-right:270px; padding:0;}
+.account-nav li { list-style-type: none; display: inline-block; padding: 0 5px; background: transparent;}
+.account-nav li a {line-height: 35px; font-weight:normal; color: #000; }
+.account-nav li a.current { font-weight:bold; }
+.account-nav li a:hover { color: #ff7f0f; }
+
+
+.main-nav { height: 42px; padding:0; padding-left: 200px; float:left; }
+.with_aside .main-nav { padding-left: 0; }
+
+.main-nav li { margin: 0 10px 0 0; list-style-type: none; display: inline-block; line-height: 32px;  background: transparent; padding:0; }
+
+.main-nav li a { padding: 0 20px; line-height: 32px; display:block; font-weight: normal; color: #ff6600; font-size: 18px;
+	-webkit-border-bottom-right-radius: 5px; -webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;}
+
+.main-nav li a.current { background: #ff7f0f url('/images/mid_stripe.png') repeat-x; opacity:.9; color: #fff; background-position: 0px -7px;}
+.main-nav li a:hover { background: #ff7f0f url('/images/mid_stripe.png') repeat-x; opacity:.7; color: #fff; background-position: 0px -7px;}

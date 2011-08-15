@@ -1,0 +1,29 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: faqs
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  frage      :string(255)
+#  antwort    :text
+#  sorter     :integer(4)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  frage: MyString
+  antwort: MyText
+  sorter: 1
+
+two:
+  name: MyString
+  titel: MyString
+  frage: MyString
+  antwort: MyText
+  sorter: 1

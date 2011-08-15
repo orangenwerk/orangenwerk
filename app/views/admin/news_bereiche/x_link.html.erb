@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "News Bereiche", admin_news_bereiche_path, :class => ("current" if @activio && (@activio == 'admin_news_bereich'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'News Bereiche', admin_news_bereiche_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_news_bereich'))  %></li>
+
+Sub:
+
+<li><%= link_to 'News Bereiche', admin_news_bereiche_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_news_bereich'))  %></li>

@@ -1,0 +1,6 @@
+<h2>WebReferenz Neu</h2>
+<%= form_for @web_referenz, :html => { :multipart => true }, :url => { :controller => 'admin/web_referenzen'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_web_referenzen_path %>

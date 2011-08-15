@@ -1,0 +1,99 @@
+<% content_for :head do %>
+	<%= javascript_include_tag 'pcnt.table_sort.js' %>
+	<script type="text/javascript">
+        $(document).ready(function() {
+            //  Randomly Create Data Rows
+            // Initialise Plugin
+            var options1 = {
+                additionalFilterTriggers: [$('#quickfind')],
+                clearFiltersControls: [$('#cleanfilters')],
+            };
+
+            $('#demotable1').tableFilter(options1);
+			
+			var grid2 = $('#demotable2');
+			var options2 = {                
+                filteringRows: function(filterStates) {										
+					grid2.addClass('filtering');
+                },
+				filteredRows: function(filterStates) {      															
+					grid2.removeClass('filtering');					
+					setRowCountOnGrid2();
+                }
+            };			
+			function setRowCountOnGrid2() {
+				var rowcount = grid2.find('tbody tr:not(:hidden)').length;
+				$('#rowcount').text('(Rows ' + rowcount + ')');										
+			}
+			
+			grid2.tableFilter(options2); // No additional filters			
+			setRowCountOnGrid2();
+        });
+    </script>
+<style>
+* {	font-size:8pt;}
+table, td, th {	border: solid 1px silver; color:#666; padding:3px 5px 3px 5px}
+th { background-color:#333; color:#fff; font-size:0.85em }
+a {	color:gray; }
+.filtering { background-color:light-gray}
+#jqtf_filters { list-style:none; }
+#jqtf_filters li { display:inline-block; position:relative; float:left; margin-bottom:20px }
+</style>
+	
+<% end %>
+
+<br/><br/>
+	<strong>Schnell-Suche ::</strong>..<input type="text" id="quickfind" width="200"/>
+<br/><br/>
+<a id="cleanfilters" href="#">Filter aufheben</a>
+<br/><br/>
+
+<table id="demotable1">
+<thead>
+  <tr class="pretty">
+	<th filter='false'>Icon</th>
+    <th filter='false'>Name</th>
+	<th filter-type='ddl'>Web? </th>
+	<th filter-type='ddl'>Branche </th>
+	<% unless @produkt %>
+	<th filter='false'>Bilder </th>
+	<th filter='false'>Produkt-<br/>Bereiche </th>
+	<th filter='false'>Produkt-<br/>Kategorien </th>
+	<th filter='false'>Produkte </th>
+    <th filter='false'></th>
+    <th filter='false'></th>
+	<% end %>
+    <th filter='false'></th>
+  </tr>
+</thead>
+<tbody>
+	
+
+
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td><%= image_tag help_me.icon.url(:thumb) %></td>
+    <td><%= help_me.name %></td>
+	<td><%= help_me.webref ? 'JA' : 'Nein' %></td>
+	<td><%= help_me.branche ? help_me.branche.titel : '...' %></td>
+  <% if @produkt%>
+	<td class="actions">	                         
+		      <%= link_to_delete help_me, :url => remove_admin_produkt_referenz_url(@produkt, help_me), :name => icon("delete")+' Löschen !' %>
+  	    </td>
+  <% else %>	
+	<td><%= help_me.referenz_bilder.count %></td>
+	<td><%= help_me.produkt_bereiche.count %></td>
+	<td><%= help_me.produkt_kategorien.count %></td>
+	<td><%= help_me.produkte.count %></td>
+	
+	<td><%= link_to show_pic, admin_referenz_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_referenz_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_referenz_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+  <% end %>
+  </tr>
+<% end %>
+
+</tbody>
+</table>
+
+

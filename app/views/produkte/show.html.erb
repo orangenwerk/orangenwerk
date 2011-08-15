@@ -1,0 +1,25 @@
+<!--<div id="bc_wrap">
+	<%# render 'breadcrumps'  %>
+</div>
+-->
+<div id="produkt_wrap">
+<% if @produkt %>
+	<%= render 'show_produkt', :produkt => @produkt  %>
+<% elsif @produkt_kategorie %>
+	<%= render 'show_produkt_kategorie', :produkt_kategorie => @produkt_kategorie   %>
+<% elsif @produkt_bereich %>
+	<%= render 'show_produkt_bereich', :produkt_bereich => @produkt_bereich %>
+<% else %>
+	<h2>Produkte</h2>
+	<div class="trenner clear"></div>
+<% ProduktBereich.all.map do |icon| %>
+<%= render 'icon_produkt_bereich', :icon => icon  %>
+<% end %>
+<div class="trenner"></div>
+<% end %>
+</div>
+
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

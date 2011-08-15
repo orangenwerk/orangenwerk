@@ -1,0 +1,8 @@
+<h2>Produkt Kategorien bearbeiten</h2>
+
+<%= form_for @produkt_kategorie, :html => { :multipart => true }, :url => admin_produkt_kategorie_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_produkt_kategorie_path(@produkt_kategorie.id) %> |
+<%= link_to 'Zurück', admin_produkt_kategorien_path %>

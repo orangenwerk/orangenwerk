@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "Kunden", admin_kunden_path, :class => ("current" if @activio && (@activio == 'admin_portfolio_bereich'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'Kunden', admin_kunden_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_kunde'))  %></li>
+
+Sub:
+
+<li><%= link_to 'Kunden', admin_kunden_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_kunde'))  %></li>

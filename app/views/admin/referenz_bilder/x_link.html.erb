@@ -1,0 +1,12 @@
+Top:
+
+<li><%= link_to "Referenz Bilder", admin_referenz_bilder_path, :class => ("current" if @activio && (@activio == 'admin_portfolio_bereich'))  %></li>
+
+
+Main:
+
+<li><%= link_to 'Referenz Bilder', admin_referenz_bilder_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_referenz_bild'))  %></li>
+
+Sub:
+
+<li><%= link_to 'Referenz Bilder', admin_referenz_bilder_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_referenz_bild_bild'))  %></li>

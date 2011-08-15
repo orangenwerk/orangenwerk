@@ -1,0 +1,7 @@
+<h2>Produkt Kategorien Neu</h2>
+
+<%= form_for @produkt_kategorie, :html => { :multipart => true }, :url => { :controller => 'admin/produkt_kategorien'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_produkt_kategorien_path %>

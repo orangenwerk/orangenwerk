@@ -1,0 +1,85 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<% asideklass = %w[kundenmeinung aktion referenz] %>
+<% asidegeber = %w[kundenmeinung aktion referenz text kunden_2_text kunden_4] %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %>
+			<div class="input-help">x_X_X_X_X__X_X_X_X__XX__X__X_X_XXXX__X_X__X_X_</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :headline %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :headline %>
+			<div class="input-help">x_X_X_X_X__X_X_X_X__XX__X__X_X_XXXX__X_X__X_X_</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :klasse %>
+		</th>
+		<td class="name-view">
+			<%= f.select :klasse, asideklass.map { |c| [c, c] } %>
+			<div class="input-help">technischer Wert zur Parameter-Übergabe! ... don´t care !</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :geber %>
+		</th>
+		<td class="name-view">
+			<%= f.select :geber, asidegeber.map { |c| [c, c] } %>
+			<div class="input-help">A R T  der  S I D E B O X  .. nur 'text' ist variabel !</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :sorter %>
+		</th>
+		<td class="name-view">
+			<%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :inhalt %>
+		</th>
+		<td class="name-view">
+			<%= f.text_area :inhalt, :class => "asid2 fck" %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Seiten:</h3>
+ <% f.fields_for :seiten_sidebars do |builder| %>
+    <%= render "seiten_sidebar_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Seite hinzufuegen", f, :seiten_sidebars %></p>
+</div>
+<div class="trennertop clear"></div>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+	<h3>Produkt_bereiche:</h3>
+ <% f.fields_for :produkt_bereiche_sidebars do |builder| %>
+    <%= render "produkt_bereiche_sidebar_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "Produkt_bereich hinzufuegen", f, :produkt_bereiche_sidebars %></p>
+</div>
+<div class="trennertop clear"></div>
+
+
+<div class="actions"><%= f.submit %></div>
+
+

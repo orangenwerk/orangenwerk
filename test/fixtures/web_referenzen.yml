@@ -1,0 +1,28 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: web_referenzen
+#
+#  id          :integer(4)      not null, primary key
+#  name        :string(255)
+#  titel       :string(255)
+#  inhalt      :text
+#  referenz_id :integer(4)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  url         :string(255)
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  referenz: 
+
+two:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  referenz: 

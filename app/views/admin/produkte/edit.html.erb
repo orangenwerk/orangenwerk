@@ -1,0 +1,76 @@
+<h2>Produkt bearbeiten</h2>
+<div class="section-group">
+  <div class="section-group-inner">
+
+<div id="admin_content_with_aside" class="section">
+<%= form_for @produkt, :html => { :multipart => true }, :url => admin_produkt_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+<br/><hr/><br/>
+<%= link_to 'Anzeigen', admin_produkt_path(@produkt.id) %> |
+<%= link_to 'Zurück', admin_produkte_path %>
+
+
+
+
+	
+</div>
+<div id="admin_content_aside" class="section">
+	<ul class="o_box">
+		<li>
+			<a href="<%= selected_admin_produkt_produkt_detail_bilder_url(@produkt) %>">
+				Detail-Bilder
+				<div class="Xcounter"><%= @produkt.produkt_detail_bilder.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		<li>
+			<a href="<%= selected_admin_produkt_banners_url(@produkt) %>">
+				Banner
+				<div class="Xcounter"><%= @produkt.banners.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		<li>
+			<a href="<%= selected_admin_produkt_referenzen_url(@produkt) %>">
+				Referenzen
+				<div class="Xcounter"><%= @produkt.referenzen.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+		<li>
+			<a href="<%= selected_admin_produkt_leistungen_url(@produkt) %>">
+				Leistungen
+				<div class="Xcounter"><%= @produkt.leistungen.count%></div>
+				<div class="clear"></div>
+				</a>
+		</li>
+	</ul>
+</div>
+
+</div></div>
+
+<div id="Pagez__stuff"></div>
+<br/>
+<p>
+    
+	
+</p>
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $('#new_page_link').click(function (event) {
+        event.preventDefault();
+        
+        $.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ $('#Pagez__stuff').html(r);} });
+      });
+	$('.Pagez_remote_link').click(function (event) {
+        event.preventDefault();
+        $.ajax({type: 'GET', url: this.href, data: ({authenticity_token: AUTH_TOKEN}), success: function(r){ $('#Pagez__stuff').html(r);} });
+      });
+
+    });
+  </script>
+<% end %>

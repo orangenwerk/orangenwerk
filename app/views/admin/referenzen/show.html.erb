@@ -1,0 +1,66 @@
+<!--
+#  name                 :string(255)
+#  titel                :string(255)
+#  inhalt               :text
+#  objekt               :string(255)
+#  ort                  :string(255)
+#  webref               :boolean(1)
+#  branche_id            :integer(4)
+#  produkt_bereich_id   :integer(4)
+#  produkt_kategorie_id :integer(4)
+#  produkt_id           :integer(4)
+#  icon_file
+-->
+<%= link_to 'Zurück', admin_referenzen_path %> | <%= link_to 'Bearbeiten', edit_admin_referenz_path(@referenz.id) %>
+<div class="stand"><%= @referenz.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @referenz.icon.url %></div>
+<div style="float:right; margin:5px"><%= image_tag @referenz.icon.url(:klein) %></div>
+<div style="float:right; margin:5px"><%= image_tag @referenz.icon.url(:thumb) %></div>
+<h2><%= @referenz.name %> <em><%= ' (web-referenz)' if @referenz.webref %></em></h2>
+<p>Name: <strong><%= @referenz.name %></strong></p>
+<p>Objekt: <strong><%= @referenz.objekt %></strong></p>
+<p>Ort: <strong><%= @referenz.ort %></strong></p>
+<p>Branche: <strong><%= @referenz.branche.titel if @referenz.branche %></strong></p>
+<p>Web-Referenz: <strong><%= @referenz.webref ? 'JA' : 'Nein' %></strong></p>
+<p><strong>datum:</strong> <%= distance_of_time_in_words(@referenz.datum, Time.now) if @referenz.datum %> .. <%= @referenz.datum.strftime('%d.%m.%Y') if @referenz.datum %> </p>
+<hr class="clear" />
+<p><strong>Produkt Bereiche: </strong></p>
+<% @referenz.produkt_bereiche.each do |pic| %>
+<%= render 'app_icons/produkt_bereich', :icon => pic  %>
+<% end %>
+<hr class="clear" />
+<p>Produkt Kategorien: <strong></strong></p>
+<% @referenz.produkt_kategorien.each do |pic| %>
+<%= render 'app_icons/produkt_kategorie', :icon => pic  %>
+<% end %>
+<hr class="clear" />
+<p>Produkte: <strong></strong></p>
+<% @referenz.produkte.each do |pic| %>
+<%= render 'app_icons/produkt', :icon => pic  %>
+<% end %>
+<hr class="clear" />
+<hr />
+Bilder:<br/>
+<% @referenz.referenz_bilder.each do |pic| %>
+<%= pic.name %>
+<%= image_tag pic.bild.url(:klein) %>
+<% end %>
+<br/>
+<div class="trennertop clear"></div>
+<p>Webref ? : <strong></strong></p>
+<% @referenz.web_referenzen.each do |pic| %>
+	<%= pic.name %> - <%= pic.url %> <br/>
+	<% pic.web_referenz_bilder.each do |webpic| %>
+		<%= image_tag webpic.screenshot.url(:thumb) %>
+	<% end %>
+<% end %>
+<div class="trennertop clear"></div>
+
+<div class="trennertop clear"></div>
+
+<div class="trennertop clear"></div>
+
+
+<%= link_to 'Zurück', admin_referenzen_path %> | <%= link_to 'Bearbeiten', edit_admin_referenz_path(@referenz.id) %>
+<hr />

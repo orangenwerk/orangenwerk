@@ -1,0 +1,6 @@
+<h2>NewsletterAbo Neu</h2>
+<%= form_for @newsletter_abo, :html => { :multipart => true }, :url => { :controller => 'admin/newsletter_abos'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_newsletter_abos_path %>

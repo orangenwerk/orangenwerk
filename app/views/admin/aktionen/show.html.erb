@@ -1,0 +1,26 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_aktionen_path %> | <%= link_to 'Bearbeiten', edit_admin_aktion_path(@aktion.id) %>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @aktion.bild.url %></div>
+<div style="float:right; margin:5px"><%= image_tag @aktion.bild.url(:thumb) %></div>
+<h2><%= @aktion.titel %></h2>
+<p>Name: <strong><%= @aktion.name %></strong></p>
+<p>Title: <strong><%= @aktion.titel %></strong></p>
+<hr />
+<p>Aktiv: <strong> <%= @aktion.aktiv.nil? ? 'ja' : 'ne' %> </strong></p>
+<p>is link: <strong> <%= @aktion.link.nil? ? 'ja' : 'ne' %> </strong></p>
+<p>Alle Bereiche: <strong> <%= @aktion.all_area.nil? ? 'ja' : 'ne' %> </strong></p>
+<p>Zeit-Limit: <strong> <%= @aktion.zeitlimit.nil? ? 'ja' : 'ne' %> </strong></p>
+
+
+	<p><strong>Von: .. </strong><%= distance_of_time_in_words(@aktion.von, Time.now) %> .. <%= @aktion.von.strftime('%d.%m.%Y') %> </p>
+	<p><strong>Bis: .. </strong><%= distance_of_time_in_words(@aktion.bis, Time.now) %> .. <%= @aktion.bis.strftime('%d.%m.%Y') %></p>
+	<br/>
+<p>Link: <strong><%= link_to @aktion.link_name, @aktion.link_url %></strong></p>
+<p>url: <%= @aktion.link_url %></p>
+<p>anzeige: <%= @aktion.link_name %></p>	
+<hr />
+<%= link_to 'Zurück', admin_aktionen_path %> | <%= link_to 'Bearbeiten', edit_admin_aktion_path(@aktion.id) %>
+<hr />

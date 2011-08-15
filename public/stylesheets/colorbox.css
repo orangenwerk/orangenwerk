@@ -1,0 +1,60 @@
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent{overflow:auto;}
+#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{cursor:pointer;}
+
+
+#cboxOverlay{background:url(/images/cbox/overlay2.png) 0 0 repeat;}
+#colorbox{ margin-bottom: 50px; }
+    #cboxTopLeft{width:8px; height:7px; background:url(/images/cbox/bg.png) 0 0 no-repeat;}
+    #cboxTopRight{width:15px; height:7px; background:url(/images/cbox/bg.png) -17px 0 no-repeat;}
+    #cboxBottomLeft{width:8px; height:15px; background:url(/images/cbox/bg.png) 0px -16px no-repeat;}
+    #cboxBottomRight{width:15px; height:15px; background:url(/images/cbox/bg.png) -17px -16px no-repeat;}
+    #cboxMiddleLeft{width:8px; background:url(/images/cbox/border3.png) left top repeat-y;}
+    #cboxMiddleRight{width:15px; background:url(/images/cbox/border3.png) right top repeat-y;}
+    #cboxTopCenter{height:7px; background:url(/images/cbox/border2.png) 0 0 repeat-x;}
+    #cboxBottomCenter{height:15px; background:url(/images/cbox/border2.png) 0 -16px repeat-x;}
+    #cboxContent{background:url(/images/cbox/back.png) left top repeat; }
+        #cboxLoadedContent{margin:0;padding: 3px 3px 30px;}
+        #cboxTitle{position:absolute; bottom: 0px; left:0; text-align:center; width:100%; height: 20px; z-index:2555;color:#666666; font-weight:normal; }
+        #cboxCurrent{position:absolute; bottom: 0px; right:0px; color:#666666;}
+        #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
+        #cboxPrevious{position:absolute; top:50%; left:0px; margin-top:-32px; background:url(/images/cbox/strange_controls.png) top left no-repeat; width:28px; height:65px; text-indent:-9999px;}
+        #cboxPrevious.hover{background-position:bottom left;}
+        #cboxNext{position:absolute; top:50%; right:0px; margin-top:-32px; background:url(/images/cbox/strange_controls.png) top right no-repeat; width:28px; height:65px; text-indent:-9999px;}
+        #cboxNext.hover{background-position:bottom right;}
+        #cboxLoadingOverlay{background:url(/images/cbox/loading_background.png) center center no-repeat;}
+        #cboxLoadingGraphic{background:url(/images/cbox/loading.gif) center center no-repeat;}
+        #cboxClose{position:absolute; top:1px; right:1px; background:url(/images/cbox/controls2.png) -25px 0px no-repeat; width:25px; height:25px; text-indent:-9999px;}
+        #cboxClose.hover{background-position:-25px -25px;}
+
+/*
+    The following fixes png-transparency for IE6.  
+    It is also necessary for png-transparency in IE7 & IE8 to avoid 'black halos' with the fade transition
+    
+    Since this method does not support CSS background-positioning, it is incompatible with CSS sprites.
+    Colorbox preloads navigation hover classes to account for this.
+    
+    !! Important Note: AlphaImageLoader src paths are relative to the HTML document,
+    while regular CSS background images are relative to the CSS document.
+*/
+.cboxIE #cboxTopLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderTopLeft2.png, sizingMethod='scale');}
+.cboxIE #cboxTopCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderTopCenter2.png, sizingMethod='scale');}
+.cboxIE #cboxTopRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderTopRight2.png, sizingMethod='scale');}
+.cboxIE #cboxBottomLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderBottomLeft2.png, sizingMethod='scale');}
+.cboxIE #cboxBottomCenter{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderBottomCenter2.png, sizingMethod='scale');}
+.cboxIE #cboxBottomRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderBottomRight2.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleLeft{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderMiddleLeft2.png, sizingMethod='scale');}
+.cboxIE #cboxMiddleRight{background:transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/images/cbox/internet_explorer/borderMiddleRight2.png, sizingMethod='scale');}
+
+

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  leistung: 
+  produkt_bereich: 
+
+two:
+  leistung: 
+  produkt_bereich: 

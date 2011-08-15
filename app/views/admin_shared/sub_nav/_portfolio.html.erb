@@ -1,0 +1,33 @@
+<nav>
+	<ul class="main-nav">
+		
+		<li<%= raw(' class="active"') if controller.controller_name == 'portfolio_bereich' %>><%= link_to 'Portfolio Bereiche', admin_portfolio_bereiche_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_portfolio_bereich'))  %></li>
+		<li><%= link_to 'Referenzen', admin_referenzen_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_referenz'))  %></li>
+		
+		<li><%= link_to 'Kunden', admin_kunden_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_kunde'))  %></li>
+		
+		<li><%= link_to 'Branchen', admin_branchen_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_branche'))  %></li>
+		
+	</ul>
+	<div class="clear"></div>
+</nav>
+
+<% if @sub_activio && (@sub_activio == 'admin_referenz') %>
+	<nav>
+		<ul class="admin_sub_nav">
+			<li><%= link_to 'Referenzen', admin_referenzen_path, 
+			:class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_referenz'))  %></li>
+			
+			<li><%= link_to 'Referenz Bilder', admin_referenz_bilder_path, 
+			:class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_referenz_bild_bild'))  %></li>
+			
+			<li><%= link_to 'Web Referenzen', admin_web_referenzen_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_web_referenz'))  %></li>
+			
+			<li><%= link_to 'Web Referenz Bilder', admin_web_referenz_bilder_path, :class => ("current" if @sub_sub_activio && (@sub_sub_activio == 'admin_web_referenz_bild'))  %></li>
+			
+		</ul>
+		<div class="clear"></div>
+	</nav>
+<% end %>

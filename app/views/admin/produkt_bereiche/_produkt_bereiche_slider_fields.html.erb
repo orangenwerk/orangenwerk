@@ -1,0 +1,12 @@
+<div class="fields many_select">
+<div class="section-group">
+	<div class="section-group-inner">
+		
+		<div class="inna field label"><%= f.label :slider_id %></div>
+		
+		<div class="inna field view"><%= f.select :slider_id, Slider.all.map { |c| [c.name, c.id] } %></div>
+		
+		<div class="remove_nested_form"><%= link_to_remove_fields "löschen", f %></div> 
+	</div>
+</div>
+</div>

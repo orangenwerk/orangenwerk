@@ -1,0 +1,7 @@
+<h2>XyOyX bearbeiten</h2>
+<%= form_for @portfolio_bereich, :html => { :multipart => true }, :url => admin_portfolio_bereich_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_portfolio_bereich_path(@portfolio_bereich.id) %> |
+<%= link_to 'Zurück', admin_portfolio_bereiche_path %>

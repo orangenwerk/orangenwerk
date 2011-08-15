@@ -1,0 +1,83 @@
+<div style="padding:0px 23px"><h1>Sitemap</h1></div>
+<div class="trenner clear"></div>
+
+<div class="Sitemap">
+<ul class="sitemap-nav">
+	<li><h2><%= link_to 'orangenwerk', root_path %></h2></li>
+	<li><ul class="sitemap-nav-in">
+		<li><%= link_to "AGB", agb_path %></li>
+		<li><%= link_to "FAQ's", faqs_path %></li>
+		<li><%= link_to 'Sitemap', sitemap_path %></li>
+	</ul></li>
+	<li><h2><%= link_to 'Produkte', produkte_path %></h2></li>
+	<li><ul class="sitemap-nav-in">
+		<% ProduktBereich.all.each do |pod_b| %>
+		<li><%= link_to pod_b.titel, '/produkte/'+pod_b.name %>
+			<% if pod_b.produkt_kategorien.count > 0 %>
+				<ul class="sitemap-nav-in">
+				<% pod_b.produkt_kategorien.each do |pod_k| %>
+					<li><%= link_to pod_k.titel, '/produkte/'+pod_b.name+'/'+pod_k.name %>
+						<% if pod_k.produkte.count > 0 %>
+							<ul class="sitemap-nav-in">
+							<% pod_k.produkte.each do |pod| %>	
+								<li><%= link_to pod.titel, '/produkte/'+pod_b.name+'/'+pod_k.name+'/'+pod.name %></li>
+							<% end %>
+							</ul>
+						<% end %>
+					</li>
+				<% end %>
+				</ul>
+			<% end %>
+		</li>	
+		<% end %>
+	</ul></li>
+	<li><h2><%= link_to 'Portfolio', '/portfolio/' %></h2></li>
+	<li><ul class="sitemap-nav-in">
+		<% PortfolioBereich.all.each do |port| %>
+			<li><%= link_to port.titel, '/portfolio/'+port.name %>
+				<% if port.name == "projekte" %>
+					<li><ul class="sitemap-nav-in">
+					<% ProduktBereich.all.each do |pod| %>
+						<% if pod.referenzen.count > 0 %>
+							<li><%= link_to pod.titel, '/portfolio/'+port.name+'/'+pod.name %></li>
+						<% end %>
+					<% end %>
+					</ul></li>
+				<% elsif port.name == "kunden" %>
+					<li><ul class="sitemap-nav-in">
+					<% Branche.all.each do |bra| %>
+						<% if bra.referenzen.count > 0 %>
+							<li><%= link_to bra.titel, '/portfolio/'+port.name+'/'+bra.name %></li>
+						<% end %>
+					<% end %>
+					</ul></li>
+				<% end %>
+			</li>
+		<% end %>
+	</ul></li>
+	<li><h2><%= link_to 'News', '/news/' %></h2></li>
+	<li><ul class="sitemap-nav-in">
+			<li><%= link_to 'Aktuelles', '/news/newsletter' %></li>
+			<li><%= link_to 'Newsletter', '/news/aktuelles' %>
+				<ul class="sitemap-nav-in">
+					<li><%= link_to 'anmelden', '/news/newsletter'+'/anmelden' %></li>
+					<li><%= link_to 'abmelden', '/news/newsletter'+'/abmelden' %></li>
+				</ul>
+			</li>
+	</ul></li>
+	<li><h2><%= link_to 'Kontakt', '/kontakt/' %></h2></li>
+	<li><ul class="sitemap-nav-in">
+		<% KontaktBereich.all.each do |kt| %>
+		<li><%= link_to kt.titel, '/kontakt/'+kt.name %>
+			<% if kt.kontakt_kategorien.count > 0 %>
+				<ul class="sitemap-nav-in">
+				<% kt.kontakt_kategorien.each do |k_k| %>
+					<li><%= link_to k_k.titel, '/kontakt/'+kt.name+'/'+k_k.name %></li>
+				<% end %>
+				</ul>
+			<% end %>
+		</li>	
+		<% end %>
+	</ul></li>
+</ul>
+</div>

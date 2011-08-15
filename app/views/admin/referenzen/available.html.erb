@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  function displayRow(){
+    var row = document.getElementById("captionRow");
+    if (row.style.display == '') row.style.display = 'none';
+    else row.style.display = '';
+  }
+</script>
+<hr/>
+<h2>Referenz hinzu:</h2>
+<br/>
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>
+<br/>
+<table class="index">
+  <tr class="pretty">
+	<th>Icon</th>
+    <th><%= sortable "name", "Name" %> </th>
+	<th>Web? </th>
+	<th>Branche </th>
+	<th>Bilder </th>
+    <th></th>
+
+  </tr>
+
+
+<% @available_refs.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td><%= image_tag help_me.icon.url(:thumb) %></td>
+    <td><%= help_me.name %></td>
+	<th><%= help_me.webref ? 'JA' : 'Nein' %></th>
+	<th><%= help_me.branche ? help_me.branche.titel : '...' %></th>
+	<td><%= help_me.referenz_bilder.count %></td>
+
+	<td>
+		<%= link_to icon('add') + ' ' + t("select"),
+                            select_admin_produkt_referenz_path(@produkt, help_me),
+                           :remote => true, :class => 'iconlink xx_link' %>
+	</td>
+
+  </tr>
+<% end %>
+</table>
+<br/>
+<%= link_to 'abbrechen', '#', :class => 'button ad_nesta' %>

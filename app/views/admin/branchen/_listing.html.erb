@@ -1,0 +1,26 @@
+<!--
+#  name       :string(255)
+#  titel      :string(255)
+#  inhalt     :text
+#  sorter     :integer(4)
+-->
+<table>
+  <tr class="pretty">
+    <th><%= sortable "name", "Name" %></th>
+	<th><%= sortable "sorter", "Sorter" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>">
+    <td><%= help_me.name %></td>
+	<td><%= help_me.sorter %></td>
+	<td><%= link_to show_pic, admin_branche_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_branche_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_branche_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+  </tr>
+<% end %>
+</table>

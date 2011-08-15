@@ -1,0 +1,41 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %><%= harken(f, :name) %>
+			<div class="input-help">zur sortierung (steuern)</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="headline-label">
+			<%= f.label :headline %>
+		</th>
+		<td class="headline-view">
+			<%= f.text_field :headline %><%= harken(f, :headline) %>
+			<div class="input-help">Überschrift .. (Steuerangelegenheiten)</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="paragraf-label">
+			<%= f.label :paragraf, 'Paragraph' %>
+		</th>
+		<td class="paragraf-view">
+			<%= f.text_field :paragraf %><%= harken(f, :paragraf) %>
+			<div class="input-help">Der Paragraph = (1.3)</div>
+		</td>
+	</tr>
+	<tr class="text">
+		<th class="inhalt-label">
+			<%= f.label :inhalt %>
+		</th>
+		<td class="inhalt-view">
+			<%= f.text_area :inhalt, :class => 'simple_fckE fck' %><%= harken(f, :inhalt) %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+</tbody></table>
+<div class="actions"><%= f.submit %></div>

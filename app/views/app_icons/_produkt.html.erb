@@ -1,0 +1,10 @@
+<% icon_texta = '
+<div class="resize_picas">
+	'+image_tag(icon.icon.url)+'
+	<div class="icon_text">'+icon.titel+'</div>
+</div>
+'%>
+
+<%= link_to raw(icon_texta), '/produkte/'+icon.produkt_kategorie.produkt_bereich.name+'/'+icon.produkt_kategorie.name+'/'+icon.name, :remote => true, :class => "produkt_icon o_box", :id => icon.id %>
+
+

@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: banners_produkt_kategorien
+#
+#  id                   :integer(4)      not null, primary key
+#  banner_id            :integer(4)
+#  produkt_kategorie_id :integer(4)
+#  created_at           :datetime
+#  updated_at           :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  banner: 
+  produkt_kategorie: 
+
+two:
+  banner: 
+  produkt_kategorie: 

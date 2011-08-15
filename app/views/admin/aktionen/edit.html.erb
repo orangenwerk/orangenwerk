@@ -1,0 +1,7 @@
+<h2>Aktion bearbeiten</h2>
+<%= form_for @aktion, :html => { :multipart => true }, :url => admin_aktion_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_aktion_path(@aktion.id) %> |
+<%= link_to 'Zurück', admin_aktionen_path %>

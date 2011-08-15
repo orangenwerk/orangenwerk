@@ -1,0 +1,22 @@
+<!--
+# => name :string
+# => title :string
+# => link :url
+# => sorter :integer
+# => bild
+-->
+<%= link_to 'Zurück', admin_sliders_path %> | <%= link_to 'Bearbeiten', edit_admin_slider_path(@slider.id) %>
+<div class="stand"><%= @slider.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @slider.bild.url(:thumb) %></div>
+<h2><%= @slider.titel %></h2>
+<p>Name: <strong><%= @slider.name %></strong></p>
+<p>Title: <strong><%= @slider.titel %></strong></p>
+
+<p>Portfolio_Bereiche: <strong><%= @slider.portfolio_bereiche.map{ |pb| pb.name }.join(', ') %></strong></p>
+<p>Produkt_Bereiche: <strong><%= @slider.produkt_bereiche.map{ |pb| pb.name }.join(', ') %></strong></p>
+<hr />
+<%= raw @slider.link %>
+<hr />
+<%= link_to 'Zurück', admin_sliders_path %> | <%= link_to 'Bearbeiten', edit_admin_slider_path(@slider.id) %>
+<hr />

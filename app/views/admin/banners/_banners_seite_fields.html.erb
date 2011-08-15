@@ -1,0 +1,11 @@
+<div class="fields many_select">
+<div class="section-group">
+	<div class="section-group-inner">
+		
+		<div class="field label"><%= f.label :seite_id, 'Seite' %></div>
+		<div class="field view"><%= f.select :seite_id, Seite.all.map { |c| [c.name, c.id] } %></div>
+		
+		<div class="remove_nested_form"><%= link_to_remove_fields "Seite entfernen", f %></div> 
+	</div>
+</div>
+</div>

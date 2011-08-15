@@ -1,0 +1,8 @@
+<h1>Editing product</h1>
+
+<%= form_for @produkt_bereich, :html => { :multipart => true }, :url => admin_produkt_bereich_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Show', admin_produkt_bereich_path(@produkt_bereich.id) %> |
+<%= link_to 'Back', admin_produkt_bereiche_path %>

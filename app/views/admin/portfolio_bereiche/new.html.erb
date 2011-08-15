@@ -1,0 +1,6 @@
+<h2>PortfolioBereich Neu</h2>
+<%= form_for @portfolio_bereich, :html => { :multipart => true }, :url => { :controller => 'admin/portfolio_bereiche'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_portfolio_bereiche_path %>

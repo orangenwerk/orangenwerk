@@ -1,0 +1,27 @@
+<% if icon.webref %>
+	
+	<a class="referenz_icon_med o_box" href="/portfolio/projekte/webproduktion/<%= icon.name %>" title="<%= icon.objekt %>">
+		<div class="icon_schimmer"></div>
+		<%= image_tag icon.icon.url(:medium), :class => 'referenz_icon_med_pic', :alt => icon.objekt %>
+		<div class="icon_text"><%= icon.objekt %></div>
+	</a>
+	
+<% else %>
+
+	<a class="referenz_icon_med o_box colorB" rel="pic_group<%= icon.id.to_s %>" href="<%= icon.icon.url %>" title="<%= icon.objekt %>">
+		<div class="icon_schimmer"></div>
+		<%= image_tag icon.icon.url(:medium), :class => 'referenz_icon_med_pic', :alt => icon.objekt %>
+		<div class="icon_text"><%= icon.objekt %></div>
+	</a>
+	
+<%end%>
+
+<div class="hidden">
+<%=  raw	'<script>$(document).ready(function(){
+					$("a.colorB[rel=\'pic_group'+icon.id.to_s+'\']").colorbox({current: "{current}/{total}"});
+				});
+				</script>' %>
+<% icon.referenz_bilder.each do |pic| %>
+<a rel="pic_group<%= icon.id.to_s %>" href="<%= pic.bild.url %>" class="hidden colorB" title="<strong><%= icon.objekt %></strong><%= ' . '+pic.name if pic.name != '' %>" src="<%= pic.bild.url %>"></a>
+<% end %>
+</div>

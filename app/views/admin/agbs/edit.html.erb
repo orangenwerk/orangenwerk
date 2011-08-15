@@ -1,0 +1,7 @@
+<h2>AGB bearbeiten</h2>
+<%= form_for @agb, :html => { :multipart => true }, :url => admin_agb_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_agb_path(@agb.id) %> |
+<%= link_to 'Zurück', admin_agbs_path %>

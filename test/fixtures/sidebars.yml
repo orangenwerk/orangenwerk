@@ -1,0 +1,33 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: sidebars
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  sorter     :integer(4)
+#  headline   :string(255)
+#  klasse     :string(255)
+#  geber      :string(255)
+#  inhalt     :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  sorter: 1
+  headline: MyString
+  klasse: MyString
+  geber: MyString
+  inhalt: MyText
+
+two:
+  name: MyString
+  sorter: 1
+  headline: MyString
+  klasse: MyString
+  geber: MyString
+  inhalt: MyText

@@ -1,0 +1,155 @@
+<div class="trenner"></div>
+<script> 
+ 
+$(document).ready(function() {
+	var options = {
+  		newsList: "ul.news",
+ 		startDelay: 50,
+ 		//tickerRate: 80,
+		tickerRate: 50,
+ 		controls: false,
+ 		ownControls: false,
+ 		stopOnHover: false
+	}
+	$().newsTicker(options);
+	
+	$('#newsticker').hover(
+	  function () {
+	    $(tickerData.newsList).trigger("stop");
+	  }, 
+	  function () {
+	    $(tickerData.newsList).trigger("resume");
+	  }
+	);
+	
+});
+ 
+ 
+</script> 
+<div class="section-group">
+	<div class="section-group-inner">
+	<div class="section1">
+		<%= image_tag '/images/home_pic_beratung.jpg' %>
+		<div class="pad5">
+			<div class="home_u_pic">
+				<h2>konzept . planung</h2>
+			</div>
+			
+			<p>Wir unterstützen Sie und Ihr Projekt bereits während der Startphase und stehen Ihnen gerne beratend und Ausführend zur Seite.</p>
+			<ul>
+				<li>kostenloses Beratungsgespräch</li>
+				<li>Bedarfsanalyse</li>
+				<li>Marktanalyse</li>
+				<li>Budgetplanung</li>
+				<li>Werbemittelplanung</li>
+			</ul>
+		</div>
+	</div>
+<div class="sectionx"></div>
+<div class="section1">
+	<%= image_tag '/images/home_pic_grafik.jpg' %>
+	<div class="pad5">
+			<div class="home_u_pic">
+				<h2>grafische gestaltung</h2>
+			</div>
+			
+			<p>Wir sorgen dafür, dass Sie sich von Mitbewerbern abheben, professionell wirken und Ihren Werbe- mitteln das „gewisse Etwas“ nicht fehlt.</p>
+			<ul>
+				<li>Logodesign</li>
+				<li>Corporate Design</li>
+				<li>Illustrationen</li>
+				<li>Produkt- und Objektfotografie</li>
+				<li>Webdesign</li>
+			</ul>
+		</div>
+</div>
+<div class="sectionx"></div>
+<div class="section1">
+	<%# image_tag '/images/home_pic_montage.jpg' %>
+	<div id="prod__pic"><%= image_tag '/images/loading.gif', :id => "front_prod_loader" %></div>
+	<style>
+	#prod__pic { width: 334px; height: 158px; display:block; position:relative;}
+	#front_prod_loader { position:absolute; left: 142px; top: 60px;}
+	</style>
+	<script type="text/javascript">
+	  $(function() {
+	    $("#prod__pic").crossSlide({
+			fade: 1,
+			sleep: 4,
+			shuffle: true,
+			doubleFade: true
+	    }, [ // Bilder
+		/*	{ src: "/images/home_pic_montage.jpg"}, */
+			{ src: "/images/produktion1.jpg"},
+			{ src: "/images/produktion2.jpg"},
+			{ src: "/images/produktion3.jpg"},
+			{ src: "/images/produktion4.jpg"}
+		]);
+	  });
+	</script>
+	
+	<div class="pad5">
+			<div class="home_u_pic">
+				<h2>eigene produktion . montage</h2>
+			</div>
+			
+			<p>orangenwerk ist ein Team von Grafikern, Designern und erfahrenen Werbetechnikern.</p><br/>
+			<p>Die Herstellung und Weiterverarbeitung unserer Produkte erfolgt zum großteil über unseren eigenen Maschinenpark.</p><br/>
+			<p>Die daraus resultierenden kurzen Wege ermöglichen schnelle Lieferzeiten und eine faire sowie transparente Preispolitik.</p><br/>
+		</div>
+</div>
+</div>
+</div>
+
+
+<br class="clear" />
+
+<div class="o_box" id="newsticker_box">
+	<%= image_tag '/images/newsticker.jpg', :class => 'NewsIcon', :id => 'newsticker_icon' %>
+	<span id="newsticker">
+		<% if NewsEintrag.count > 0 %>
+			<ul class="news">
+				<% NewsEintrag.all.each do |new| %>
+				
+					<% newztext = new.datum.strftime('%d.%m.%Y') %>
+					<% newztext += ' | ' %>
+					<% newztext += new.headline.length > 103 ? new.headline.to_s[0..100]+'...' : new.headline %>
+					<li><%= link_to newztext, '/news/aktuelles/'+new.name %>
+				<% end %>
+			</ul>
+		<% end %>
+	</span>
+</div>
+
+<div class="trenner"></div>
+
+<div class="section-group">
+	<div class="section-group-inner">
+	<div class="section1 o_box icon_zeiger">
+		<div class="box_headline">
+			<%= image_tag '/images/icn_start_kunden.png' %>
+			<div class="in_box_headline">Unsere Kunden und Partner</div>
+		</div>
+		<div class="front_box_in">
+			<% Kunde.random(4).each do |kunde| %>
+				<%= render 'app_icons/kunde_klein', :icon => kunde %>
+			<% end %>
+		</div>
+	</div>
+	<div class="sectionx"></div>
+	<div class="section2 o_box">
+		<div class="box_headline">
+			<%= image_tag '/images/icn_start_referenzen.png' %>
+			
+			<div class="in_box_headline">referenzen .  von handwerk bis kunstwerk!</div>
+		</div>
+		<div class="front_box_in">
+			<% Referenz.random(8).each do |ref| %>
+				<%= render 'app_icons/referenz_klein', :icon => ref %>
+			<% end %>
+		</div>
+	</div>
+
+</div>
+</div>
+

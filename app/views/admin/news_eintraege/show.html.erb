@@ -1,0 +1,15 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_news_eintraege_path %> | <%= link_to 'Bearbeiten', edit_admin_news_eintrag_path(@news_eintrag.id) %>
+<div class="stand"><%= @news_eintrag.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<h2><%= @news_eintrag.titel %></h2>
+<p>Name: <strong><%= @news_eintrag.name %></strong></p>
+<p>Title: <strong><%= @news_eintrag.titel %></strong></p>
+	<p><strong>datum:</strong> <%= distance_of_time_in_words(@news_eintrag.datum, Time.now) if @news_eintrag.datum %> .. <%= @news_eintrag.datum.strftime('%d.%m.%Y') if @news_eintrag.datum %> </p>
+<hr />
+<%= raw @news_eintrag.inhalt %>
+<hr />
+<%= link_to 'Zurück', admin_news_eintraege_path %> | <%= link_to 'Bearbeiten', edit_admin_news_eintrag_path(@news_eintrag.id) %>
+<hr />

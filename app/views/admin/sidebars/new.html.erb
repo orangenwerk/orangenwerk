@@ -1,0 +1,6 @@
+<h2>Sidebar Neu</h2>
+<%= form_for @sidebar, :html => { :multipart => true }, :url => { :controller => 'admin/sidebars'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_sidebars_path %>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>orangenwerk . Agentur f&uuml;r visuelle Medien.</title>
+	<style type="text/css">
+		body { background-color: #fff; color: #666; text-align: center; height: 100% !important; width: 100%;  display:block; font-family: arial, sans-serif; margin: 15% 0;}
+		div.dialog {
+			width: 200px;
+			height: 200px;
+background: url(/images/bau.jpg) 50% 50% no-repeat;
+			margin: auto auto;
+		}
+#alert { background: transparent url('/images/alert_bg.png') 0px 0px repeat-x; border: solid 1px rgba(204,0,0,.7); padding:0px 20px; position:relative; dislpay: block;
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; 
+	color: rgba(204,0,0,.9); margin:5px 50px; }
+#in_alert { font-size: 18px; line-height: 18px; background: transparent url('/images/icn_alert.png') 0px 9px no-repeat; padding: 22px 60px 20px;}
+
+#notice { background: transparent url('/images/notice_bg.jpg') 0px 0px repeat-x; border: solid 1px #66a366; padding:0px 20px; position:relative; dislpay: block; margin:5px 50px; color: #666 !important; 
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;  }
+#in_notice { font-size: 18px; line-height: 18px; background: transparent url('/images/icn_notice.png') 0px 9px no-repeat; padding: 22px 60px 20px;}
+	
+ul.account-nav { position:absolute; right: 100px; top: 20px; list-style:none;}	
+ul.account-nav li { float: left; list-style:none;}
+ul.account-nav li a { text-decoration:none; color: #666;}
+ul.account-nav li a:hover { color: #ff6600;}	
+	</style>
+	
+</head>
+
+<body>
+	<ul class="account-nav">
+	  <% if signed_in? %>
+			<li><%= link_to current_user.name, current_user %></li>
+	  		<li><%= rechte_symbol %></li>
+      		<li><%= link_to "Log out", signout_path, :method => :delete %></li>
+      <% else %>
+      	<li><%= link_to "Log in", signin_path %></li>
+      <% end %>
+</ul>
+  <!-- This file lives in public/500.html -->
+						<% if notice %>
+							<div id="notice"><div id="in_notice"><%= notice %></div></div>
+						<% end %>
+						<% if alert %>
+							<div id="alert"><div id="in_alert"><%= alert %></div></div>
+						<% end %>
+  <div class="dialog">
+    
+  </div>
+</body>
+</html>

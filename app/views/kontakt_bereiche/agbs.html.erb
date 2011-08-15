@@ -1,0 +1,27 @@
+<h1>Allgemeine Geschäftsbedingungen</h1>
+<!-- <div class="stand">Stand: <%# @agbs.last.updated_at.strftime('%d.%m.%Y') %></div> -->
+<div class="trenner clear"></div>
+
+<% if @agbs %>
+
+	<% @agbs.each do |agb| %>
+		
+		<div>
+			
+		<h3>&sect;<%= agb.paragraf %> <%= agb.headline %></h3>
+		<br class="clear"/>
+		<p><%= raw agb.inhalt %></p>
+		<br class="clear"/>
+		</div>
+		
+
+	<% end %>
+
+<% end %>
+<br class="clear"/>
+<br class="clear"/>
+<br class="clear"/>
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

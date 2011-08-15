@@ -1,0 +1,20 @@
+<div class="bread">
+	<% if @produkt %>
+		<%= link_to 'orangenwerk', root_path %> . 
+		<%= link_to 'Produkte', produkte_path %> . 
+		<%= link_to @produkt_bereich.titel, produkt_path(@produkt_bereich.name) %> . 
+		<%= link_to @produkt_kategorie.titel, produkt_path(@produkt_bereich.name)+'/'+@produkt_kategorie.name %> . 
+		<%= @produkt.titel %>
+	<% elsif @produkt_kategorie %>
+		<%= link_to 'orangenwerk', root_path %> . 
+		<%= link_to 'Produkte', produkte_path %> . 
+		<%= link_to @produkt_bereich.titel, produkt_path(@produkt_bereich.name) %> . 
+		<%= @produkt_kategorie.titel %>
+	<% elsif @produkt_bereich %>
+		<%= link_to 'orangenwerk', root_path %> . 
+		<%= link_to 'Produkte', produkte_path %> . 
+		<%= @produkt_bereich.titel %>
+	<% else %>
+		<%= link_to 'orangenwerk', root_path %> . Produkte
+	<% end %>
+</div>

@@ -1,0 +1,38 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">Kann Leer- und Sonderzeichen enthalten (wird in Lightbox angezeigt)</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :icon, 'Bild' %></th>
+		<td class="view"><%= f.file_field :icon %>
+			
+			<div class="input-help">zwecks Lightbox max. 800 x 600 px  ... wichtig 4:3, denn ICON wird beschnitten</div>		</td>
+	</tr>
+	<% if @produkt %>
+		<%= f.hidden_field :produkt_id, :value => @produkt.id %>
+	<% else %>
+	<tr>
+		<th class="label"><%= f.label :produkt_id %></th>
+		<td class="view"><%= f.select :produkt_id, Produkt.all.map { |c| [c.name, c.id] }, :include_blank => true %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<% end %>
+	
+	
+
+</tbody></table>
+
+
+<div class="actions"><%= f.submit %></div>

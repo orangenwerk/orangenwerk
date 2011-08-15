@@ -1,0 +1,99 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label">
+			<%= f.label :name %>
+		</th>
+		<td class="view">
+			<%= f.text_field :name %><%= harken(f, :name) %>
+			<div class="input-help">für sortierung</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="label">
+			<%= f.label :titel %>
+		</th>
+		<td class="view">
+			<%= f.text_field :titel %><%= harken(f, :titel) %>
+			<div class="input-help">falls headline oder so</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="label">
+			<%= f.label :link %>
+		</th>
+		<td class="view">
+			<%= f.text_field :link, :default => "http://" %>
+			<div class="input-help">Link url für diesen Banner .. leitet bei klick weiter</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="label">
+			<%= f.label :sorter %>
+		</th>
+		<td class="name-view">
+			<%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			<div class="input-help">Positions-Nummer</div>
+		</td>
+	</tr>
+	<tr>
+		<th class="label">
+			<%= f.label :bild %>
+		</th>
+		<td class="view">
+			<%= f.file_field :bild %><%= harken(f, :bild_file_name) %>
+			<div class="input-help">Einfach halten ! = klein, '_' statt ' ' ! .. Bsp mesh_outdoor</div>
+		</td>
+	</tr>
+</tbody></table>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_produkt_bereiche do |builder| %>
+    		<%= render "banners_produkt_bereich_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Produkt_Bereich", f, :banners_produkt_bereiche %></p>
+</div>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_produkt_kategorien do |builder| %>
+    		<%= render "banners_produkt_kategorie_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Produkt_Kategorie", f, :banners_produkt_kategorien %></p>
+</div>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_produkte do |builder| %>
+    		<%= render "banners_produkt_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Produkt", f, :banners_produkte %></p>
+</div>
+
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_kontakt_bereiche do |builder| %>
+    		<%= render "banners_kontakt_bereich_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Kontakt_Bereich", f, :banners_kontakt_bereiche %></p>
+</div>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_news_bereiche do |builder| %>
+    		<%= render "banners_news_bereich_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ News_Bereich", f, :banners_news_bereiche %></p>
+</div>
+<div class="trennertop clear"></div>
+<div class="nested_form">
+ 		<% f.fields_for :banners_seiten do |builder| %>
+    		<%= render "banners_seite_fields", :f => builder %>
+  		<% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Seite", f, :banners_seiten %></p>
+</div>
+
+<div class="trennertop clear"></div>
+
+<div class="actions"><%= f.submit %></div>	
+
+
+

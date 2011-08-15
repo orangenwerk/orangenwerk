@@ -1,0 +1,43 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">Kann Leer- und Sonderzeichen enthalten (wird in Lightbox hinter OBJEKT angezeigt)</div></td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :referenz_id %></th>
+		<% if @referenz %>
+		<td class="view"><%= f.select :referenz_id, Referenz.all.map { |c| [c.name, c.id] }, :selected => @referenz.id.to_s %>
+		<% else %>
+		<td class="view"><%= f.select :referenz_id, Referenz.all.map { |c| [c.name, c.id] } %>
+		<% end %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :bild %></th>
+		<td class="view"><%= f.file_field :bild %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :sorter %></th>
+		<td class="view"><%= f.select :sorter, Array(0..42).map { |c| [c, c] } %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :inhalt %></th>
+		<td class="view"><%= f.text_area :inhalt, :class => "asid2", :rows => "5" %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	
+
+</tbody></table>
+
+
+<div class="actions"><%= f.submit %></div>

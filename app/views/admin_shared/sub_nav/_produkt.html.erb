@@ -1,0 +1,20 @@
+<nav>
+	<ul class="main-nav">
+		
+		<li><%= link_to 'Produkt Bereiche', admin_produkt_bereiche_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'sub_admin_produkt_bereich'))  %></li>
+		
+		<li><%= link_to 'Produkt Kategorien', admin_produkt_kategorien_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'sub_admin_produkt_kategorie'))  %></li>
+		
+		<li><%= link_to 'Produkt', admin_produkte_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_produkt'))  %></li>
+		
+		<li><%= link_to 'Produkt Detail Bilder', admin_produkt_detail_bilder_path, 
+		:class => ("current" if @sub_activio && (@sub_activio == 'admin_produkt_detail_bild'))  %></li>
+		
+		<li><%= link_to 'Leistungen', admin_leistungen_path, :class => ("current" if @sub_activio && (@sub_activio == 'admin_leistung'))  %></li>
+		
+	</ul>
+	<div class="clear"></div>
+</nav>

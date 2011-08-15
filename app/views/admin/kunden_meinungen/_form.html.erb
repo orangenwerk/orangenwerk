@@ -1,0 +1,38 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :kunden_name %></th>
+		<td class="view"><%= f.text_field :kunden_name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :firma %></th>
+		<td class="view"><%= f.text_field :firma %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :inhalt %></th>
+		<td class="view"><%= f.text_area :inhalt, :class => "asid2" %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :kunde_id, 'Kunde:' %></th>
+		<td class="view"><%= f.select :kunde_id, Kunde.all.map { |c| [c.name, c.id] }, :include_blank => true %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+
+</tbody></table>
+
+
+<div class="actions"><%= f.submit %></div>

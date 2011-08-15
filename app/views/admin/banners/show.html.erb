@@ -1,0 +1,35 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_banners_path %> | <%= link_to 'Bearbeiten', edit_admin_banner_path(@banner.id) %>
+<hr />
+
+<div style="float:right; margin:5px"><%= image_tag @banner.bild.url(:thumb) %></div>
+<h2><%= @banner.titel %></h2>
+<p>Name: <strong><%= @banner.name %></strong></p>
+<p>Title: <strong><%= @banner.titel %></strong></p>
+<hr />
+<%= raw @banner.link %>
+<hr />
+<p>Produkt_bereiche: <strong><%= @banner.produkt_bereiche.count %></strong></p>
+<% p_b = @banner.produkt_bereiche.map { |x| [x.titel] } %>
+<p><em><%= p_b.join(', ') %></em></p>
+<p>Produkt_Kategorien: <strong><%= @banner.produkt_kategorien.count %></strong></p>
+<% pr_b = @banner.produkt_kategorien.map { |x| [x.titel] } %>
+<p><em><%= pr_b.join(', ') %></em></p>
+<p>Produkte: <strong><%= @banner.produkte.count %></strong></p>
+<% pb = @banner.produkte.map { |x| [x.titel] } %>
+<p><em><%= pb.join(', ') %></em></p>
+<p>News_bereiche: <strong><%= @banner.news_bereiche.count %></strong></p>
+<% n_b = @banner.news_bereiche.map { |x| [x.titel] } %>
+<p><em><%= n_b.join(', ') %></em></p>
+<p>Kontakt_bereiche: <strong><%= @banner.kontakt_bereiche.count %></strong></p>
+<% k_b = @banner.kontakt_bereiche.map { |x| [x.titel] } %>
+<p><em><%= k_b.join(', ') %></em></p>
+<p>Seiten: <strong><%= @banner.seiten.count %></strong></p>
+<% s_b = @banner.seiten.map { |x| [x.titel] } %>
+<p><em><%= s_b.join(', ') %></em></p>
+
+<br /><hr />
+<%= link_to 'Zurück', admin_banners_path %> | <%= link_to 'Bearbeiten', edit_admin_banner_path(@banner.id) %>
+<hr />

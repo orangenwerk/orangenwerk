@@ -1,0 +1,42 @@
+<%= render 'app_shared/error_msg', :item => f.object %>
+<table class="field-list">
+<tbody>
+	<tr>
+		<th class="label"><%= f.label :name %></th>
+		<td class="view"><%= f.text_field :name %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :titel %></th>
+		<td class="view"><%= f.text_field :titel %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :headline %></th>
+		<td class="view"><%= f.text_field :headline %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :autor %></th>
+		<td class="view"><%= f.text_field :autor %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label"><%= f.label :datum %></th>
+		<td class="view"><%= f.date_select(:datum) %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+	<tr>
+		<th class="label texta"><%= f.label :inhalt %></th>
+		<td class="view"><%= f.text_area :inhalt, :class => "asid2 fck" %>
+			
+			<div class="input-help">x___xx___xxx___xx___x</div>		</td>
+	</tr>
+</tbody></table>
+<div class="actions"><%= f.submit %></div>
+

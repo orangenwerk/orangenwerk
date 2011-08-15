@@ -1,0 +1,66 @@
+<!--
+#  name       :string(255)
+#  titel      :string(255)
+#  headline   :string(255)
+#  inhalt     :text
+#  paragraf   :string(255)
+-->
+<table class="agb_table">
+<thead>
+  <tr class="pretty">
+	<th></th>
+    <th><%= sortable "name", "Name" %></th>
+    <th><%= sortable "headline", "Headline" %></th>
+	<th><%= sortable "paragraf", "Paragraf" %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% data.each do |help_me| %>
+  <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(help_me)%>">
+	<td class="sorter"><span class="handler"></span></td>
+    <td><%= help_me.name %></td>
+    <td><%= help_me.headline %></td>
+	<td><%= help_me.paragraf %></td>
+	<td><%= link_to show_pic, admin_agb_path(help_me.id), :class => 'a_link_show' %></td>
+    <td><%= link_to edit_pic, edit_admin_agb_path(help_me.id), :class => 'a_link_edit' %></td>
+    <td><%= link_to del_pic, admin_agb_path(help_me.id), :confirm => 'Bist du wirklich Sicher?', :method => :delete, :class => 'a_link_del' %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+
+<% content_for :head do %>
+<script type="text/javascript" charset="utf-8">
+	
+	var fixWidthHelper = function(e, ui) {
+      ui.children().each(function() {
+        $(this).width($(this).width());
+      });
+      return ui;
+  };
+  $(function() {
+    $("table.agb_table tbody").sortable({
+      axis: 'y',
+      handle: '.handler',
+      cursor: "move",
+      helper: fixWidthHelper,
+      
+      update: function(){
+        $.ajax({
+          type: 'post', 
+          data: $('table.agb_table tbody').sortable('serialize'), 
+          dataType: 'script',
+          complete: function(request){
+            $('table.agb_table tbody').effect('highlight');
+          },
+          url: "<%= admin_reorder_agbs_url %>"
+        })
+      }
+		}).disableSelection();
+  });
+</script>
+<% end %>

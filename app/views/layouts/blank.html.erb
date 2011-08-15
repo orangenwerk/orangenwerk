@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <%= render 'app_shared/scriptz' %>
+<!--[if IE]>
+<%= stylesheet_link_tag '/stylesheets/ie/ie.css' %>
+<![endif]-->
+  <%= csrf_meta_tag %>
+</head>
+<body class="app">
+
+
+<header>
+	<div id="top-nav">
+		<div class="container">
+			<%= logo %>
+		</div>
+	</div>
+	<div id="top-stripe"></div>
+	<div id="banner">
+
+	</div>
+	<div id="mid-stripe"></div>
+</header>
+<div id="page" class="pngFix">
+	<div class="container">
+		<div class="section-group">
+			<div class="section-group-inner">
+
+					
+					<div class="site">
+						<% if notice %>
+							<div id="notice"><div id="in_notice"><%= notice %></div></div>
+						<% end %>
+						<% if alert %>
+							<div id="alert"><div id="in_alert"><%= alert %></div></div>
+						<% end %>
+			  				<br/>
+							<%= yield %>
+	
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+

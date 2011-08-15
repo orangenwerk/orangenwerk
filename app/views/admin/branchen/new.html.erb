@@ -1,0 +1,6 @@
+<h2>Branche Neu</h2>
+<%= form_for @branche, :html => { :multipart => true }, :url => { :controller => 'admin/branchen'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_branchen_path %>

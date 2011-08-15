@@ -1,0 +1,70 @@
+<%= form_for @xmail_kontakt, :url => { :controller => 'kontakt_bereiche', :action => 'kontaktmail_safe'}, :remote => true do |f| %>
+<%= render 'app_shared/error_msg', :item => f.object %>
+
+<table class="field-list odw_admin_table">
+<tbody>
+	<tr>
+		<th class="name-label">
+			<%= f.label :geschlecht %>
+		</th>
+		<td class="name-view">
+			<%= f.select :geschlecht, geschlechter.map { |c| [c, c] }, :include_blank => true %><%= harken(f, :geschlecht) %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :name %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :name %><%= harken(f, :name) %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :vorname %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :vorname %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			<%= f.label :email %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :email %><%= harken(f, :email) %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label texta">
+			<%= f.label :inhalt %>
+		</th>
+		<td class="name-view"
+			<%= f.text_area :inhalt, :rows => 3, :cols => 30 %><%= harken(f, :inhalt) %>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td>
+			<span class="info_text">Aus Sicherheitsgründen bitten wir Sie,<br/>die folgende kleine Aufgabe zu lösen:</span>
+		</td>
+	</tr>
+	<tr>
+		
+		<th class="name-label">
+			<%= f.label :sicherheits_code, '2 x 4 =' %>
+		</th>
+		<td class="name-view">
+			<%= f.text_field :sicherheits_code, :size => 30 %><%= harken(f, :sicherheits_code) %>
+		</td>
+	</tr>
+	<tr>
+		<th class="name-label">
+			&nbsp;
+		</th>
+		<td class="name-view">
+			<%= submit_tag " senden " %>
+		</td>
+	</tr>
+</tbody></table>
+<% end %>

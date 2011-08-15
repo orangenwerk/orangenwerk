@@ -1,0 +1,14 @@
+<h1><%= @kontakt_k.titel %></h1>
+<div class="trenner clear"></div>
+<%= raw @kontakt_k.inhalt %>
+<% if @xmail_kontakt %>
+<div id="Kontkat_form">
+	<%= render 'k_form' %>
+</div>
+<% end %>
+
+<div class="trenner clear"></div>
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

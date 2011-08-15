@@ -1,0 +1,15 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_newsletter_abos_path %> | <%= link_to 'Bearbeiten', edit_admin_newsletter_abo_path(@newsletter_abo.id) %>
+<hr />
+<h2><%= @newsletter_abo.email %></h2>
+<p>Anrede: <strong><%= @newsletter_abo.geschlecht %></strong></p>
+<p>Name: <strong><%= @newsletter_abo.name %></strong></p>
+<br/>	
+<p>Registriert am: <strong><%= @newsletter_abo.created_at.strftime('%d.%m.%Y') %></strong></p>
+<hr />
+<%= @newsletter_abo.email %>
+<hr />
+<%= link_to 'Zurück', admin_newsletter_abos_path %> | <%= link_to 'Bearbeiten', edit_admin_newsletter_abo_path(@newsletter_abo.id) %>
+<hr />

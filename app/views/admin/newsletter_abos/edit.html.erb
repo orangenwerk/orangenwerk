@@ -1,0 +1,7 @@
+<h2>NewsletterAbo bearbeiten</h2>
+<%= form_for @newsletter_abo, :html => { :multipart => true }, :url => admin_newsletter_abo_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_newsletter_abo_path(@newsletter_abo.id) %> |
+<%= link_to 'Zurück', admin_newsletter_abos_path %>

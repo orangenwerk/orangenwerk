@@ -1,0 +1,41 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: referenz_bilder
+#
+#  id                :integer(4)      not null, primary key
+#  name              :string(255)
+#  inhalt            :text
+#  sorter            :integer(4)
+#  referenz_id       :integer(4)
+#  bild_file_name    :string(255)
+#  bild_content_type :string(255)
+#  bild_file_size    :integer(4)
+#  bild_updated_at   :datetime
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  referenz: 
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-09 09:36:08
+
+two:
+  name: MyString
+  titel: MyString
+  inhalt: MyText
+  sorter: 1
+  referenz: 
+  bild_file_name: MyString
+  bild_content_type: MyString
+  bild_file_size: 1
+  bild_updated_at: 2010-09-09 09:36:08

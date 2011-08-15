@@ -1,0 +1,7 @@
+<h2>Seite bearbeiten</h2>
+<%= form_for @seite, :html => { :multipart => true }, :url => admin_seite_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_seite_path(@seite.id) %> |
+<%= link_to 'Zurück', admin_seiten_path %>

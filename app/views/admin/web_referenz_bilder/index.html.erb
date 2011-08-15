@@ -1,0 +1,19 @@
+<h2>Web Referenz Bilder [ screenshots ] :</h2>
+<br/>
+<% if @web_referenz %>
+	<%= link_to ' zurück zu .. "'+@web_referenz.referenz.objekt+'" ', edit_admin_referenz_path(@web_referenz.referenz), :class => 'admin_new_button' %>
+<% else %>
+	<%= link_to 'WebReferenzBild erstellen', new_admin_web_referenz_bild_path, :class => 'admin_new_button Pagez_remote_link' %>
+<% end %>
+
+<br /><br/>
+<%= render 'listing', :data => @web_referenz_bilder  %>
+<br />
+<% if @web_referenz %>
+	<%= link_to 'neuen Screenshot erstellen', new_admin_web_referenz_web_referenz_bild_path(@web_referenz), :class => 'admin_new_button Pagez_remote_link' %>
+<% else %>
+	<%= link_to 'WebReferenzBild erstellen', new_admin_web_referenz_bild_path, :class => 'admin_new_button Pagez_remote_link' %>
+<% end %>
+<br/><br/>
+<div id="Pagez__stuff"></div>
+<br/>

@@ -1,0 +1,24 @@
+<h1>FAQ&acute;s</h1>
+<div class="trenner clear"></div>
+<% if @faqs %>
+	<% @faqs.each do |faq| %>
+
+		<div class="o_box news_box">
+		<div class="trigger">
+		<h3><%= faq.frage %></h3>
+		</div>
+		<div class="toggle_container">
+		<div class="x_trenner"></div>
+		<br class="clear"/>
+		<%= raw faq.antwort %>
+		<br class="clear"/>
+		</div>
+		</div>
+
+	<% end %>
+<% end %>
+
+
+<% content_for :left_aside do %>
+	<%= render 'aside_left' %>
+<% end %>

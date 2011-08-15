@@ -1,0 +1,7 @@
+<h2>NewsBereich bearbeiten</h2>
+<%= form_for @news_bereich, :html => { :multipart => true }, :url => admin_news_bereich_path do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Anzeigen', admin_news_bereich_path(@news_bereich.id) %> |
+<%= link_to 'Zurück', admin_news_bereiche_path %>

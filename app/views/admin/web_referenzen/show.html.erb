@@ -1,0 +1,21 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_web_referenzen_path %> | <%= link_to 'Bearbeiten', edit_admin_web_referenz_path(@web_referenz.id) %>
+<div class="stand"><%= @web_referenz.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<h2><%= @web_referenz.titel %></h2>
+<p>Name: <strong><%= @web_referenz.name %></strong></p>
+<p>Title: <strong><%= @web_referenz.titel %></strong></p>
+<p>URL: <strong><%= @web_referenz.url %></strong></p>
+<p>Referenz: <strong><%= link_to(@web_referenz.referenz.name, '/admin/referenzen/'+@web_referenz.referenz.id.to_s ) if @web_referenz.referenz %></strong></p>
+<hr />
+<%= raw @web_referenz.inhalt %>
+<hr class="clear" />
+<p>Screenshots: <strong></strong></p>
+<% @web_referenz.web_referenz_bilder.each do |pic| %>
+<%= image_tag pic.screenshot.url(:klein) %>
+<% end %>
+<hr class="clear" />
+<%= link_to 'Zurück', admin_web_referenzen_path %> | <%= link_to 'Bearbeiten', edit_admin_web_referenz_path(@web_referenz.id) %>
+<hr />

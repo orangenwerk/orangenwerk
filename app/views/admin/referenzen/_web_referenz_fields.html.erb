@@ -1,0 +1,47 @@
+<div class="fields">
+
+<div class="remove_nested_form"><%= link_to_remove_fields "Web-Referenz entfernen", f %></div> 
+
+<p><strong>Web Referenz Inhalt:</strong></p>
+<div class="section-group">
+	<div class="section-group-inner">
+		
+		<div class="field">
+	    <%= f.label :name %>
+		</div>
+		<div class="field">
+	    <%= f.text_field :name %>
+		</div>
+	</div>
+	<div class="section-group-inner">
+  		<div class="field">
+		    <%= f.label :titel %>
+		  </div>
+		  <div class="field">
+		    <%= f.text_field :titel %>
+		  </div>
+  	</div>
+	
+	<div class="section-group-inner">
+  		<div class="field">
+		    <%= f.label :url %>
+		  </div>
+		  <div class="field">
+		    <%= f.text_field :url %>
+		  </div>
+  	</div>
+
+	<div class="section-group-inner">
+  		<div class="field">
+		    <%= f.label :inhalt %>
+		  </div>
+		  <div class="field">
+		    <%= f.text_area :inhalt, :class => "asid2 live_fck", :cols => 70, :rows => 5 %>
+		  </div>
+ 	</div>
+</div>
+<% f.fields_for :web_referenz_bilder do |builder| %>
+    <%= render "web_referenz_bild_fields", :f => builder %>
+  <% end %>
+  <p class="add_nested_form"><%= link_to_add_fields "+ Screenshot", f, :web_referenz_bilder %></p>
+</div>

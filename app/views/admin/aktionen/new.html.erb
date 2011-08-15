@@ -1,0 +1,6 @@
+<h2>Aktion Neu</h2>
+<%= form_for @aktion, :html => { :multipart => true }, :url => { :controller => 'admin/aktionen'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_aktionen_path %>

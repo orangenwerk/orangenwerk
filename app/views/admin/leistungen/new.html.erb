@@ -1,0 +1,6 @@
+<h2>Leistung Neu</h2>
+<%= form_for @leistung, :html => { :multipart => true }, :url => { :controller => 'admin/leistungen'} do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<% end %>
+
+<%= link_to 'Zurück', admin_leistungen_path %>

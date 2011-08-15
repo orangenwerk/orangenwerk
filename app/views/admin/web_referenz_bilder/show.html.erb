@@ -1,0 +1,16 @@
+<!--
+
+-->
+<%= link_to 'Zurück', admin_web_referenz_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_web_referenz_bild_path(@web_referenz_bild.id) %>
+<div class="stand"><%= @web_referenz_bild.updated_at.strftime('%d.%m.%Y .. %H:%M') %></div>
+<hr />
+<div style="float:right; margin:5px"><%= image_tag @web_referenz_bild.screenshot.url(:thumb) %></div>
+<h2><%= @web_referenz_bild.name %></h2>
+<p>Name: <strong><%= @web_referenz_bild.name %></strong></p>
+<p>Web-Referenz: <strong><%= @web_referenz_bild.web_referenz.name if @web_referenz_bild.web_referenz %></strong></p>
+	<p>Web-Referenz: <strong><%= @web_referenz_bild.web_referenz.referenz.name if @web_referenz_bild.web_referenz && @web_referenz_bild.web_referenz.referenz %></strong></p>
+<hr />
+<%= image_tag @web_referenz_bild.screenshot.url(:klein) %>
+<hr />
+<%= link_to 'Zurück', admin_web_referenz_bilder_path %> | <%= link_to 'Bearbeiten', edit_admin_web_referenz_bild_path(@web_referenz_bild.id) %>
+<hr />

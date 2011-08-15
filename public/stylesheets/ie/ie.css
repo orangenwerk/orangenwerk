@@ -1,0 +1,25 @@
+ul.top-nav li { float: left; }
+ul.main-nav li { float: left; }
+ul.account-nav li { float: left; }
+
+.aside.leftside { float: left; }
+.aside.rightside { float: right; }
+
+.section-part.with_aside { float: left; }
+
+.section-part.with_aside.both { width: 545px; }
+.section-part.with_aside.left { width: 837px; }
+
+.sidebar_icon_pic, .pngFix, img { behavior: url('/stylesheets/ie/iepngfix.htc') }
+
+
+#top-nav { z-index: 11; }
+#top-nav .container { z-index: 10; }
+#top-nav #logo_link { z-index: 8; }
+#top-nav #logo_link #logo { z-index: 5; }
+
+#banner { z-index:0;}
+#banner #banner_container { z-index:0;}
+#banner #banner_container #banner_box { z-index:0; }
+#banner #banner_container #banner_box img { z-index: -1; position:relative;}
+

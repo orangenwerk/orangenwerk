@@ -1,0 +1,21 @@
+# == Schema Information
+# Schema version: 20100913141444
+#
+# Table name: banners_kontakt_bereiche
+#
+#  id                 :integer(4)      not null, primary key
+#  banner_id          :integer(4)
+#  kontakt_bereich_id :integer(4)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  banner: 
+  kontakt_bereich: 
+
+two:
+  banner: 
+  kontakt_bereich: 

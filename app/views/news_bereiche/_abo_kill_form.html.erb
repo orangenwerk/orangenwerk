@@ -1,0 +1,33 @@
+<%= form_for @newsletter_abo, :html => { :multipart => true }, :url => { :controller => 'news_bereiche', :action => 'newsletter_kill'} do |f| %>
+	<%= render 'app_shared/error_msg', :item => f.object %>
+
+	<table class="field-list">
+	<tbody>
+		<tr>
+			<th>
+				E-Mail:
+			</th>
+			<td>
+				<strong><%= @newsletter_abo.email %></strong>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				Abo-Dauer:
+			</th>
+			<td>
+				<strong><%= distance_of_time_in_words(@newsletter_abo.updated_at, Time.now) %></strong>
+			</td>
+		</tr>
+		<tr>
+			<th>
+			</th>
+			<td>
+				<div class="actions"><%= submit_tag "E-Mail-Adresse löschen", :confirm => "Wollen Sie wirklich unseren Newsletter verpassen?" %></div>
+			</td>
+		</tr>
+
+		<%= hidden_field(:newsletter_abo, :id) %>
+	</tbody></table>
+	
+<% end %>
