@@ -9,15 +9,12 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails1_go_online
-  # database: db_10821412n3
+  database: db_10821412n3
   pool: 5
-  # username: user10821412n3
-  # password: juA2Rj5T
-  # host: zeta.railshoster.de
-  username: fineline
-  password: dau@mac
-  host: localhost
+  username: user10821412n3
+  password: juA2Rj5T
+  host: zeta.railshoster.de
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -30,14 +27,14 @@ test:
   pool: 5
   username: root
   password: behave
-  host: localhost
+  host:  zeta.railshoster.de
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: rails1_go_online
+  database: db_10821412n3
   pool: 5
-  username: fineline
-  password: dau@mac
-  host: localhost
+  username: user10821412n3
+  password: juA2Rj5T
+  host: zeta.railshoster.de

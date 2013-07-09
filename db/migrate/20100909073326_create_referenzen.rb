@@ -7,7 +7,7 @@ class CreateReferenzen < ActiveRecord::Migration
       t.string :objekt
       t.string :ort
       t.boolean :webref, :default => false
-      t.references :branche
+      t.references :banche
       t.references :produkt_bereich
       t.references :produkt_kategorie
       t.references :produkt
@@ -18,7 +18,7 @@ class CreateReferenzen < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :referenzen, :branche_id
+    add_index :referenzen, :banche_id
     add_index :referenzen, :produkt_bereich_id
     add_index :referenzen, :produkt_kategorie_id
     add_index :referenzen, :produkt_id

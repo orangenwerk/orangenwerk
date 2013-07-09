@@ -8,7 +8,8 @@
  *
  * Developed for Graham Glass
  *
- * Version: 0.3 
+ * Version: 0.1 04-August-2006
+ * Version: 0.2 19-April-2008. Updated for FCKeditor 2.6
  */
 
 //Image Dialog
@@ -45,58 +46,26 @@ FCKToolbarItems.RegisterItem( 'easyLink', oEasyLinkItem ) ;
 
 
 
-// Context menu for Image and Link
+//context menu for Image and Link
 // Define the context menu "listener".
-var oMyContextMenuListener = { 
-	// We will use our own menus only if the default ones have been removed from the config, so if someone uses just the 
-	// image dialog then we don' mess with the links (for example)
-	EnableImageMenu : (FCKConfig.ContextMenu.IndexOf('Image') == -1) ,
- 
-	EnableLinkMenu : (FCKConfig.ContextMenu.IndexOf('Link') == -1) ,
+var oMyContextMenuListener = new Object() ;
 
 // This is the standard function called right before sowing the context menu.
-	AddItems : function( menu, tag, tagName )
+oMyContextMenuListener.AddItems = function( menu, tag, tagName )
+{
+	if ( tagName == 'IMG' && !tag.getAttribute( '_fckfakelement' ) )
 	{
-		if ( this.EnableImageMenu && tagName == 'IMG' && !tag.getAttribute( '_fckfakelement' ) )
-		{
-			menu.AddSeparator() ;
-			menu.AddItem( 'easyImage', FCKLang.EuMenuImageProperties, 37 ) ;
-		}
-
-		if ( this.EnableLinkMenu && FCK.GetNamedCommandState( 'Unlink' ) != FCK_TRISTATE_DISABLED )
-		{
-			menu.AddSeparator() ;
-			menu.AddItem( 'easyLink'	, FCKLang.EuMenuEditLink		, 34 ) ;
-			menu.AddItem( 'Unlink'	, FCKLang.EuMenuRemoveLink	, 35 ) ; //calls the default one
-		}
+		menu.AddSeparator() ;
+		menu.AddItem( 'easyImage', FCKLang.EuMenuImageProperties, 37 ) ;
 	}
 
+	if ( FCK.GetNamedCommandState( 'Unlink' ) != FCK_TRISTATE_DISABLED )
+	{
+		menu.AddSeparator() ;
+		menu.AddItem( 'easyLink'	, FCKLang.EuMenuEditLink		, 34 ) ;
+		menu.AddItem( 'Unlink'	, FCKLang.EuMenuRemoveLink	, 35 ) ; //calls the default one
+	}
 }
 
 // Register our context menu listener.
 FCK.ContextMenu.RegisterListener( oMyContextMenuListener ) ;
-
-
-
-
-// Returns an array with the available classes defined in the Styles
-GetAvailableClasses = function( nodeName ) 
-{
-	var styles = FCK.Styles.GetStyles() ;
-	var aClasses = [{name:'', classname:''}];
-
-	for ( var styleName in styles )
-	{
-		var style = styles[styleName] ;
-		if (style.IsCore)
-			continue;
-
-		if (style.Element == nodeName)
-		{
-			if (style._StyleDesc.Attributes && style._StyleDesc.Attributes['class'] ) 
-				aClasses.push( {name:styleName, classname:style._StyleDesc.Attributes['class']} ) ;
-		}
-	}
-
-	return aClasses ;
-}

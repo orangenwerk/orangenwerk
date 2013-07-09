@@ -7,22 +7,14 @@
  * 		Alfonso Martínez de Lizarrondo
  */
 
-FCKLang['EuImgDialogTitle']	= 'Insert / Edit Image' ;
+FCKLang['EuImgDialogTitle']	= 'Insert Image' ;
 FCKLang['EuInsertImageLbl']	= 'Insert/Edit an image' ;
 FCKLang['EuInsertImage']	= 'Insert/Edit an image' ;
 
-FCKLang['EuImgSelectFileLbl']		= 'Select picture from your computer (Image will also be added to Library)' ;
+FCKLang['EuImgSelectFileLbl']		= 'Select picture' ;
 FCKLang['EuImgContinueBtn']		= 'Continue' ;
-FCKLang['EuDlgImgAlt']	= 'Short Description (optional, but recommended for accessibility)' ;
-FCKLang['DlgEUSelectServer']		= 'Or choose an image from the Library' ;
-FCKLang['DlgEuPasteURL']		= 'Or paste an image from another site' ;
-FCKLang['DlgEuBtnBrowseServer']		= 'Browse Library' ;
-FCKLang['DlgEuBtnResetSize'] = 'Restore image to original size';
-FCKLang['EuImageClass'] = 'Image Style';
-FCKLang['EuImageSize'] = 'Image Size';
-FCKLang.Help = 'Help' ;
+FCKLang['EuDlgImgAlt']	= 'Short Description' ;
 
-FCKLang['EuSelectAnImage'] = 'Please, select the image that you want to use '; 
 
 FCKLang['EuFileDialogTitle']	= 'Insert attachment' ;
 FCKLang['EuFileInsertFileLbl']	= 'Link a file' ;

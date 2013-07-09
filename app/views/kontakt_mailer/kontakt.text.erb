@@ -1,11 +1,15 @@
-Neue Kontakt-Mail.
 
-<%= @kontakt.geschlecht+' '+@kontakt.name %><%= @kontakt.vorname.nil? ? '' : ', '+@kontakt.vorname %>
+Kontakt-Mail: <%= @kontakt.geschlecht %> <%= @kontakt.vorname if !@kontakt.vorname.blank? %> <%= @kontakt.name %>
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
 
 <%= @kontakt.inhalt %>
 
 
-<%= @std_domain %> - <%= Time.now %>
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 
-<%= @kontakt.email %>
+<%= @std_domain %> - <%= I18n.l Time.now, :format => :short %>
+
+
+<%= @kontakt.geschlecht %> <%= @kontakt.vorname if !@kontakt.vorname.blank? %> <%= @kontakt.name %> [<%= @kontakt.email %>]

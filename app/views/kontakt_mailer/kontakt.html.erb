@@ -3,13 +3,26 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
-  <body>
-    <h1>Neue Kontakt-Mail.</h1>
-    <p><%= @kontakt.geschlecht+' '+@kontakt.name %><%= @kontakt.vorname.nil? ? '' : ', '+@kontakt.vorname %></p>
-	<p><%= @kontakt.email %></p>
-    <br/>
-<p><%= @kontakt.inhalt %></p>
-	<br/>
+  <body style="position: relative; background: #e5e5e5; color: #444; margin: 0; padding: 20px; text-align: center;">
+	<div style="display: block; position: relative; margin: 0; padding: 10px 30px 30px; background: #fff; border: solid 1px #ccc; color: #666;">
+		<h2 style="display: block; position: relative; margin: 0; padding: 10px 20px; color: #666; font-size: 20px; font-weight: bold;">
+			Kontakt-Mail: 
+			<small style="color: #444; font-weight: normal;">
+				<%= @kontakt.geschlecht %> <%= @kontakt.vorname if !@kontakt.vorname.blank? %> <%= @kontakt.name %>
+			</small>
+		</h2>
+		<h5><%= @kontakt.email %></h5>
+		<br/>
+		<hr/>
+		<br/>
+		<pre>
+			<p style="color: #000; font-size: 1.2em;"><%= @kontakt.inhalt %></p>
+		</pre>
+		<br/>
+		<hr/>
+		<br/>
+		<p><%= @kontakt.geschlecht %> <%= @kontakt.vorname if !@kontakt.vorname.blank? %> <%= @kontakt.name %> [<%= @kontakt.email %>]</p>
+	</div>
     <p><%= @std_domain %> - <%= I18n.l Time.now, :format => :short %></p>
   </body>
 </html>

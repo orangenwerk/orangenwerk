@@ -23,38 +23,25 @@
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta name="robots" content="noindex, nofollow">
-	<script type="text/javascript">
-	function Import(aSrc) {
-		 document.write('<scr'+'ipt type="text/javascript" src="' + aSrc + '"></sc' + 'ript>');
-	}
+		<link href="../../../dialog/common/fck_dialog_common.css" rel="stylesheet" type="text/css" />
+		<script language="javascript">
 
-	var FCKTools	= window.parent.FCKTools ;
-	var FCKConfig	= window.parent.FCKConfig ;
-
-	Import(FCKConfig.FullBasePath + 'dialog/common/fck_dialog_common.js');
-	</script>
-	<script type="text/javascript">
 // Sets the Skin CSS
-//document.write( FCKTools.GetStyleHtml( FCKConfig.SkinDialogCSS ) ) ;
-//document.write( FCKTools.GetStyleHtml( GetCommonDialogCss( FCKConfig.FullBasePath + 'dialog/' ) ) ) ;
-
-//set the preview CSS
-	document.write( FCKTools.GetStyleHtml( FCKConfig.EditorAreaCSS ) ) ;
-	document.write( FCKTools.GetStyleHtml( FCKConfig.EditorAreaStyles ) ) ;
+document.write( '<link href="' + window.parent.FCKConfig.SkinPath + 'fck_dialog.css" type="text/css" rel="stylesheet">' ) ;
 
 if ( window.parent.FCKConfig.BaseHref.length > 0 )
 	document.write( '<base href="' + window.parent.FCKConfig.BaseHref + '">' ) ;
 
 window.onload = function()
 {
-	window.parent.SetPreviewElements(
+	window.parent.SetPreviewElements( 
 		document.getElementById( 'imgPreview' ),
 		document.getElementById( 'lnkPreview' ) ) ;
 }
 
-	</script>
+		</script>
 	</head>
-	<body>
+	<body style="COLOR: #000000; BACKGROUND-COLOR: #ffffff">
 		<a id="lnkPreview" onclick="return false;" style="CURSOR: default"><img id="imgPreview" onload="window.parent.UpdateOriginal();" style="DISPLAY: none"></a>Lorem 
 		ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas feugiat consequat 
 		diam. Maecenas metus. Vivamus diam purus, cursus a, commodo non, facilisis 

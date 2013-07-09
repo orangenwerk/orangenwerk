@@ -10,8 +10,10 @@ class KontaktMailer < ActionMailer::Base
     @kontakt = kontakt
     @std_domain = 'orangenwerk.com'
     # => mail :to => abo.email
-    mail(:to => 'strangeaustin@googlemail.com',
-         :subject => "Kontakt - #{ @kontakt.geschlecht } #{ @kontakt.name }!")
+    mail    :to       => 'info@orangenwerk.com',
+            :bcc      => ["Peter <p.klar@orangenwerk.com>", "Marco <m.sebald@orangenwerk.com>", "Admin <web@orangenwerk.com>"],
+            :reply_to => @kontakt.email,
+            :subject  => "orangenwerk-Kontakt - #{ @kontakt.geschlecht } #{ @kontakt.name }"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

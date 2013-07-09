@@ -14,7 +14,6 @@ var oEditor		= window.parent.InnerDialogLoaded() ;
 var FCK			= oEditor.FCK ;
 var FCKLang		= oEditor.FCKLang ;
 var FCKConfig	= oEditor.FCKConfig ;
-var FCKTools	= oEditor.FCKTools ;
 
 Import(FCKConfig.FullBasePath + 'dialog/common/fck_dialog_common.js');
 
@@ -75,19 +74,16 @@ function Ok()
 		if ( CheckUpload() )
 			GetE('frmUpload').submit();
 
-		return false ; // We'll finish once the file is at the server
+		return false ; //we'll finish once the file is at the server
 	}
 
 	sUri = GetE('txtUrl').value ;
 	if ( sUri.length == 0 )
 	{
-		// If the url is empty check to see if they have already selected a file
+		//if the url is empty check to see if they have already selected a file
 		CheckUpload();
 		return false ; 
 	}
-
-	// Workaround to make IE happy
-//	window.focus();
 	oEditor.FCKUndo.SaveUndoStep() ;
 
 	// If no link is selected, create a new one (it may result in more than one link creation - #220).
@@ -110,13 +106,13 @@ function Ok()
 		aLinks = [ oEditor.FCK.InsertElement( 'a' ) ] ;
 	}
 	
-//	sUri = encodeURI( sUri ).replace( '#', '%23' );
 	for ( var i = 0 ; i < aLinks.length ; i++ )
 	{
 		oLink = aLinks[i] ;
 	
 		if ( aHasSelection )
 			sInnerHtml = oLink.innerHTML ;		// Save the innerHTML (IE changes it if it is like an URL).
+
 
 		oLink.href = sUri ;
 		SetAttribute( oLink, '_fcksavedurl', sUri ) ;
@@ -144,7 +140,6 @@ function SetUrl( url )
 
 function OnUploadCompleted( errorNumber, fileUrl, fileName, customMsg )
 {
-
 	switch ( errorNumber )
 	{
 		case 0 :	// No errors
@@ -173,7 +168,7 @@ function OnUploadCompleted( errorNumber, fileUrl, fileName, customMsg )
 	SetUrl( fileUrl ) ;
 	GetE('frmUpload').reset() ;
 
-	// Press the Ok button if we had only a warning or it was succesful
+	//Press the Ok button if we had only a warning or it was succesful
 	if (errorNumber == 0 || errorNumber == 101  || errorNumber == 201 )
 		window.parent.Ok();
 }
